@@ -1,0 +1,81 @@
+﻿<Window x:Class="Map.Popups.ButtonAlertPopup"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Width="665"
+        Height="365"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        AllowsTransparency="True"
+        Background="Transparent"
+        ShowInTaskbar="False"
+        WindowStartupLocation="CenterOwner">
+
+    <Grid>
+
+        <!-- Background -->
+        <Border CornerRadius="20">
+            <Border.Background>
+                <ImageBrush ImageSource="/images/buttonpopup.png"
+                            Stretch="Fill"/>
+            </Border.Background>
+            
+        </Border>
+
+        <!-- Content -->
+        <Grid Margin="40">
+            <StackPanel Orientation="Horizontal"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="20,10,0,0">
+                <!-- 경고 아이콘 -->
+                <Image Source="/images/Warning.png"
+                   Width="40"
+                   Height="40"
+                       Margin="0,10,0,0"
+                  />
+                <!-- 우측 상단 -->
+            <TextBlock Text="주의경보"
+                       Foreground="#EBA400"
+                       FontSize="30"
+                       FontWeight="Bold"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Top"  Margin="5,10,0,0"/>
+            </StackPanel>
+
+            <!-- 중앙 메시지 -->
+            <TextBlock x:Name="MessageText"
+                       Foreground="#EBA400"
+                       FontSize="26"
+                       FontWeight="Bold"
+                       TextAlignment="Center"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       TextWrapping="Wrap"/>
+
+            <!-- 확인 버튼 -->
+            <Button x:Name="ConfirmButton"
+                Width="100"
+                Height="42"
+                Background="#EBA400"
+                Foreground="Black"
+                FontSize="18"
+                FontWeight="Bold"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                Cursor="Hand"
+                Click="Confirm_Click"
+                Content="확인">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                    CornerRadius="13">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+        </Grid>
+    </Grid>
+</Window>

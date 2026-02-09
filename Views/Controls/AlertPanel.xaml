@@ -1,0 +1,115 @@
+﻿<UserControl x:Class="Map.Views.Controls.AlertPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Map.Views.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="267" d:DesignWidth="800">
+
+    <Border Width="800" Height="267" Background="#111327" CornerRadius="20" Margin="0,20,0,0">
+        <Grid Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,-20,5,0">
+                <Image Source="pack://application:,,,/Map;component/images/error.png" Width="32" Height="32"/>
+                <TextBlock Text="경보 알림" Foreground="White" FontSize="18" FontWeight="Bold" Margin="3,0,0,0" VerticalAlignment="Center"/>
+            </StackPanel>
+            <!--table area-->
+            <Grid Grid.Row="1" Margin="0,10,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- header -->
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="내용" Foreground="White" FontSize="14" FontWeight="Bold" VerticalAlignment="Center"/>
+                    <TextBlock Text="알림 발생 시간" Grid.Column="1" Foreground="White" FontSize="14" FontWeight="Bold"
+                           HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Grid>
+                <!-- TABLE CONTENT (4 Rows) -->
+                <StackPanel Grid.Row="1" Orientation="Vertical" Margin="0,5,0,0">
+
+                    <!-- Row 0 -->
+                    <Grid Height="40">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock
+                        Text="{Binding Alerts[0].Msg}"
+                        Foreground="White" FontSize="13" VerticalAlignment="Center"/>
+
+                        <TextBlock Grid.Column="1"
+                        Text="{Binding Alerts[0].Time}"
+                        Foreground="White" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+                        <Border Grid.ColumnSpan="2" BorderBrush="#444" BorderThickness="0,0,0,1" VerticalAlignment="Bottom"/>
+                    </Grid>
+
+                    <!-- Row 1 -->
+                    <Grid Height="40">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock
+                        Text="{Binding Alerts[1].Msg}"
+                        Foreground="White" FontSize="13" VerticalAlignment="Center"/>
+
+                        <TextBlock Grid.Column="1"
+                        Text="{Binding Alerts[1].Time}"
+                        Foreground="White" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+                        <Border Grid.ColumnSpan="2" BorderBrush="#444" BorderThickness="0,0,0,1" VerticalAlignment="Bottom"/>
+                    </Grid>
+
+                    <!-- Row 2 -->
+                    <Grid Height="40">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock
+                        Text="{Binding Alerts[2].Msg}"
+                        Foreground="White" FontSize="13" VerticalAlignment="Center"/>
+
+                        <TextBlock Grid.Column="1"
+                        Text="{Binding Alerts[2].Time}"
+                        Foreground="White" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+                        <Border Grid.ColumnSpan="2" BorderBrush="#444" BorderThickness="0,0,0,1" VerticalAlignment="Bottom"/>
+                    </Grid>
+
+                    <!-- Row 3 -->
+                    <Grid Height="40">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock
+                        Text="{Binding Alerts[3].Msg}"
+                        Foreground="White" FontSize="13" VerticalAlignment="Center"/>
+
+                        <TextBlock Grid.Column="1"
+                        Text="{Binding Alerts[3].Time}"
+                        Foreground="White" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <Border Grid.ColumnSpan="2" BorderBrush="#444" BorderThickness="0,0,0,1" VerticalAlignment="Bottom"/>
+                    </Grid>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Border>
+</UserControl>

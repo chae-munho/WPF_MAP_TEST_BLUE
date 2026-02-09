@@ -1,0 +1,81 @@
+﻿<Window x:Class="Map.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:controls="clr-namespace:Map.Views.Controls"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        mc:Ignorable="d"
+        Title="문경시 관광테마 열차 관제 시스템"
+        Width="1750"
+        Height="1030"
+        Background="#222B4E"
+        ResizeMode="CanResize">
+
+    <Window.Resources>
+        <Style x:Key="ValueStyle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontFamily" Value="Dinmed"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+
+        <Style x:Key="TimeStyle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontFamily" Value="Dinmed"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+
+        <BitmapImage x:Key="DefaultLockIcon"
+                 UriSource="pack://application:,,,/Map;component/images/lock.png"/>
+    </Window.Resources>
+  
+    <Viewbox Stretch="Fill">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- HEADER -->
+            <controls:HeaderPanel />
+
+            <!-- MAIN AREA -->
+            <Grid Grid.Row="2" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                
+
+              
+                <!-- LEFT (A열) -->
+                <controls:TrainAPanel Grid.Column="0"/>
+    
+                <!--Train A 패널 끝-->
+
+
+
+                <!--  CENTER (Map + Alert)  -->
+                <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <!---Map Panel-->
+                    <controls:MapPanel x:Name="MapPanelControl"/>
+                    <!---Map Panel 끝-->
+                    
+                    <!-- ALERT PANEL -->
+                    <controls:AlertPanel></controls:AlertPanel>
+                    <!--Alert Panel 끝-->
+                </StackPanel>
+     
+                <!-- RIGHT (B열) -->
+                <controls:TrainBPanel Grid.Column="2"/>
+                <!---Train B 패널 끝-->                             
+            </Grid>
+        </Grid>
+    </Viewbox>
+</Window>

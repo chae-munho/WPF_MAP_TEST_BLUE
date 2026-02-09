@@ -1,0 +1,29 @@
+﻿<Application x:Class="Map.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Map"
+             StartupUri="Views/MainWindow.xaml">
+    <Application.Resources>
+        <Style x:Key="ValueStyle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontFamily" Value="Dinmed"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+
+        <Style x:Key="TimeStyle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontFamily" Value="Dinmed"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+
+        <BitmapImage x:Key="DefaultLockIcon"
+                     UriSource="pack://application:,,,/Map;component/images/lock.png"/>
+       
+           
+      
+
+    </Application.Resources>
+</Application>
