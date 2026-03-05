@@ -36,7 +36,7 @@
         <Grid Width="420" Height="253" Margin="0,0,0,20">
             <Border Width="420" Height="253"
             Background="#111327"
-            CornerRadius="20">
+            CornerRadius="10">
                 <Grid Margin="15">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="250"/>
@@ -63,13 +63,7 @@
                        VerticalAlignment="Center"
                        Clip="{Binding TrainA.GaugeClip}"/>
 
-                        <TextBlock Text="열차 A"
-                       Foreground="White"
-                       FontSize="12"
-                       FontFamily="Dinmed"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center"
-                       Margin="0,-80,0,0"/>
+
 
                         <!-- 속도 텍스트 -->
                         <TextBlock HorizontalAlignment="Center"
@@ -98,11 +92,18 @@
                             </Image.RenderTransform>
                         </Image>
                         <Label Content="0" HorizontalAlignment="Left" Margin="60,153,0,0" VerticalAlignment="Top" Foreground="#FF6F88A3" FontSize="10"/>
-                        <Label Content="5" HorizontalAlignment="Left" Margin="42,8,0,0" VerticalAlignment="Center" Foreground="#FF6F88A3" FontSize="10"/>
-                        <Label Content="10" HorizontalAlignment="Left" Margin="79,37,0,0" VerticalAlignment="Top" Foreground="#FF6F88A3" FontSize="10"/>
-                        <Label Content="15" HorizontalAlignment="Left" Margin="145,37,0,0" VerticalAlignment="Top" Foreground="#FF6F88A3" FontSize="10"/>
-                        <Label Content="20" HorizontalAlignment="Left" Margin="184,88,0,0" VerticalAlignment="Top" Foreground="#FF6F88A3" FontSize="10"/>
-                        <Label Content="25" HorizontalAlignment="Left" Margin="167,153,0,0" VerticalAlignment="Top" Foreground="#FF6F88A3" FontSize="10"/>
+                        <Label Content="3" HorizontalAlignment="Left" Margin="43,123,0,0" VerticalAlignment="Top" Foreground="#FF6F88A3" FontSize="10"/>
+                        <Label Content="6" HorizontalAlignment="Left" Margin="43,90,0,0" VerticalAlignment="Top" Foreground="#FF6F88A3" FontSize="10"/>
+                        <Label Content="9" HorizontalAlignment="Left" Margin="57,60,0,0" VerticalAlignment="Top" Foreground="#FF6F88A3" FontSize="10"/>
+                        <Label Content="12" HorizontalAlignment="Left" Margin="80,39,0,0" VerticalAlignment="Top" Foreground="#FF6F88A3" FontSize="10"/>
+                        <Label Content="15" HorizontalAlignment="Center" Margin="0,30,0,0" VerticalAlignment="Top" Foreground="#FF6F88A3" FontSize="10"/>
+                        <Label Content="18" HorizontalAlignment="Left" Margin="145,38,0,0" VerticalAlignment="Top" Foreground="#FF6F88A3" FontSize="10"/>
+                        <Label Content="21" HorizontalAlignment="Left" Margin="171,59,0,0" VerticalAlignment="Top" Foreground="#FF6F88A3" FontSize="10"/>
+                        <Label Content="24" HorizontalAlignment="Left" Margin="185,90,0,0" VerticalAlignment="Top" Foreground="#FF6F88A3" FontSize="10"/>
+                        <Label Content="27" HorizontalAlignment="Left" Margin="185,123,0,0" VerticalAlignment="Top" Foreground="#FF6F88A3" FontSize="10"/>
+                        <Label Content="30" HorizontalAlignment="Left" Margin="167,153,0,0" VerticalAlignment="Top" Foreground="#FF6F88A3" FontSize="10"/>
+
+
                     </Grid>
 
                     <!-- RIGHT AREA : 버튼 4개 1열 -->
@@ -212,11 +213,11 @@
         </Grid>
 
 
-        <!-- Rect 2 : 전압/전류 그래프 (열차 A) -->
+        <!-- Rect 2 : 전압/모터출력 그래프 (열차 A) -->
         <Grid Width="420" Height="317" Margin="0,0,0,20">
             <Border Width="420" Height="317"
             Background="#111327"
-            CornerRadius="20">
+            CornerRadius="10">
                 <Grid Margin="15">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
@@ -295,9 +296,9 @@
                         </StackPanel>
                     </StackPanel>
 
-                    <!-- 전류(A) -->
+                    <!-- 모터출력(A) -->
                     <StackPanel Grid.Row="2" Orientation="Horizontal">
-                        <TextBlock Text="전류(A)"
+                        <TextBlock Text="모터출력(A)"
                        Foreground="White"
                        FontFamily="Dinmed"
                        FontSize="11"
@@ -310,14 +311,14 @@
                             <StackPanel Orientation="Horizontal"
                             HorizontalAlignment="Center"
                             Margin="-7,0,0,0">
-                                <TextBlock Text="{Binding TrainA.CurrentGraph[0].ValueText, TargetNullValue='100', FallbackValue='100'}" Width="52" TextAlignment="Center" Style="{StaticResource ValueStyle}" Margin="-5,0"/>
-                                <TextBlock Text="{Binding TrainA.CurrentGraph[1].ValueText, TargetNullValue='100', FallbackValue='100'}" Width="52" TextAlignment="Center" Style="{StaticResource ValueStyle}" Margin="-5,0"/>
-                                <TextBlock Text="{Binding TrainA.CurrentGraph[2].ValueText, TargetNullValue='100', FallbackValue='100'}" Width="52" TextAlignment="Center" Style="{StaticResource ValueStyle}" Margin="-5,0"/>
-                                <TextBlock Text="{Binding TrainA.CurrentGraph[3].ValueText, TargetNullValue='100', FallbackValue='100'}" Width="52" TextAlignment="Center" Style="{StaticResource ValueStyle}" Margin="-5,0"/>
-                                <TextBlock Text="{Binding TrainA.CurrentGraph[4].ValueText, TargetNullValue='100', FallbackValue='100'}" Width="52" TextAlignment="Center" Style="{StaticResource ValueStyle}" Margin="-5,0"/>
-                                <TextBlock Text="{Binding TrainA.CurrentGraph[5].ValueText, TargetNullValue='100', FallbackValue='100'}" Width="52" TextAlignment="Center" Style="{StaticResource ValueStyle}" Margin="-5,0"/>
-                                <TextBlock Text="{Binding TrainA.CurrentGraph[6].ValueText, TargetNullValue='100', FallbackValue='100'}" Width="52" TextAlignment="Center" Style="{StaticResource ValueStyle}" Margin="-5,0"/>
-                                <TextBlock Text="{Binding TrainA.CurrentGraph[7].ValueText, TargetNullValue='100', FallbackValue='100'}" Width="52" TextAlignment="Center" Style="{StaticResource ValueStyle}"/>
+                                <TextBlock Text="{Binding TrainA.MotorOutputGraph[0].ValueText, TargetNullValue='100', FallbackValue='100'}" Width="52" TextAlignment="Center" Style="{StaticResource ValueStyle}" Margin="-5,0"/>
+                                <TextBlock Text="{Binding TrainA.MotorOutputGraph[1].ValueText, TargetNullValue='100', FallbackValue='100'}" Width="52" TextAlignment="Center" Style="{StaticResource ValueStyle}" Margin="-5,0"/>
+                                <TextBlock Text="{Binding TrainA.MotorOutputGraph[2].ValueText, TargetNullValue='100', FallbackValue='100'}" Width="52" TextAlignment="Center" Style="{StaticResource ValueStyle}" Margin="-5,0"/>
+                                <TextBlock Text="{Binding TrainA.MotorOutputGraph[3].ValueText, TargetNullValue='100', FallbackValue='100'}" Width="52" TextAlignment="Center" Style="{StaticResource ValueStyle}" Margin="-5,0"/>
+                                <TextBlock Text="{Binding TrainA.MotorOutputGraph[4].ValueText, TargetNullValue='100', FallbackValue='100'}" Width="52" TextAlignment="Center" Style="{StaticResource ValueStyle}" Margin="-5,0"/>
+                                <TextBlock Text="{Binding TrainA.MotorOutputGraph[5].ValueText, TargetNullValue='100', FallbackValue='100'}" Width="52" TextAlignment="Center" Style="{StaticResource ValueStyle}" Margin="-5,0"/>
+                                <TextBlock Text="{Binding TrainA.MotorOutputGraph[6].ValueText, TargetNullValue='100', FallbackValue='100'}" Width="52" TextAlignment="Center" Style="{StaticResource ValueStyle}" Margin="-5,0"/>
+                                <TextBlock Text="{Binding TrainA.MotorOutputGraph[7].ValueText, TargetNullValue='100', FallbackValue='100'}" Width="52" TextAlignment="Center" Style="{StaticResource ValueStyle}"/>
                             </StackPanel>
 
                             <!-- Bars -->
@@ -325,28 +326,28 @@
                             HorizontalAlignment="Center"
                             Margin="-10,3,0,0">
                                 <Grid Width="52" Height="97" Margin="-5,0">
-                                    <Image Source="pack://application:,,,/Map;component/images/A2.png" Width="52" Height="{Binding TrainA.CurrentGraph[0].BarHeight}" Margin="-5,0" Stretch="Fill" VerticalAlignment="Bottom"/>
+                                    <Image Source="pack://application:,,,/Map;component/images/A2.png" Width="52" Height="{Binding TrainA.MotorOutputGraph[0].BarHeight}" Margin="-5,0" Stretch="Fill" VerticalAlignment="Bottom"/>
                                 </Grid>
                                 <Grid Width="52" Height="97" Margin="-5,0">
-                                    <Image Source="pack://application:,,,/Map;component/images/A2.png" Width="52" Height="{Binding TrainA.CurrentGraph[1].BarHeight}" Margin="-5,0" Stretch="Fill" VerticalAlignment="Bottom"/>
+                                    <Image Source="pack://application:,,,/Map;component/images/A2.png" Width="52" Height="{Binding TrainA.MotorOutputGraph[1].BarHeight}" Margin="-5,0" Stretch="Fill" VerticalAlignment="Bottom"/>
                                 </Grid>
                                 <Grid Width="52" Height="97" Margin="-5,0">
-                                    <Image Source="pack://application:,,,/Map;component/images/A2.png" Width="52" Height="{Binding TrainA.CurrentGraph[2].BarHeight}" Margin="-5,0" Stretch="Fill" VerticalAlignment="Bottom"/>
+                                    <Image Source="pack://application:,,,/Map;component/images/A2.png" Width="52" Height="{Binding TrainA.MotorOutputGraph[2].BarHeight}" Margin="-5,0" Stretch="Fill" VerticalAlignment="Bottom"/>
                                 </Grid>
                                 <Grid Width="52" Height="97" Margin="-5,0">
-                                    <Image Source="pack://application:,,,/Map;component/images/A2.png" Width="52" Height="{Binding TrainA.CurrentGraph[3].BarHeight}" Margin="-5,0" Stretch="Fill" VerticalAlignment="Bottom"/>
+                                    <Image Source="pack://application:,,,/Map;component/images/A2.png" Width="52" Height="{Binding TrainA.MotorOutputGraph[3].BarHeight}" Margin="-5,0" Stretch="Fill" VerticalAlignment="Bottom"/>
                                 </Grid>
                                 <Grid Width="52" Height="97" Margin="-5,0">
-                                    <Image Source="pack://application:,,,/Map;component/images/A2.png" Width="52" Height="{Binding TrainA.CurrentGraph[4].BarHeight}" Margin="-5,0" Stretch="Fill" VerticalAlignment="Bottom"/>
+                                    <Image Source="pack://application:,,,/Map;component/images/A2.png" Width="52" Height="{Binding TrainA.MotorOutputGraph[4].BarHeight}" Margin="-5,0" Stretch="Fill" VerticalAlignment="Bottom"/>
                                 </Grid>
                                 <Grid Width="52" Height="97" Margin="-5,0">
-                                    <Image Source="pack://application:,,,/Map;component/images/A2.png" Width="52" Height="{Binding TrainA.CurrentGraph[5].BarHeight}" Margin="-5,0" Stretch="Fill" VerticalAlignment="Bottom"/>
+                                    <Image Source="pack://application:,,,/Map;component/images/A2.png" Width="52" Height="{Binding TrainA.MotorOutputGraph[5].BarHeight}" Margin="-5,0" Stretch="Fill" VerticalAlignment="Bottom"/>
                                 </Grid>
                                 <Grid Width="52" Height="97" Margin="-5,0">
-                                    <Image Source="pack://application:,,,/Map;component/images/A2.png" Width="52" Height="{Binding TrainA.CurrentGraph[6].BarHeight}" Margin="-5,0" Stretch="Fill" VerticalAlignment="Bottom"/>
+                                    <Image Source="pack://application:,,,/Map;component/images/A2.png" Width="52" Height="{Binding TrainA.MotorOutputGraph[6].BarHeight}" Margin="-5,0" Stretch="Fill" VerticalAlignment="Bottom"/>
                                 </Grid>
                                 <Grid Width="52" Height="97" Margin="-5,0">
-                                    <Image Source="pack://application:,,,/Map;component/images/A2.png" Width="52" Height="{Binding TrainA.CurrentGraph[7].BarHeight}" Margin="-5,0" Stretch="Fill" VerticalAlignment="Bottom"/>
+                                    <Image Source="pack://application:,,,/Map;component/images/A2.png" Width="52" Height="{Binding TrainA.MotorOutputGraph[7].BarHeight}" Margin="-5,0" Stretch="Fill" VerticalAlignment="Bottom"/>
                                 </Grid>
                             </StackPanel>
 
@@ -375,11 +376,11 @@
             IsHitTestVisible="False"/>
         </Grid>
 
-        <!-- Rect 3 : 배터리 / 온도 / 모터 (열차 A)  -->
+        <!-- Rect 3 : 배터리 / 온도 A  -->
         <Grid Width="420" Height="267" Margin="0,0,0,0">
             <Border Width="420" Height="267"
             Background="#111327"
-            CornerRadius="20">
+            CornerRadius="10">
                 <Grid Margin="20,20,10,20">
                     <Grid.Resources>
                         <Style x:Key="TitleText" TargetType="TextBlock">
@@ -415,15 +416,15 @@
                         <ColumnDefinition Width="3"/>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="3"/>
-                        <ColumnDefinition Width="130"/>
+                        
                     </Grid.ColumnDefinitions>
 
                     <!-- 배터리 용량 -->
                     <StackPanel Grid.Column="0" HorizontalAlignment="Center" Margin="-21,0,0,0">
-                        <TextBlock Text="배터리 용량" Style="{StaticResource TitleText}"/>
-                        <Grid Width="150" Height="150">
+                        <TextBlock Text="배터리 용량(%)" Style="{StaticResource TitleText}"/>
+                        <Grid Width="170" Height="170">
                             <Image Source="pack://application:,,,/Map;component/images/firstBattery2.png"
-                           Width="150" Height="150"
+                           Width="170" Height="170"
                            RenderTransformOrigin="0.5,0.5">
                                 <Image.RenderTransform>
                                     <RotateTransform Angle="{Binding TrainA.BatteryRotateAngle}"/>
@@ -438,7 +439,7 @@
                             </StackPanel>
                         </Grid>
 
-                        <Button Width="66" Height="20"
+                        <Button Width="86" Height="26"
                         Margin="5,4,0,0"
                         Background="Transparent"
                         BorderThickness="0"
@@ -455,10 +456,10 @@
 
                     <!-- 배터리 온도 -->
                     <StackPanel Grid.Column="2" HorizontalAlignment="Center" Margin="-14,0,0,0">
-                        <TextBlock Text="배터리 온도" Style="{StaticResource TitleText}"/>
-                        <Grid Width="142" Height="142">
+                        <TextBlock Text="배터리 온도(℃)" Style="{StaticResource TitleText}"/>
+                        <Grid Width="158" Height="156">
                             <Image Source="pack://application:,,,/Map;component/images/secondBattery2.png"
-                           Width="141" Height="140"
+                           Width="158" Height="156"
                            RenderTransformOrigin="0.5,0.5">
                                 <Image.RenderTransform>
                                     <RotateTransform Angle="{Binding TrainA.BatteryTempRotateAngle}"/>
@@ -473,8 +474,8 @@
                             </StackPanel>
                         </Grid>
 
-                        <Button Width="66" Height="20"
-                        Margin="0,12,-5,0"
+                        <Button Width="86" Height="26"
+                        Margin="0,19,-5,0"
                         Background="Transparent"
                         BorderThickness="0"
                         Cursor="Hand">
@@ -489,39 +490,7 @@
                     </StackPanel>
 
                     <!-- 모터 출력 -->
-                    <StackPanel Grid.Column="4" HorizontalAlignment="Center" Margin="-10,0,0,0">
-                        <TextBlock Text="모터 출력" Style="{StaticResource TitleText}"/>
-                        <Grid Width="142" Height="142">
-                            <Image Source="pack://application:,,,/Map;component/images/motor2.png"
-                           Width="142" Height="142"
-                           RenderTransformOrigin="0.5,0.5">
-                                <Image.RenderTransform>
-                                    <RotateTransform Angle="{Binding TrainA.MotorRotateAngle}"/>
-                                </Image.RenderTransform>
-                            </Image>
-
-                            <StackPanel Orientation="Horizontal"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center">
-                                <TextBlock Text="{Binding TrainA.MotorOutput, TargetNullValue='0', FallbackValue='0'}" Style="{StaticResource CenterValue}"/>
-                                <TextBlock Text="A" Style="{StaticResource UnitValue}"/>
-                            </StackPanel>
-                        </Grid>
-
-                        <Button Width="66" Height="20"
-                        Margin="5,12,0,0"
-                        Background="Transparent"
-                        BorderThickness="0"
-                        Cursor="Hand">
-                            <Grid>
-                                <Image Source="pack://application:,,,/Map;component/images/bellButton2.png" Stretch="Fill"/>
-                                <Image Source="pack://application:,,,/Map;component/images/notice2.png"
-                               Width="16" Height="16"
-                               HorizontalAlignment="Center"
-                               VerticalAlignment="Center"/>
-                            </Grid>
-                        </Button>
-                    </StackPanel>
+                
 
                 </Grid>
             </Border>

@@ -27,9 +27,9 @@ namespace Map.ViewModels
 
         //기존 MainWindow.xaml.cs 상수 1:1 
         private const double GAUGE_MIN = 0;
-        private const double GAUGE_MAX = 25;
-        private const double GAUGE_FULL_ANGLE = 300;
-        private const double GAUGE_START_ANGLE = -250;
+        private const double GAUGE_MAX = 30;
+        private const double GAUGE_FULL_ANGLE = 310;
+        private const double GAUGE_START_ANGLE = -240;
 
         private const double GAUGE_WIDTH = 233;
         private const double GAUGE_HEIGHT = 193;
@@ -92,7 +92,7 @@ namespace Map.ViewModels
             _movement = movementProvider;
         }
 
-        
+
         // getdata 폴링 (기존 DataTimer_Tick 1:1)
         private async Task DataTimerTickAsync()
         {
@@ -105,7 +105,8 @@ namespace Map.ViewModels
                 if (data == null) return;
 
                 //실패 -> 성공으로 바뀌는 순간에만 알림
-                if (_getDataLastOk != true) {
+                if (_getDataLastOk != true)
+                {
                     AddAlert("[GET] 수신 성공");
                     _getDataLastOk = true;
                 }
@@ -115,7 +116,8 @@ namespace Map.ViewModels
             }
             catch (Exception ex)
             {
-                if (_getDataLastOk != false) {
+                if (_getDataLastOk != false)
+                {
                     AddAlert("[GET] 수신 실패");
                     _getDataLastOk = false;
                 }
@@ -127,7 +129,7 @@ namespace Map.ViewModels
             }
         }
 
-      
+
         // 원 이미지 회전 + 블랙막 (기존 RotateTimer_Tick 1:1)      
         private void RotateTimerTick()
         {
@@ -191,7 +193,7 @@ namespace Map.ViewModels
             return angle;
         }
 
-       
+
         // Alerts 
         //  항상 4칸 유지, 최신이 위로 오게 유지
         private void AddAlert(string msg)
@@ -225,12 +227,12 @@ namespace Map.ViewModels
                 AddAlert($"{prefix} 모터 과속 ({motorSpeed}km/h)");
         }
 
-       
+
         // Dashboard 업데이트    
         private void UpdateDashboard(string[] arr)
         {
             //  Train A (arr[1]~arr[6]) 
-            int voltageA = int.Parse(arr[1]);   
+            int voltageA = int.Parse(arr[1]);
             int currentA = int.Parse(arr[2]);
             int batteryA = int.Parse(arr[3]);
             int batteryTempA = int.Parse(arr[4]);
@@ -245,7 +247,7 @@ namespace Map.ViewModels
             TrainA.MotorSpeed = motorSpeedA;
 
             // 바늘
-            double angleA = -90 + (motorSpeedA * 7.2);
+            double angleA = -90 + (motorSpeedA * 6.0);
             if (angleA > 85) angleA = 85;
             if (angleA < -85) angleA = -85;
             TrainA.NeedleAngle = angleA;
@@ -255,7 +257,7 @@ namespace Map.ViewModels
 
             // 그래프 8칸
             TrainA.PushVoltage(voltageA.ToString());
-            TrainA.PushCurrent(currentA.ToString());
+            TrainA.PushMotorOutput(motorOutputA.ToString());
 
             CheckAlerts("A면", voltageA, currentA, batteryTempA, motorSpeedA);
 
@@ -275,7 +277,7 @@ namespace Map.ViewModels
             TrainB.MotorOutput = motorOutputB;
             TrainB.MotorSpeed = motorSpeedB;
 
-            double angleB = -90 + (motorSpeedB * 7.2);
+            double angleB = -90 + (motorSpeedB * 6.18);
             if (angleB > 85) angleB = 85;
             if (angleB < -85) angleB = -85;
             TrainB.NeedleAngle = angleB;
@@ -283,12 +285,12 @@ namespace Map.ViewModels
             TrainB.GaugeClip = CreateGaugeClip(motorSpeedB);
 
             TrainB.PushVoltage(voltageB.ToString());
-            TrainB.PushCurrent(currentB.ToString());
+            TrainB.PushMotorOutput(motorOutputB.ToString());
 
             CheckAlerts("B면", voltageB, currentB, batteryTempB, motorSpeedB);
         }
 
-   
+
         // Gauge Clip
         private Geometry CreateGaugeClip(double speed)
         {
@@ -333,7 +335,7 @@ namespace Map.ViewModels
             );
         }
 
-     
+
         //Commands (RelayCommand) 
         //Lock 클릭: RelayCommand
         //Down/Up: Behaviors로 연결
@@ -373,7 +375,7 @@ namespace Map.ViewModels
         [RelayCommand]
         private async Task TrainAForwardDown()
         {
-            if (TrainA.IsLocked) return;            
+            if (TrainA.IsLocked) return;
             await SendSetDataAsync(1, 1, 1);
         }
 
@@ -390,7 +392,7 @@ namespace Map.ViewModels
         private async Task TrainABackwardDown()
         {
             if (TrainA.IsLocked) return;
-           
+
             await SendSetDataAsync(2, 1, 1);
         }
 
@@ -407,7 +409,7 @@ namespace Map.ViewModels
         private async Task TrainABreakDown()
         {
             if (TrainA.IsLocked) return;
-           
+
             await SendSetDataAsync(3, 1, 1);
         }
 
@@ -425,7 +427,7 @@ namespace Map.ViewModels
         private async Task TrainBForwardDown()
         {
             if (TrainB.IsLocked) return;
-            
+
             await SendSetDataAsync(1, 1, 2);
         }
 
@@ -442,7 +444,7 @@ namespace Map.ViewModels
         private async Task TrainBBackwardDown()
         {
             if (TrainB.IsLocked) return;
-            
+
             await SendSetDataAsync(2, 1, 2);
         }
 
@@ -459,7 +461,7 @@ namespace Map.ViewModels
         private async Task TrainBBreakDown()
         {
             if (TrainB.IsLocked) return;
-           
+
             await SendSetDataAsync(3, 1, 2);
         }
 
@@ -479,14 +481,14 @@ namespace Map.ViewModels
             {   //train : A면인지 B면인지, op : 전진 후진 정지 긴급(삭제된 기능), value : 누름, 뗌 상태(1, 0)
                 await _api.PostSetDataAsync(operation, value, train);
                 AddAlert($"[SET] 전송 성공 (train={train}, op={operation}, value={value})");
-             
-                
+
+
             }
             catch (Exception ex)
             {
                 Debug.WriteLine("setdata POST 실패: " + ex.Message);
                 AddAlert($"[SET] 전송 실패 (train={train}, op={operation}, value={value})");
-              
+
             }
         }
         public void Dispose()

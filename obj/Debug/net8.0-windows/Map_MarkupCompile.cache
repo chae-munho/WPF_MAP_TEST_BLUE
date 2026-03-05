@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\munho\STUDY_C#\WPF_MAP_TEST\obj\Debug\net8.0-windows\
+C:\Users\munho\STUDY_C#\WPF_MAP_TEST_BLUE\obj\Debug\net8.0-windows\
 Map
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
-C:\Users\munho\STUDY_C#\WPF_MAP_TEST\App.xaml
+C:\Users\munho\STUDY_C#\WPF_MAP_TEST_BLUE\App.xaml
 8399918561
 
 24-75259508
-2001291391464
+200-454512100
 Popups\ButtonAlertPopup.xaml;Popups\PasswordPopup.xaml;Views\Controls\AlertPanel.xaml;Views\Controls\HeaderPanel.xaml;Views\Controls\MapPanel.xaml;Views\Controls\TrainAPanel.xaml;Views\Controls\TrainBPanel.xaml;Views\MainWindow.xaml;
 
 False

@@ -33,7 +33,7 @@ namespace Map.ViewModels
 
         // 그래프(8칸) 
         public ObservableCollection<GraphPointViewModel> VoltageGraph { get; } = new();
-        public ObservableCollection<GraphPointViewModel> CurrentGraph { get; } = new();
+        public ObservableCollection<GraphPointViewModel> MotorOutputGraph { get; } = new();
 
         public TrainSideViewModel()
         {
@@ -41,7 +41,7 @@ namespace Map.ViewModels
             for (int i = 0; i < 8; i++)
             {
                 VoltageGraph.Add(new GraphPointViewModel());
-                CurrentGraph.Add(new GraphPointViewModel());
+                MotorOutputGraph.Add(new GraphPointViewModel());
             }
         }
 
@@ -59,9 +59,9 @@ namespace Map.ViewModels
             PushSlidingGraph(VoltageGraph, newValue);
         }
 
-        public void PushCurrent(string newValue)
+        public void PushMotorOutput(string newValue)
         {
-            PushSlidingGraph(CurrentGraph, newValue);
+            PushSlidingGraph(MotorOutputGraph, newValue);
         }
 
         private static void PushSlidingGraph(ObservableCollection<GraphPointViewModel> points, string newValue)

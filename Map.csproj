@@ -11,6 +11,7 @@
   <ItemGroup>
     <None Remove="images\A.png" />
     <None Remove="images\A2.png" />
+    <None Remove="images\backGraph.png" />
     <None Remove="images\bellButton.png" />
     <None Remove="images\bellButton2.png" />
     <None Remove="images\bridge.png" />
@@ -21,6 +22,7 @@
     <None Remove="images\down.png" />
     <None Remove="images\down2.png" />
     <None Remove="images\error.png" />
+    <None Remove="images\fillGraph.png" />
     <None Remove="images\firstBattery.png" />
     <None Remove="images\firstBattery2.png" />
     <None Remove="images\firstButton.png" />
@@ -78,6 +80,9 @@
     <Resource Include="images\A2.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="images\backGraph.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="images\bellButton.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
@@ -106,6 +111,9 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="images\error.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\fillGraph.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="images\firstBattery.png">

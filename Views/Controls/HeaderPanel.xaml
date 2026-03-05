@@ -20,41 +20,39 @@
         </Border.Effect>
 
         <Grid Margin="20,0">
-
-            <!-- 2개 컬럼: 좌측 콘텐츠, 우측 시간 -->
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <!-- LEFT SIDE -->
-            <StackPanel Grid.Column="0"
+            <!-- CENTER: 로고 + 제목 (정확히 중앙) -->
+            <StackPanel Grid.Column="1"
                 Orientation="Horizontal"
-                VerticalAlignment="Center">
-
-                <!-- Header Image -->
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center">
                 <Image Source="pack://application:,,,/Map;component/images/header.png"
-                    Width="132"
-                    Height="33"
-                    Margin="-20, 0,0,0"
-                    Stretch="Uniform"/>
+               Width="132"
+               Height="33"
+               Margin="0,0,0,0"
+               Stretch="Uniform"/>
 
-                <!-- 헤더 텍스트 -->
                 <TextBlock Text="테마열차 관제 및 차량 제어 시스템"
-                    Foreground="White"
-                    FontSize="22"
-                    FontWeight="Bold"
-                    VerticalAlignment="Center"
-                    Margin="-8,0,0,0"/>
+                   Foreground="White"
+                   FontSize="22"
+                   FontWeight="Bold"
+                   VerticalAlignment="Center"/>
             </StackPanel>
 
-            <!-- RIGHT SIDE  -->
-            <TextBlock 
-                Grid.Column="1"
-                Foreground="White"
-                FontSize="20"
-                VerticalAlignment="Center"
-                Text="{Binding TimeText, RelativeSource={RelativeSource AncestorType=UserControl} , FallbackValue=0000년 00월 00일 - 00:00:00, TargetNullValue=0000년 00월 00일 - 00:00:00 }"/>
+            <!-- RIGHT: 시간 (오른쪽 끝) -->
+            <TextBlock Grid.Column="2"
+               HorizontalAlignment="Right"
+               Foreground="White"
+               FontSize="20"
+               VerticalAlignment="Center"
+               Text="{Binding TimeText, RelativeSource={RelativeSource AncestorType=UserControl},
+                              FallbackValue=0000년 00월 00일 - 00:00:00,
+                              TargetNullValue=0000년 00월 00일 - 00:00:00}"/>
         </Grid>
     </Border>
     <!--HEADER END-->
