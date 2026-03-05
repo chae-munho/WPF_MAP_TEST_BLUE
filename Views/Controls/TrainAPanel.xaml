@@ -213,162 +213,105 @@
         </Grid>
 
 
-        <!-- Rect 2 : 전압/모터출력 그래프 (열차 A) -->
-        <Grid Width="420" Height="317" Margin="0,0,0,20">
-            <Border Width="420" Height="317"
+    
+        <!-- Rect 2 : 전압/모터출력 (현재값 수평막대) -->
+        <Grid Width="420" Height="265" Margin="0,0,0,20">
+            <Border Width="420" Height="265"
             Background="#111327"
             CornerRadius="10">
                 <Grid Margin="15">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="20"/>
+                        <!-- Voltage -->
+                        <RowDefinition Height="50"/>
                         <RowDefinition Height="Auto"/>
+                        <!-- Motor -->
+                        <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
-                    <!-- 전압(V) -->
-                    <StackPanel Grid.Row="0" Orientation="Horizontal">
-                        <TextBlock Text="전압(V)"
-                       Foreground="White"
-                       FontFamily="Dinmed"
-                       FontSize="11"
-                       FontWeight="Bold"
-                       VerticalAlignment="Center"
-                       Margin="0,0,10,0"/>
+                    <!-- ===================== 전압(A) ===================== -->
+                    <StackPanel Grid.Row="0">
+                        <!-- 헤더: 좌 라벨 / 우 값 -->
+                        <Grid Margin="0,25,0,6">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
 
-                        <StackPanel Orientation="Vertical">
-                            <!-- Values -->
-                            <StackPanel Orientation="Horizontal"
-                            HorizontalAlignment="Center"
-                            Margin="-6,0,0,0">
-                                <TextBlock Text="{Binding TrainA.VoltageGraph[0].ValueText, TargetNullValue='100', FallbackValue='100'}" Width="52" TextAlignment="Center" Style="{StaticResource ValueStyle}" Margin="-5,0"/>
-                                <TextBlock Text="{Binding TrainA.VoltageGraph[1].ValueText, TargetNullValue='100', FallbackValue='100'}" Width="52" TextAlignment="Center" Style="{StaticResource ValueStyle}" Margin="-5,0"/>
-                                <TextBlock Text="{Binding TrainA.VoltageGraph[2].ValueText, TargetNullValue='100', FallbackValue='100'}" Width="52" TextAlignment="Center" Style="{StaticResource ValueStyle}" Margin="-5,0"/>
-                                <TextBlock Text="{Binding TrainA.VoltageGraph[3].ValueText, TargetNullValue='100', FallbackValue='100'}" Width="52" TextAlignment="Center" Style="{StaticResource ValueStyle}" Margin="-5,0"/>
-                                <TextBlock Text="{Binding TrainA.VoltageGraph[4].ValueText, TargetNullValue='100', FallbackValue='100'}" Width="52" TextAlignment="Center" Style="{StaticResource ValueStyle}" Margin="-5,0"/>
-                                <TextBlock Text="{Binding TrainA.VoltageGraph[5].ValueText, TargetNullValue='100', FallbackValue='100'}" Width="52" TextAlignment="Center" Style="{StaticResource ValueStyle}" Margin="-5,0"/>
-                                <TextBlock Text="{Binding TrainA.VoltageGraph[6].ValueText, TargetNullValue='100', FallbackValue='100'}" Width="52" TextAlignment="Center" Style="{StaticResource ValueStyle}" Margin="-5,0"/>
-                                <TextBlock Text="{Binding TrainA.VoltageGraph[7].ValueText, TargetNullValue='100', FallbackValue='100'}" Width="52" TextAlignment="Center" Style="{StaticResource ValueStyle}"/>
-                            </StackPanel>
+                            <TextBlock Grid.Column="0"
+                               Text="전압(V)"
+                               Foreground="White"
+                               FontFamily="Dinmed"
+                               FontSize="16"
+                               FontWeight="Bold"
+                               HorizontalAlignment="Left"/>
 
-                            <!-- Bars -->
-                            <StackPanel Orientation="Horizontal"
-                            HorizontalAlignment="Center"
-                            Margin="-10,3,0,0">
-                                <Grid Width="52" Height="97" Margin="-5,0">
-                                    <Image Source="pack://application:,,,/Map;component/images/V2.png" Width="52" Height="{Binding TrainA.VoltageGraph[0].BarHeight}" Margin="-5,0" Stretch="Fill" VerticalAlignment="Bottom"/>
-                                </Grid>
-                                <Grid Width="52" Height="97" Margin="-5,0">
-                                    <Image Source="pack://application:,,,/Map;component/images/V2.png" Width="52" Height="{Binding TrainA.VoltageGraph[1].BarHeight}" Margin="-5,0" Stretch="Fill" VerticalAlignment="Bottom"/>
-                                </Grid>
-                                <Grid Width="52" Height="97" Margin="-5,0">
-                                    <Image Source="pack://application:,,,/Map;component/images/V2.png" Width="52" Height="{Binding TrainA.VoltageGraph[2].BarHeight}" Margin="-5,0" Stretch="Fill" VerticalAlignment="Bottom"/>
-                                </Grid>
-                                <Grid Width="52" Height="97" Margin="-5,0">
-                                    <Image Source="pack://application:,,,/Map;component/images/V2.png" Width="52" Height="{Binding TrainA.VoltageGraph[3].BarHeight}" Margin="-5,0" Stretch="Fill" VerticalAlignment="Bottom"/>
-                                </Grid>
-                                <Grid Width="52" Height="97" Margin="-5,0">
-                                    <Image Source="pack://application:,,,/Map;component/images/V2.png" Width="52" Height="{Binding TrainA.VoltageGraph[4].BarHeight}" Margin="-5,0" Stretch="Fill" VerticalAlignment="Bottom"/>
-                                </Grid>
-                                <Grid Width="52" Height="97" Margin="-5,0">
-                                    <Image Source="pack://application:,,,/Map;component/images/V2.png" Width="52" Height="{Binding TrainA.VoltageGraph[5].BarHeight}" Margin="-5,0" Stretch="Fill" VerticalAlignment="Bottom"/>
-                                </Grid>
-                                <Grid Width="52" Height="97" Margin="-5,0">
-                                    <Image Source="pack://application:,,,/Map;component/images/V2.png" Width="52" Height="{Binding TrainA.VoltageGraph[6].BarHeight}" Margin="-5,0" Stretch="Fill" VerticalAlignment="Bottom"/>
-                                </Grid>
-                                <Grid Width="52" Height="97" Margin="-5,0">
-                                    <Image Source="pack://application:,,,/Map;component/images/V2.png" Width="52" Height="{Binding TrainA.VoltageGraph[7].BarHeight}" Margin="-5,0" Stretch="Fill" VerticalAlignment="Bottom"/>
-                                </Grid>
-                            </StackPanel>
+                            <TextBlock Grid.Column="1"
+                               Text="{Binding TrainA.VoltageBar.ValueText, FallbackValue='0', TargetNullValue='0'}"
+                               Foreground="White"
+                               FontFamily="Dinmed"
+                               FontSize="26"
+                               FontWeight="Bold"
+                               HorizontalAlignment="Right"/>
+                        </Grid>
 
-                            <!-- Time -->
-                            <StackPanel Orientation="Horizontal"
-                            HorizontalAlignment="Center"
-                            Margin="-7,3,0,0">
-                                <TextBlock Text="-7s" Width="52" TextAlignment="Center" Style="{StaticResource TimeStyle}" Margin="-5,0"/>
-                                <TextBlock Text="-6s" Width="52" TextAlignment="Center" Style="{StaticResource TimeStyle}" Margin="-5,0"/>
-                                <TextBlock Text="-5s" Width="52" TextAlignment="Center" Style="{StaticResource TimeStyle}" Margin="-5,0"/>
-                                <TextBlock Text="-4s" Width="52" TextAlignment="Center" Style="{StaticResource TimeStyle}" Margin="-5,0"/>
-                                <TextBlock Text="-3s" Width="52" TextAlignment="Center" Style="{StaticResource TimeStyle}" Margin="-5,0"/>
-                                <TextBlock Text="-2s" Width="52" TextAlignment="Center" Style="{StaticResource TimeStyle}" Margin="-5,0"/>
-                                <TextBlock Text="-1s" Width="52" TextAlignment="Center" Style="{StaticResource TimeStyle}" Margin="-5,0"/>
-                                <TextBlock Text="Now" Width="52" TextAlignment="Center" Style="{StaticResource TimeStyle}"/>
-                            </StackPanel>
-                        </StackPanel>
+                        <!-- 막대: back + fill -->
+                        <Grid Height="25" HorizontalAlignment="Left">
+                            <Image Source="pack://application:,,,/Map;component/images/backGraph.png"
+                           Width="365" Height="25"
+                           HorizontalAlignment="Left"/>
+
+                            <Image Source="pack://application:,,,/Map;component/images/fillGraph.png"
+                           Height="25"
+                           HorizontalAlignment="Left"
+                           Stretch="Fill"
+                           Width="{Binding TrainA.VoltageBar.BarWidth}"/>
+                        </Grid>
                     </StackPanel>
 
-                    <!-- 모터출력(A) -->
-                    <StackPanel Grid.Row="2" Orientation="Horizontal">
-                        <TextBlock Text="모터출력(A)"
-                       Foreground="White"
-                       FontFamily="Dinmed"
-                       FontSize="11"
-                       FontWeight="Bold"
-                       VerticalAlignment="Center"
-                       Margin="0,0,10,0"/>
+                    <!-- ===================== 모터출력(A) ===================== -->
+                    <StackPanel Grid.Row="2">
+                        <!-- 헤더: 좌 라벨 / 우 값 -->
+                        <Grid Margin="0,0,0,6">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
 
-                        <StackPanel Orientation="Vertical">
-                            <!-- Values -->
-                            <StackPanel Orientation="Horizontal"
-                            HorizontalAlignment="Center"
-                            Margin="-7,0,0,0">
-                                <TextBlock Text="{Binding TrainA.MotorOutputGraph[0].ValueText, TargetNullValue='100', FallbackValue='100'}" Width="52" TextAlignment="Center" Style="{StaticResource ValueStyle}" Margin="-5,0"/>
-                                <TextBlock Text="{Binding TrainA.MotorOutputGraph[1].ValueText, TargetNullValue='100', FallbackValue='100'}" Width="52" TextAlignment="Center" Style="{StaticResource ValueStyle}" Margin="-5,0"/>
-                                <TextBlock Text="{Binding TrainA.MotorOutputGraph[2].ValueText, TargetNullValue='100', FallbackValue='100'}" Width="52" TextAlignment="Center" Style="{StaticResource ValueStyle}" Margin="-5,0"/>
-                                <TextBlock Text="{Binding TrainA.MotorOutputGraph[3].ValueText, TargetNullValue='100', FallbackValue='100'}" Width="52" TextAlignment="Center" Style="{StaticResource ValueStyle}" Margin="-5,0"/>
-                                <TextBlock Text="{Binding TrainA.MotorOutputGraph[4].ValueText, TargetNullValue='100', FallbackValue='100'}" Width="52" TextAlignment="Center" Style="{StaticResource ValueStyle}" Margin="-5,0"/>
-                                <TextBlock Text="{Binding TrainA.MotorOutputGraph[5].ValueText, TargetNullValue='100', FallbackValue='100'}" Width="52" TextAlignment="Center" Style="{StaticResource ValueStyle}" Margin="-5,0"/>
-                                <TextBlock Text="{Binding TrainA.MotorOutputGraph[6].ValueText, TargetNullValue='100', FallbackValue='100'}" Width="52" TextAlignment="Center" Style="{StaticResource ValueStyle}" Margin="-5,0"/>
-                                <TextBlock Text="{Binding TrainA.MotorOutputGraph[7].ValueText, TargetNullValue='100', FallbackValue='100'}" Width="52" TextAlignment="Center" Style="{StaticResource ValueStyle}"/>
-                            </StackPanel>
+                            <TextBlock Grid.Column="0"
+                               Text="모터출력(A)"
+                               Foreground="White"
+                               FontFamily="Dinmed"
+                               FontSize="16"
+                               FontWeight="Bold"
+                               HorizontalAlignment="Left"/>
 
-                            <!-- Bars -->
-                            <StackPanel Orientation="Horizontal"
-                            HorizontalAlignment="Center"
-                            Margin="-10,3,0,0">
-                                <Grid Width="52" Height="97" Margin="-5,0">
-                                    <Image Source="pack://application:,,,/Map;component/images/A2.png" Width="52" Height="{Binding TrainA.MotorOutputGraph[0].BarHeight}" Margin="-5,0" Stretch="Fill" VerticalAlignment="Bottom"/>
-                                </Grid>
-                                <Grid Width="52" Height="97" Margin="-5,0">
-                                    <Image Source="pack://application:,,,/Map;component/images/A2.png" Width="52" Height="{Binding TrainA.MotorOutputGraph[1].BarHeight}" Margin="-5,0" Stretch="Fill" VerticalAlignment="Bottom"/>
-                                </Grid>
-                                <Grid Width="52" Height="97" Margin="-5,0">
-                                    <Image Source="pack://application:,,,/Map;component/images/A2.png" Width="52" Height="{Binding TrainA.MotorOutputGraph[2].BarHeight}" Margin="-5,0" Stretch="Fill" VerticalAlignment="Bottom"/>
-                                </Grid>
-                                <Grid Width="52" Height="97" Margin="-5,0">
-                                    <Image Source="pack://application:,,,/Map;component/images/A2.png" Width="52" Height="{Binding TrainA.MotorOutputGraph[3].BarHeight}" Margin="-5,0" Stretch="Fill" VerticalAlignment="Bottom"/>
-                                </Grid>
-                                <Grid Width="52" Height="97" Margin="-5,0">
-                                    <Image Source="pack://application:,,,/Map;component/images/A2.png" Width="52" Height="{Binding TrainA.MotorOutputGraph[4].BarHeight}" Margin="-5,0" Stretch="Fill" VerticalAlignment="Bottom"/>
-                                </Grid>
-                                <Grid Width="52" Height="97" Margin="-5,0">
-                                    <Image Source="pack://application:,,,/Map;component/images/A2.png" Width="52" Height="{Binding TrainA.MotorOutputGraph[5].BarHeight}" Margin="-5,0" Stretch="Fill" VerticalAlignment="Bottom"/>
-                                </Grid>
-                                <Grid Width="52" Height="97" Margin="-5,0">
-                                    <Image Source="pack://application:,,,/Map;component/images/A2.png" Width="52" Height="{Binding TrainA.MotorOutputGraph[6].BarHeight}" Margin="-5,0" Stretch="Fill" VerticalAlignment="Bottom"/>
-                                </Grid>
-                                <Grid Width="52" Height="97" Margin="-5,0">
-                                    <Image Source="pack://application:,,,/Map;component/images/A2.png" Width="52" Height="{Binding TrainA.MotorOutputGraph[7].BarHeight}" Margin="-5,0" Stretch="Fill" VerticalAlignment="Bottom"/>
-                                </Grid>
-                            </StackPanel>
+                            <TextBlock Grid.Column="1"
+                               Text="{Binding TrainA.MotorOutputBar.ValueText, FallbackValue='0', TargetNullValue='0'}"
+                               Foreground="White"
+                               FontFamily="Dinmed"
+                               FontSize="26"
+                               FontWeight="Bold"
+                               HorizontalAlignment="Right"/>
+                        </Grid>
 
-                            <!-- Time -->
-                            <StackPanel Orientation="Horizontal"
-                            HorizontalAlignment="Center"
-                            Margin="-7,3,0,0">
-                                <TextBlock Text="-7s" Width="52" TextAlignment="Center" Style="{StaticResource TimeStyle}" Margin="-5,0"/>
-                                <TextBlock Text="-6s" Width="52" TextAlignment="Center" Style="{StaticResource TimeStyle}" Margin="-5,0"/>
-                                <TextBlock Text="-5s" Width="52" TextAlignment="Center" Style="{StaticResource TimeStyle}" Margin="-5,0"/>
-                                <TextBlock Text="-4s" Width="52" TextAlignment="Center" Style="{StaticResource TimeStyle}" Margin="-5,0"/>
-                                <TextBlock Text="-3s" Width="52" TextAlignment="Center" Style="{StaticResource TimeStyle}" Margin="-5,0"/>
-                                <TextBlock Text="-2s" Width="52" TextAlignment="Center" Style="{StaticResource TimeStyle}" Margin="-5,0"/>
-                                <TextBlock Text="-1s" Width="52" TextAlignment="Center" Style="{StaticResource TimeStyle}" Margin="-5,0"/>
-                                <TextBlock Text="Now" Width="52" TextAlignment="Center" Style="{StaticResource TimeStyle}"/>
-                            </StackPanel>
-                        </StackPanel>
+                        <!-- 막대: back + fill -->
+                        <Grid Height="25" HorizontalAlignment="Left">
+                            <Image Source="pack://application:,,,/Map;component/images/backGraph.png"
+                           Width="365" Height="25"
+                           HorizontalAlignment="Left"/>
+
+                            <Image Source="pack://application:,,,/Map;component/images/fillGraph.png"
+                           Height="25"
+                           HorizontalAlignment="Left"
+                           Stretch="Fill"
+                           Width="{Binding TrainA.MotorOutputBar.BarWidth}"/>
+                        </Grid>
                     </StackPanel>
 
                 </Grid>
             </Border>
+
             <!-- blackout overlay (A2) -->
             <Border Background="#80000000"
             CornerRadius="20"
