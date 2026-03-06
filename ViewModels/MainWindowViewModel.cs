@@ -233,7 +233,7 @@ namespace Map.ViewModels
         {
             //  Train A (arr[1]~arr[6]) 
             int voltageA = int.Parse(arr[1]);
-            int currentA = int.Parse(arr[2]);
+            int currentA = int.Parse(arr[2]);  // 이제 전류는 표시 안함 혹시나 모르니까 코드는 남겨둠
             int batteryA = int.Parse(arr[3]);
             int batteryTempA = int.Parse(arr[4]);
             int motorOutputA = int.Parse(arr[5]);
@@ -264,7 +264,7 @@ namespace Map.ViewModels
             // Train B (arr[31]~arr[36]) 
             int off = 30;
             int voltageB = int.Parse(arr[1 + off]);
-            int currentB = int.Parse(arr[2 + off]);
+            int currentB = int.Parse(arr[2 + off]);  // 이제 전류는 표시 안함 혹시나 모르니까 코드는 남겨둠
             int batteryB = int.Parse(arr[3 + off]);
             int batteryTempB = int.Parse(arr[4 + off]);
             int motorOutputB = int.Parse(arr[5 + off]);
@@ -472,6 +472,13 @@ namespace Map.ViewModels
             AddAlert("기차1 B면에서 정지버튼이 눌렸습니다");
             _buttonAlertDialog.ShowMessage("기차1 B면에서 정지 버튼이 눌렸습니다");
             return SendSetDataAsync(3, 0, 2);
+        }
+
+        //알람패널 다운로드 버튼 메서드
+        [RelayCommand]
+        private void DownloadAlerts()
+        {
+            MessageBox.Show("로그 엑셀 다운로드 구현 예정", "알림", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         // setdata API

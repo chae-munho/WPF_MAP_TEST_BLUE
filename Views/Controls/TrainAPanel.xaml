@@ -32,22 +32,22 @@
     Margin="20,0,20,15"
     VerticalAlignment="Top">
 
-        <!--  Rect 1 : 속도계 패널 (열차 A)  -->
+     
         <Grid Width="420" Height="305" Margin="0,0,0,20">
             <Border Width="420" Height="305"
             Background="#111327"
             CornerRadius="10">
 
-                <!-- ✅ 헤더(전체폭) + 본문(마진15) 구조 -->
+               
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="30"/>
-                        <!-- Header -->
+                      
                         <RowDefinition Height="*"/>
-                        <!-- Body -->
+                       
                     </Grid.RowDefinitions>
 
-                    <!-- ✅ Header : 패널 전체 폭으로 채움 + 상단 라운드 유지 -->
+                   
                     <Border Grid.Row="0"
                     Background="#3E6AA0"
                     CornerRadius="10,10,0,0">
@@ -60,14 +60,14 @@
                            VerticalAlignment="Center"/>
                     </Border>
 
-                    <!-- ✅ Body : 기존 내용 그대로 + Margin은 여기만 -->
+                  
                     <Grid Grid.Row="1" Margin="15">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="250"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
 
-                        <!-- LEFT AREA : 속도계 -->
+                      
                         <Grid Grid.Column="0"
                       HorizontalAlignment="Left"
                       VerticalAlignment="Center"
@@ -79,7 +79,7 @@
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"/>
 
-                            <!-- 아치 채움 (Clip 바인딩) -->
+                         
                             <Image Source="pack://application:,,,/Map;component/images/gaze2.png"
                            Width="233"
                            Height="193"
@@ -87,7 +87,7 @@
                            VerticalAlignment="Center"
                            Clip="{Binding TrainA.GaugeClip}"/>
 
-                            <!-- 속도 텍스트 -->
+                        
                             <TextBlock HorizontalAlignment="Center"
                                VerticalAlignment="Center"
                                Foreground="White"
@@ -101,7 +101,7 @@
                              FontSize="15"/>
                             </TextBlock>
 
-                            <!-- 바늘 -->
+                         
                             <Image Source="pack://application:,,,/Map;component/images/niddle2.png"
                            Width="21"
                            Height="70"
@@ -121,12 +121,12 @@
                             <Label Content="30" HorizontalAlignment="Left" Margin="167,153,0,0" VerticalAlignment="Top" Foreground="#FF6F88A3" FontSize="10"/>
                         </Grid>
 
-                        <!-- RIGHT AREA : 버튼 4개 1열 -->
+                   
                         <StackPanel Grid.Column="1"
                             VerticalAlignment="Center"
                             HorizontalAlignment="Center">
 
-                            <!-- LOCK -->
+                        
                             <Button Width="98" Height="30"
                             Background="Transparent"
                             BorderThickness="0"
@@ -142,7 +142,7 @@
                                 </Grid>
                             </Button>
 
-                            <!-- UP -->
+                       
                             <Button Width="98" Height="30"
                             Background="Transparent"
                             BorderThickness="0"
@@ -167,7 +167,7 @@
                                 </Grid>
                             </Button>
 
-                            <!-- DOWN -->
+                         
                             <Button Width="98" Height="30"
                             Background="Transparent"
                             BorderThickness="0"
@@ -192,7 +192,7 @@
                                 </Grid>
                             </Button>
 
-                            <!-- PAUSE -->
+                         
                             <Button Width="98" Height="30"
                             Background="Transparent"
                             BorderThickness="0"
@@ -221,7 +221,7 @@
                 </Grid>
             </Border>
 
-            <!-- blackout overlay (A1) -->
+          
             <Border Background="#80000000"
             CornerRadius="10"
             Visibility="{Binding A1Blackout, FallbackValue=Collapsed, TargetNullValue=Collapsed}"
@@ -230,7 +230,7 @@
 
 
 
-        <!-- Rect 2 : 전압/모터출력 (현재값 수평막대) -->
+     
         <Grid Width="420" Height="265" Margin="0,0,0,20">
             <Border Width="420" Height="265"
             Background="#111327"
@@ -238,16 +238,16 @@
                 <Grid Margin="15">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
-                        <!-- Voltage -->
+                   
                         <RowDefinition Height="20"/>
                         <RowDefinition Height="Auto"/>
                         <!-- Motor -->
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
 
-                    <!-- ===================== 전압(A) ===================== -->
+                  
                     <StackPanel Grid.Row="0">
-                        <!-- 헤더: 좌 라벨 / 우 값 -->
+                     
                         <Grid Margin="0,20,0,6">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
@@ -271,13 +271,13 @@
                                HorizontalAlignment="Left" Margin="325,1,0,-1"/>
                         </Grid>
 
-                        <!-- 막대(이미지 제거): back + fill (Width=350, Height=25) -->
+                     
                         <Grid Height="25" Width="350" HorizontalAlignment="Center">
-                            <!-- back -->
+                        
                             <Border Background="#2A2E45"
                             CornerRadius="10"/>
 
-                            <!-- fill -->
+                        
                             <Border Background="#4CC3FF"
                             CornerRadius="10"
                             HorizontalAlignment="Left"
@@ -285,7 +285,7 @@
                             ClipToBounds="True"/>
                         </Grid>
 
-                        <!--눈금 숫자: 0 90 180 270 350 -->
+                     
                         <Grid Width="350" Margin="0,6,0,0" HorizontalAlignment="Center">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
@@ -328,13 +328,13 @@
                                HorizontalAlignment="Left" Margin="325,1,0,-1"/>
                         </Grid>
 
-                        <!-- 막대(이미지 제거): back + fill (Width=350, Height=25) -->
+                   
                         <Grid Height="25" Width="350" HorizontalAlignment="Center">
-                            <!-- back -->
+                        
                             <Border Background="#2A2E45"
                             CornerRadius="10"/>
 
-                            <!-- fill -->
+                        
                             <Border Background="#4CC3FF"
                             CornerRadius="10"
                             HorizontalAlignment="Left"
@@ -342,7 +342,7 @@
                             ClipToBounds="True"/>
                         </Grid>
 
-                        <!-- ✅ 눈금 숫자: 0 60 120 180 250 -->
+                     
                         <Grid Width="350" Margin="0,6,0,0" HorizontalAlignment="Center">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
@@ -413,7 +413,7 @@
 
                     </Grid.ColumnDefinitions>
 
-                    <!-- 배터리 용량 -->
+              
                     <StackPanel Grid.Column="0" HorizontalAlignment="Center" Margin="-21,0,0,0">
                         <TextBlock Text="배터리 용량(%)" Style="{StaticResource TitleText}"/>
                         <Grid Width="170" Height="170">
@@ -448,7 +448,7 @@
                         </Button>
                     </StackPanel>
 
-                    <!-- 배터리 온도 -->
+                 
                     <StackPanel Grid.Column="2" HorizontalAlignment="Center" Margin="-14,0,0,0">
                         <TextBlock Text="배터리 온도(℃)" Style="{StaticResource TitleText}"/>
                         <Grid Width="158" Height="156">
@@ -483,7 +483,7 @@
                         </Button>
                     </StackPanel>
 
-                    <!-- 모터 출력 -->
+                
                 </Grid>
             </Border>
 
