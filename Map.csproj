@@ -21,6 +21,7 @@
     <None Remove="images\check.png" />
     <None Remove="images\down.png" />
     <None Remove="images\down2.png" />
+    <None Remove="images\download.png" />
     <None Remove="images\error.png" />
     <None Remove="images\fillGraph.png" />
     <None Remove="images\firstBattery.png" />
@@ -109,6 +110,9 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="images\down2.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\download.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="images\error.png">

@@ -51,7 +51,7 @@
 
                         <TextBlock Grid.Column="1"
                         Text="{Binding Alerts[0].Time}"
-                        Foreground="White" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        Foreground="White" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,-28,0"/>
 
                         <Border Grid.ColumnSpan="2" BorderBrush="#444" BorderThickness="0,0,0,1" VerticalAlignment="Bottom"/>
                     </Grid>
@@ -69,7 +69,7 @@
 
                         <TextBlock Grid.Column="1"
                         Text="{Binding Alerts[1].Time}"
-                        Foreground="White" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        Foreground="White" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,-28,0"/>
 
                         <Border Grid.ColumnSpan="2" BorderBrush="#444" BorderThickness="0,0,0,1" VerticalAlignment="Bottom"/>
                     </Grid>
@@ -83,11 +83,11 @@
 
                         <TextBlock
                         Text="{Binding Alerts[2].Msg}"
-                        Foreground="White" FontSize="13" VerticalAlignment="Center"/>
+                        Foreground="White" FontSize="13" VerticalAlignment="Center" />
 
                         <TextBlock Grid.Column="1"
                         Text="{Binding Alerts[2].Time}"
-                        Foreground="White" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        Foreground="White" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,-28,0"/>
 
                         <Border Grid.ColumnSpan="2" BorderBrush="#444" BorderThickness="0,0,0,1" VerticalAlignment="Bottom"/>
                     </Grid>
@@ -105,7 +105,7 @@
 
                         <TextBlock Grid.Column="1"
                         Text="{Binding Alerts[3].Time}"
-                        Foreground="White" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        Foreground="White" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,-28,0"/>
                         <Border Grid.ColumnSpan="2" BorderBrush="#444" BorderThickness="0,0,0,1" VerticalAlignment="Bottom"/>
                     </Grid>
                 </StackPanel>

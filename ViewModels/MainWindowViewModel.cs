@@ -198,7 +198,7 @@ namespace Map.ViewModels
         //  항상 4칸 유지, 최신이 위로 오게 유지
         private void AddAlert(string msg)
         {
-            string now = DateTime.Now.ToString("HH:mm:ss");
+            string now = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
             // 최신을 위로
             Alerts.Insert(0, new AlertItemViewModel { Msg = msg, Time = now });

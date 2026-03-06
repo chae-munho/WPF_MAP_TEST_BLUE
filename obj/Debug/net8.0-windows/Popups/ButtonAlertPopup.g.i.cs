@@ -68,7 +68,7 @@ namespace Map.Popups {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Map;component/popups/buttonalertpopup.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Map;V1.0.0.0;component/popups/buttonalertpopup.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Popups\ButtonAlertPopup.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
