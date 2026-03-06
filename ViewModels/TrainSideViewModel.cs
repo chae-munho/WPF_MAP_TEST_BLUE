@@ -1,13 +1,14 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using System;
-using System.Collections.ObjectModel;
 using System.Windows.Media;
 
 namespace Map.ViewModels
 {
     public partial class TrainSideViewModel : ObservableObject
     {
-        //  숫자 데이터 
+     
+        // 숫자 데이터
+     
         [ObservableProperty] private int voltage;
         [ObservableProperty] private int current;
         [ObservableProperty] private int battery;
@@ -15,35 +16,32 @@ namespace Map.ViewModels
         [ObservableProperty] private int motorOutput;
         [ObservableProperty] private int motorSpeed;
 
-        //  표시용 
+      
+        // 표시용 (속도계)
         [ObservableProperty] private double needleAngle;
         [ObservableProperty] private Geometry? gaugeClip;
 
-        //  Lock 상태 / UI 
+     
+        // Lock 상태 / UI
         [ObservableProperty] private bool isLocked = true;
         [ObservableProperty] private ImageSource? lockIcon;
 
         [ObservableProperty] private bool controlsEnabled = false;
         [ObservableProperty] private double controlsOpacity = 0.4;
 
-        //  회전(원형 이미지) 
+      
+        // 회전(원형 이미지)
         [ObservableProperty] private double batteryRotateAngle;
         [ObservableProperty] private double batteryTempRotateAngle;
         [ObservableProperty] private double motorRotateAngle;
 
-        // 그래프(8칸) 
-        public ObservableCollection<GraphPointViewModel> VoltageGraph { get; } = new();
-        public ObservableCollection<GraphPointViewModel> MotorOutputGraph { get; } = new();
+       
+        //수평 막대 현재값만 출력 
 
-        public TrainSideViewModel()
-        {
-            // 8칸 고정 생성
-            for (int i = 0; i < 8; i++)
-            {
-                VoltageGraph.Add(new GraphPointViewModel());
-                MotorOutputGraph.Add(new GraphPointViewModel());
-            }
-        }
+        public GraphPointViewModel VoltageBar { get; } = new();
+        public GraphPointViewModel MotorOutputBar { get; } = new();
+
+        private const double BAR_MAX_WIDTH = 350.0;
 
         public void SetLockedUI(bool locked, ImageSource lockedIcon, ImageSource unlockedIcon)
         {
@@ -54,33 +52,30 @@ namespace Map.ViewModels
             ControlsOpacity = locked ? 0.4 : 1.0;
         }
 
-        public void PushVoltage(string newValue)
+        // 전압(0~350) -> bar width(0~350)
+        public void UpdateVoltageBar(int v)
         {
-            PushSlidingGraph(VoltageGraph, newValue);
+            Voltage = v;
+
+            VoltageBar.ValueText = v.ToString();
+            VoltageBar.BarWidth = MapToWidth(v, 350);
         }
 
-        public void PushMotorOutput(string newValue)
+        // 모터출력(0~250) -> bar width(0~250)
+        public void UpdateMotorOutputBar(int v)
         {
-            PushSlidingGraph(MotorOutputGraph, newValue);
+            MotorOutput = v;
+
+            MotorOutputBar.ValueText = v.ToString();
+            MotorOutputBar.BarWidth = MapToWidth(v, 250);
         }
 
-        private static void PushSlidingGraph(ObservableCollection<GraphPointViewModel> points, string newValue)
+        private static double MapToWidth(int value, int max)
         {
-            // 왼쪽으로 밀기
-            for (int i = 0; i < points.Count - 1; i++)
-            {
-                points[i].ValueText = points[i + 1].ValueText;
-                points[i].BarHeight = points[i + 1].BarHeight;
-            }
+            value = Math.Clamp(value, 0, max);
+            if (max <= 0) return 0;
 
-            // 맨 오른쪽 새 값
-            var last = points[^1];
-            last.ValueText = newValue;
-
-            if (int.TryParse(newValue, out int v))
-            {
-                last.BarHeight = Math.Clamp(v * 0.3, 10, 97);
-            }
+            return BAR_MAX_WIDTH * value / max;
         }
     }
 }

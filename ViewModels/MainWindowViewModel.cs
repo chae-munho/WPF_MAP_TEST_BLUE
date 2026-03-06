@@ -256,8 +256,8 @@ namespace Map.ViewModels
             TrainA.GaugeClip = CreateGaugeClip(motorSpeedA);
 
             // 그래프 8칸
-            TrainA.PushVoltage(voltageA.ToString());
-            TrainA.PushMotorOutput(motorOutputA.ToString());
+            TrainA.UpdateVoltageBar(voltageA);
+            TrainA.UpdateMotorOutputBar(motorOutputA);
 
             CheckAlerts("A면", voltageA, currentA, batteryTempA, motorSpeedA);
 
@@ -284,8 +284,8 @@ namespace Map.ViewModels
 
             TrainB.GaugeClip = CreateGaugeClip(motorSpeedB);
 
-            TrainB.PushVoltage(voltageB.ToString());
-            TrainB.PushMotorOutput(motorOutputB.ToString());
+            TrainB.UpdateVoltageBar(voltageB);
+            TrainB.UpdateMotorOutputBar(motorOutputB);
 
             CheckAlerts("B면", voltageB, currentB, batteryTempB, motorSpeedB);
         }

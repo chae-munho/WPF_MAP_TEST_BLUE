@@ -36,6 +36,7 @@
     <None Remove="images\lock.png" />
     <None Remove="images\lock2.png" />
     <None Remove="images\loginpopup.png" />
+    <None Remove="images\loginpopup2.png" />
     <None Remove="images\map1.png" />
     <None Remove="images\map2.png" />
     <None Remove="images\motor.png" />
@@ -153,6 +154,9 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="images\loginpopup.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\loginpopup2.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="images\map1.png">

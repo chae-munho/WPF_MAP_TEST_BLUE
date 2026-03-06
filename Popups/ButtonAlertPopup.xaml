@@ -15,8 +15,8 @@
         <!-- Background -->
         <Border CornerRadius="20">
             <Border.Background>
-                <ImageBrush ImageSource="/images/buttonpopup.png"
-                            Stretch="Fill"/>
+                <ImageBrush ImageSource="pack://application:,,,/Map;component/images/buttonpopup.png"
+                        Stretch="Fill"/>
             </Border.Background>
             
         </Border>

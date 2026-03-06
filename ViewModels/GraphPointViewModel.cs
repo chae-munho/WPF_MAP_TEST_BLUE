@@ -9,7 +9,7 @@ namespace Map.ViewModels
 {
     public partial class GraphPointViewModel : ObservableObject
     {
-        [ObservableProperty] private string valueText = "100";
-        [ObservableProperty] private double barHeight = 97; // Image Height 바인딩
+        [ObservableProperty] private string valueText = "0";
+        [ObservableProperty] private double barWidth = 350; //  fillGraph Width 바인딩
     }
 }

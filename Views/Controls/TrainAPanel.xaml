@@ -33,8 +33,8 @@
     VerticalAlignment="Top">
 
         <!--  Rect 1 : 속도계 패널 (열차 A)  -->
-        <Grid Width="420" Height="253" Margin="0,0,0,20">
-            <Border Width="420" Height="253"
+        <Grid Width="420" Height="305" Margin="0,0,0,20">
+            <Border Width="420" Height="305"
             Background="#111327"
             CornerRadius="10">
                 <Grid Margin="15">
@@ -213,7 +213,7 @@
         </Grid>
 
 
-    
+
         <!-- Rect 2 : 전압/모터출력 (현재값 수평막대) -->
         <Grid Width="420" Height="265" Margin="0,0,0,20">
             <Border Width="420" Height="265"
@@ -223,16 +223,16 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <!-- Voltage -->
-                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="20"/>
                         <RowDefinition Height="Auto"/>
                         <!-- Motor -->
-                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
 
                     <!-- ===================== 전압(A) ===================== -->
                     <StackPanel Grid.Row="0">
                         <!-- 헤더: 좌 라벨 / 우 값 -->
-                        <Grid Margin="0,25,0,6">
+                        <Grid Margin="0,20,0,6">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="Auto"/>
@@ -244,34 +244,51 @@
                                FontFamily="Dinmed"
                                FontSize="16"
                                FontWeight="Bold"
-                               HorizontalAlignment="Left"/>
+                               HorizontalAlignment="Left" Margin="22,9,0,-9"/>
 
-                            <TextBlock Grid.Column="1"
+                            <TextBlock
                                Text="{Binding TrainA.VoltageBar.ValueText, FallbackValue='0', TargetNullValue='0'}"
                                Foreground="White"
                                FontFamily="Dinmed"
                                FontSize="26"
                                FontWeight="Bold"
-                               HorizontalAlignment="Right"/>
+                               HorizontalAlignment="Left" Margin="325,1,0,-1"/>
                         </Grid>
 
-                        <!-- 막대: back + fill -->
-                        <Grid Height="25" HorizontalAlignment="Left">
-                            <Image Source="pack://application:,,,/Map;component/images/backGraph.png"
-                           Width="365" Height="25"
-                           HorizontalAlignment="Left"/>
+                        <!-- 막대(이미지 제거): back + fill (Width=350, Height=25) -->
+                        <Grid Height="25" Width="350" HorizontalAlignment="Center">
+                            <!-- back -->
+                            <Border Background="#2A2E45"
+                            CornerRadius="10"/>
 
-                            <Image Source="pack://application:,,,/Map;component/images/fillGraph.png"
-                           Height="25"
-                           HorizontalAlignment="Left"
-                           Stretch="Fill"
-                           Width="{Binding TrainA.VoltageBar.BarWidth}"/>
+                            <!-- fill -->
+                            <Border Background="#4CC3FF"
+                            CornerRadius="10"
+                            HorizontalAlignment="Left"
+                            Width="{Binding TrainA.VoltageBar.BarWidth}"
+                            ClipToBounds="True"/>
+                        </Grid>
+
+                        <!--눈금 숫자: 0 90 180 270 350 -->
+                        <Grid Width="350" Margin="0,6,0,0" HorizontalAlignment="Center">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Grid.Column="0" Text="0"   Foreground="#FFF" FontFamily="Dinmed" FontSize="12" HorizontalAlignment="Left"/>
+                            <TextBlock Grid.Column="1" Text="90"  Foreground="#FFF" FontFamily="Dinmed" FontSize="12" HorizontalAlignment="Center" Margin="-30,0,0,0"/>
+                            <TextBlock Grid.Column="2" Text="180" Foreground="#FFF" FontFamily="Dinmed" FontSize="12" HorizontalAlignment="Center"/>
+                            <TextBlock Grid.Column="3" Text="270" Foreground="#FFF" FontFamily="Dinmed" FontSize="12" HorizontalAlignment="Center" Margin="30,0,0,0"/>
+                            <TextBlock Grid.Column="4" Text="350" Foreground="#FFF" FontFamily="Dinmed" FontSize="12" HorizontalAlignment="Right"/>
                         </Grid>
                     </StackPanel>
 
-                    <!-- ===================== 모터출력(A) ===================== -->
+                    <!--  모터출력(A)  -->
                     <StackPanel Grid.Row="2">
-                        <!-- 헤더: 좌 라벨 / 우 값 -->
                         <Grid Margin="0,0,0,6">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
@@ -284,28 +301,46 @@
                                FontFamily="Dinmed"
                                FontSize="16"
                                FontWeight="Bold"
-                               HorizontalAlignment="Left"/>
+                               HorizontalAlignment="Left" Margin="22,9,0,-9"/>
 
-                            <TextBlock Grid.Column="1"
+                            <TextBlock
                                Text="{Binding TrainA.MotorOutputBar.ValueText, FallbackValue='0', TargetNullValue='0'}"
                                Foreground="White"
                                FontFamily="Dinmed"
                                FontSize="26"
                                FontWeight="Bold"
-                               HorizontalAlignment="Right"/>
+                               HorizontalAlignment="Left" Margin="325,1,0,-1"/>
                         </Grid>
 
-                        <!-- 막대: back + fill -->
-                        <Grid Height="25" HorizontalAlignment="Left">
-                            <Image Source="pack://application:,,,/Map;component/images/backGraph.png"
-                           Width="365" Height="25"
-                           HorizontalAlignment="Left"/>
+                        <!-- 막대(이미지 제거): back + fill (Width=350, Height=25) -->
+                        <Grid Height="25" Width="350" HorizontalAlignment="Center">
+                            <!-- back -->
+                            <Border Background="#2A2E45"
+                            CornerRadius="10"/>
 
-                            <Image Source="pack://application:,,,/Map;component/images/fillGraph.png"
-                           Height="25"
-                           HorizontalAlignment="Left"
-                           Stretch="Fill"
-                           Width="{Binding TrainA.MotorOutputBar.BarWidth}"/>
+                            <!-- fill -->
+                            <Border Background="#4CC3FF"
+                            CornerRadius="10"
+                            HorizontalAlignment="Left"
+                            Width="{Binding TrainA.MotorOutputBar.BarWidth}"
+                            ClipToBounds="True"/>
+                        </Grid>
+
+                        <!-- ✅ 눈금 숫자: 0 60 120 180 250 -->
+                        <Grid Width="350" Margin="0,6,0,0" HorizontalAlignment="Center">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Grid.Column="0" Text="0"   Foreground="#FFF" FontFamily="Dinmed" FontSize="12" HorizontalAlignment="Left"/>
+                            <TextBlock Grid.Column="1" Text="60"  Foreground="#FFF" FontFamily="Dinmed" FontSize="12" HorizontalAlignment="Center" Margin="-30,0,0,0"/>
+                            <TextBlock Grid.Column="2" Text="120" Foreground="#FFF" FontFamily="Dinmed" FontSize="12" HorizontalAlignment="Center"/>
+                            <TextBlock Grid.Column="3" Text="180" Foreground="#FFF" FontFamily="Dinmed" FontSize="12" HorizontalAlignment="Center" Margin="30,0,0,0"/>
+                            <TextBlock Grid.Column="4" Text="250" Foreground="#FFF" FontFamily="Dinmed" FontSize="12" HorizontalAlignment="Right"/>
                         </Grid>
                     </StackPanel>
 
@@ -359,7 +394,7 @@
                         <ColumnDefinition Width="3"/>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="3"/>
-                        
+
                     </Grid.ColumnDefinitions>
 
                     <!-- 배터리 용량 -->
@@ -433,8 +468,6 @@
                     </StackPanel>
 
                     <!-- 모터 출력 -->
-                
-
                 </Grid>
             </Border>
 
