@@ -25,11 +25,11 @@ namespace Map.ViewModels
         private readonly DispatcherTimer _dataTimer = new();
         private readonly DispatcherTimer _rotateTimer = new();
 
-        //기존 MainWindow.xaml.cs 상수 1:1 
+        //기존 MainWindow.xaml.cs 
         private const double GAUGE_MIN = 0;
-        private const double GAUGE_MAX = 30;
-        private const double GAUGE_FULL_ANGLE = 310;
-        private const double GAUGE_START_ANGLE = -240;
+        private const double GAUGE_MAX = 30;   // 25에서 30으로 수정됨
+        private const double GAUGE_FULL_ANGLE = 292;   // 300 -> 292로
+        private const double GAUGE_START_ANGLE = -237; // -250 -> -237로
 
         private const double GAUGE_WIDTH = 233;
         private const double GAUGE_HEIGHT = 193;
@@ -247,7 +247,7 @@ namespace Map.ViewModels
             TrainA.MotorSpeed = motorSpeedA;
 
             // 바늘
-            double angleA = -90 + (motorSpeedA * 6.0);
+            double angleA = -90 + (motorSpeedA * 6.0);    // 기존 7.2에서 6.0으로 수정됨
             if (angleA > 85) angleA = 85;
             if (angleA < -85) angleA = -85;
             TrainA.NeedleAngle = angleA;
@@ -277,7 +277,7 @@ namespace Map.ViewModels
             TrainB.MotorOutput = motorOutputB;
             TrainB.MotorSpeed = motorSpeedB;
 
-            double angleB = -90 + (motorSpeedB * 6.18);
+            double angleB = -90 + (motorSpeedB * 6.0);
             if (angleB > 85) angleB = 85;
             if (angleB < -85) angleB = -85;
             TrainB.NeedleAngle = angleB;

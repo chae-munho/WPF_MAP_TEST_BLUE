@@ -7,28 +7,36 @@
       "RelativeMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|solutionrelative:viewmodels\\mainwindowviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|c:\\users\\munho\\study_c#\\wpf_map_test_blue\\views\\controls\\alertpanel.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|solutionrelative:views\\controls\\alertpanel.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|c:\\users\\munho\\study_c#\\wpf_map_test_blue\\views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|solutionrelative:views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|c:\\users\\munho\\study_c#\\wpf_map_test_blue\\views\\controls\\trainbpanel.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|solutionrelative:views\\controls\\trainbpanel.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|c:\\users\\munho\\study_c#\\wpf_map_test_blue\\views\\controls\\headerpanel.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|solutionrelative:views\\controls\\headerpanel.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|c:\\users\\munho\\study_c#\\wpf_map_test_blue\\views\\controls\\alertpanel.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|solutionrelative:views\\controls\\alertpanel.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|c:\\users\\munho\\study_c#\\wpf_map_test_blue\\views\\controls\\trainapanel.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|solutionrelative:views\\controls\\trainapanel.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|c:\\users\\munho\\study_c#\\wpf_map_test_blue\\views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|solutionrelative:views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|c:\\users\\munho\\study_c#\\wpf_map_test_blue\\views\\controls\\mappanel.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|solutionrelative:views\\controls\\mappanel.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|c:\\users\\munho\\study_c#\\wpf_map_test_blue\\views\\controls\\mappanel.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|solutionrelative:views\\controls\\mappanel.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|c:\\users\\munho\\study_c#\\wpf_map_test_blue\\views\\controls\\trainbpanel.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|solutionrelative:views\\controls\\trainbpanel.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|c:\\users\\munho\\study_c#\\wpf_map_test_blue\\views\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|solutionrelative:views\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|c:\\users\\munho\\study_c#\\wpf_map_test_blue\\views\\controls\\mappanel.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|solutionrelative:views\\controls\\mappanel.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|c:\\users\\munho\\study_c#\\wpf_map_test_blue\\viewmodels\\alertitemviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -57,14 +65,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|c:\\users\\munho\\study_c#\\wpf_map_test_blue\\viewmodels\\graphpointviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|solutionrelative:viewmodels\\graphpointviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|c:\\users\\munho\\study_c#\\wpf_map_test_blue\\views\\controls\\mappanel.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|solutionrelative:views\\controls\\mappanel.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|c:\\users\\munho\\study_c#\\wpf_map_test_blue\\views\\controls\\headerpanel.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|solutionrelative:views\\controls\\headerpanel.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|c:\\users\\munho\\study_c#\\wpf_map_test_blue\\views\\controls\\headerpanel.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -138,11 +138,23 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
+              "Title": "MapPanel.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\Views\\Controls\\MapPanel.xaml.cs",
+              "RelativeDocumentMoniker": "Views\\Controls\\MapPanel.xaml.cs",
+              "ToolTip": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\Views\\Controls\\MapPanel.xaml.cs",
+              "RelativeToolTip": "Views\\Controls\\MapPanel.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8BAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-07T04:12:31.237Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "AlertPanel.xaml",
               "DocumentMoniker": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\Views\\Controls\\AlertPanel.xaml",
               "RelativeDocumentMoniker": "Views\\Controls\\AlertPanel.xaml",
@@ -154,32 +166,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "TrainBPanel.xaml",
-              "DocumentMoniker": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\Views\\Controls\\TrainBPanel.xaml",
-              "RelativeDocumentMoniker": "Views\\Controls\\TrainBPanel.xaml",
-              "ToolTip": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\Views\\Controls\\TrainBPanel.xaml",
-              "RelativeToolTip": "Views\\Controls\\TrainBPanel.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-01-11T14:06:44.621Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "MapPanel.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\Views\\Controls\\MapPanel.xaml.cs",
-              "RelativeDocumentMoniker": "Views\\Controls\\MapPanel.xaml.cs",
-              "ToolTip": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\Views\\Controls\\MapPanel.xaml.cs",
-              "RelativeToolTip": "Views\\Controls\\MapPanel.xaml.cs",
-              "ViewState": "AgIAAHMBAAAAAAAAAAAmwIgBAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-07T04:12:31.237Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "TrainAPanel.xaml",
               "DocumentMoniker": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\Views\\Controls\\TrainAPanel.xaml",
               "RelativeDocumentMoniker": "Views\\Controls\\TrainAPanel.xaml",
@@ -197,27 +184,14 @@
               "RelativeDocumentMoniker": "ViewModels\\MainWindowViewModel.cs",
               "ToolTip": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\ViewModels\\MainWindowViewModel.cs",
               "RelativeToolTip": "ViewModels\\MainWindowViewModel.cs",
-              "ViewState": "AgIAAMoBAAAAAAAAAAAAANIBAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABoAAAAAAAAAAAAAACMAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-09T02:24:31.656Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\Views\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "Views\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\Views\\MainWindow.xaml.cs",
-              "RelativeToolTip": "Views\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-03T06:22:56.644Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\Views\\MainWindow.xaml",
               "RelativeDocumentMoniker": "Views\\MainWindow.xaml",
@@ -229,88 +203,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "TrainSideViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\ViewModels\\TrainSideViewModel.cs",
-              "RelativeDocumentMoniker": "ViewModels\\TrainSideViewModel.cs",
-              "ToolTip": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\ViewModels\\TrainSideViewModel.cs",
-              "RelativeToolTip": "ViewModels\\TrainSideViewModel.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAABUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-09T02:22:08.42Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AlertItemViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\ViewModels\\AlertItemViewModel.cs",
-              "RelativeDocumentMoniker": "ViewModels\\AlertItemViewModel.cs",
-              "ToolTip": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\ViewModels\\AlertItemViewModel.cs",
-              "RelativeToolTip": "ViewModels\\AlertItemViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-09T01:51:07.003Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "PasswordPopup.xaml",
-              "DocumentMoniker": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\Popups\\PasswordPopup.xaml",
-              "RelativeDocumentMoniker": "Popups\\PasswordPopup.xaml",
-              "ToolTip": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\Popups\\PasswordPopup.xaml",
-              "RelativeToolTip": "Popups\\PasswordPopup.xaml",
+              "DocumentIndex": 2,
+              "Title": "HeaderPanel.xaml",
+              "DocumentMoniker": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\Views\\Controls\\HeaderPanel.xaml",
+              "RelativeDocumentMoniker": "Views\\Controls\\HeaderPanel.xaml",
+              "ToolTip": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\Views\\Controls\\HeaderPanel.xaml",
+              "RelativeToolTip": "Views\\Controls\\HeaderPanel.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-12-17T05:23:07.671Z"
+              "WhenOpened": "2026-01-06T06:39:45.11Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "PasswordPopup.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\Popups\\PasswordPopup.xaml.cs",
-              "RelativeDocumentMoniker": "Popups\\PasswordPopup.xaml.cs",
-              "ToolTip": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\Popups\\PasswordPopup.xaml.cs",
-              "RelativeToolTip": "Popups\\PasswordPopup.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAvwAwAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-17T05:59:43.035Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ButtonAlertPopup.xaml",
-              "DocumentMoniker": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\Popups\\ButtonAlertPopup.xaml",
-              "RelativeDocumentMoniker": "Popups\\ButtonAlertPopup.xaml",
-              "ToolTip": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\Popups\\ButtonAlertPopup.xaml",
-              "RelativeToolTip": "Popups\\ButtonAlertPopup.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-12-18T01:15:31.407Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "GraphPointViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\ViewModels\\GraphPointViewModel.cs",
-              "RelativeDocumentMoniker": "ViewModels\\GraphPointViewModel.cs",
-              "ToolTip": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\ViewModels\\GraphPointViewModel.cs",
-              "RelativeToolTip": "ViewModels\\GraphPointViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-09T01:56:29.582Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Map",
-              "DocumentMoniker": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\Map.csproj",
-              "RelativeDocumentMoniker": "Map.csproj",
-              "ToolTip": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\Map.csproj",
-              "RelativeToolTip": "Map.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-03-06T04:11:42.931Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 6,
               "Title": "MapPanel.xaml",
               "DocumentMoniker": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\Views\\Controls\\MapPanel.xaml",
               "RelativeDocumentMoniker": "Views\\Controls\\MapPanel.xaml",
@@ -322,15 +227,108 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "HeaderPanel.xaml",
-              "DocumentMoniker": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\Views\\Controls\\HeaderPanel.xaml",
-              "RelativeDocumentMoniker": "Views\\Controls\\HeaderPanel.xaml",
-              "ToolTip": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\Views\\Controls\\HeaderPanel.xaml",
-              "RelativeToolTip": "Views\\Controls\\HeaderPanel.xaml",
+              "DocumentIndex": 8,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\Views\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Views\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\Views\\MainWindow.xaml.cs",
+              "RelativeToolTip": "Views\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T06:22:56.644Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "TrainBPanel.xaml",
+              "DocumentMoniker": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\Views\\Controls\\TrainBPanel.xaml",
+              "RelativeDocumentMoniker": "Views\\Controls\\TrainBPanel.xaml",
+              "ToolTip": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\Views\\Controls\\TrainBPanel.xaml",
+              "RelativeToolTip": "Views\\Controls\\TrainBPanel.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-01-06T06:39:45.11Z",
+              "WhenOpened": "2026-01-11T14:06:44.621Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "TrainSideViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\ViewModels\\TrainSideViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\TrainSideViewModel.cs",
+              "ToolTip": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\ViewModels\\TrainSideViewModel.cs",
+              "RelativeToolTip": "ViewModels\\TrainSideViewModel.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAABUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-09T02:22:08.42Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AlertItemViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\ViewModels\\AlertItemViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\AlertItemViewModel.cs",
+              "ToolTip": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\ViewModels\\AlertItemViewModel.cs",
+              "RelativeToolTip": "ViewModels\\AlertItemViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-09T01:51:07.003Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "PasswordPopup.xaml",
+              "DocumentMoniker": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\Popups\\PasswordPopup.xaml",
+              "RelativeDocumentMoniker": "Popups\\PasswordPopup.xaml",
+              "ToolTip": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\Popups\\PasswordPopup.xaml",
+              "RelativeToolTip": "Popups\\PasswordPopup.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-17T05:23:07.671Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "PasswordPopup.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\Popups\\PasswordPopup.xaml.cs",
+              "RelativeDocumentMoniker": "Popups\\PasswordPopup.xaml.cs",
+              "ToolTip": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\Popups\\PasswordPopup.xaml.cs",
+              "RelativeToolTip": "Popups\\PasswordPopup.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAvwAwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-17T05:59:43.035Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ButtonAlertPopup.xaml",
+              "DocumentMoniker": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\Popups\\ButtonAlertPopup.xaml",
+              "RelativeDocumentMoniker": "Popups\\ButtonAlertPopup.xaml",
+              "ToolTip": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\Popups\\ButtonAlertPopup.xaml",
+              "RelativeToolTip": "Popups\\ButtonAlertPopup.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-18T01:15:31.407Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "GraphPointViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\ViewModels\\GraphPointViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\GraphPointViewModel.cs",
+              "ToolTip": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\ViewModels\\GraphPointViewModel.cs",
+              "RelativeToolTip": "ViewModels\\GraphPointViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-09T01:56:29.582Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Map",
+              "DocumentMoniker": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\Map.csproj",
+              "RelativeDocumentMoniker": "Map.csproj",
+              "ToolTip": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\Map.csproj",
+              "RelativeToolTip": "Map.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-03-06T04:11:42.931Z"
             },
             {
               "$type": "Document",
