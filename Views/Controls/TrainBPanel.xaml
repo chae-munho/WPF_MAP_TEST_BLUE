@@ -79,7 +79,7 @@
                            VerticalAlignment="Center"/>
 
                             <!-- 아치 채움 (Clip 바인딩) -->
-                            <Image Source="pack://application:,,,/Map;component/images/gaze2.png"
+                            <Image Source="pack://application:,,,/Map;component/images/gaze2_2.png"
                            Width="233"
                            Height="193"
                            HorizontalAlignment="Center"

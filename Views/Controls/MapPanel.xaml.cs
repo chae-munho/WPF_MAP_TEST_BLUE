@@ -24,7 +24,6 @@ using System.Windows.Threading;
 
 namespace Map.Views.Controls
 {
-   
     public partial class MapPanel : UserControl, IMovementProvider
     {
         //지도/캔버스 + 경로 + GPS + 이동 + 포인터/이펙트 + 회전/방향/각도 + 상태 복원/재실행 관련 필드 시작
@@ -47,8 +46,9 @@ namespace Map.Views.Controls
         };
         // 파일 경로
         private static readonly string BaseDir = AppDomain.CurrentDomain.BaseDirectory;
-        private readonly string savePath = System.IO.Path.Combine(BaseDir, "pos.txt");
-        private readonly string vertexSavePath = System.IO.Path.Combine(BaseDir, "vertex.txt");
+        private readonly string dataFolderPath = System.IO.Path.Combine(BaseDir, "Data");
+        private string savePath => System.IO.Path.Combine(dataFolderPath, "pos.txt");
+        private string vertexSavePath => System.IO.Path.Combine(dataFolderPath, "vertex.txt");
         //gps timer
         private readonly DispatcherTimer gpsTimer = new();
         //개발/운영 모드 토글 true : 개발용(점 찍기, 점/라인 표시) false : 실서비스 (점 찍기 금지, 점/라인 숨기기)
@@ -56,7 +56,7 @@ namespace Map.Views.Controls
         // 실제 GPS 기준 전체 경로 (위도/경도 목록)
         private readonly List<(double lat, double lng)> gpsRoute = new()
         {
-                      // TODO: 여기에 너가 실제 lat,lng 좌표를 채워 넣으면 됨
+                 
  (36.64864970499273, 128.06153436130455),
 (36.648237715725806, 128.06175795009995),
 (36.64783018110709, 128.06198718901183),
@@ -251,7 +251,7 @@ namespace Map.Views.Controls
 
 
         };
-        // 거리 기반 이동 상태 (Unity 동일)
+        // 거리 기반 이동 상태 
         //현재까지 이동한 누적 거리
         private double distanceTravelled = 0.0;
         //이번 스냅에서 도달해야 하는 목표 거리 gps로부터 계산된 현재 위치에 해당하는 경로 거리를 targetDistance로 설정
@@ -277,7 +277,7 @@ namespace Map.Views.Controls
         //마지막으로 화면 (포인터/경로 등)을 렌더링(갱신)한 시각
         private DateTime lastRenderTime;
         //마지막 gps 인덱스 저장용 필드 앱 실행시 포인터 방향 전진/후진 방향 유지를 위한 필드 및 마지막으로 저장된 GPS index (재실행 대비)
-        private readonly string lastGpsIndexPath = System.IO.Path.Combine(BaseDir, "last_gps_index.txt");
+        private string lastGpsIndexPath => System.IO.Path.Combine(dataFolderPath, "last_gps_index.txt");
         //마지막으로 저장해둔 gps 인덱스
         private int lastGpsIndex = -1;
         // 포인터 이미지의 방향 보정(도 단위)
@@ -301,7 +301,7 @@ namespace Map.Views.Controls
 
 
         //추가 최적화 코드  
-        // 외부(MainWindow)에서 읽어야 하는 값 (대시보드 회전/블랙막 제어용) 
+        // 외부(MainWindow)에서 읽어야 하는 값 (대시보드 회전, 블랙막 제어용) 
         public double MoveSpeed => moveSpeed;
         public int MoveDirectionSign => moveDirectionSign;
 
@@ -328,6 +328,10 @@ namespace Map.Views.Controls
 
         private void InitializeMapSystem()
         {
+            //data 폴더가 없으면 만듬
+            if (!Directory.Exists(dataFolderPath)) { 
+                Directory.CreateDirectory(dataFolderPath);  
+            }
           
             //지도/캔버스 + 경로 + GPS + 이동 + 포인터/이펙트 + 회전/방향/각도 + 상태 복원/재실행 관련 생성자 초기화 시작
             //불값에 따라 좌표 찍기 기능 활성 또는 비활성(개발/운영)

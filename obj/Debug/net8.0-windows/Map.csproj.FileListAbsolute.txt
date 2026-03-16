@@ -167,3 +167,7 @@ C:\Users\munho\STUDY_C#\WPF_MAP_TEST_BLUE\obj\Debug\net8.0-windows\refint\Map.dl
 C:\Users\munho\STUDY_C#\WPF_MAP_TEST_BLUE\obj\Debug\net8.0-windows\Map.pdb
 C:\Users\munho\STUDY_C#\WPF_MAP_TEST_BLUE\obj\Debug\net8.0-windows\Map.genruntimeconfig.cache
 C:\Users\munho\STUDY_C#\WPF_MAP_TEST_BLUE\obj\Debug\net8.0-windows\ref\Map.dll
+C:\Users\munho\STUDY_C#\WPF_MAP_TEST_BLUE\bin\Debug\net8.0-windows\data\last_gps_index.txt
+C:\Users\munho\STUDY_C#\WPF_MAP_TEST_BLUE\bin\Debug\net8.0-windows\data\pos.txt
+C:\Users\munho\STUDY_C#\WPF_MAP_TEST_BLUE\bin\Debug\net8.0-windows\data\vertex.txt
+C:\Users\munho\STUDY_C#\WPF_MAP_TEST_BLUE\obj\Debug\net8.0-windows\Map_Content.g.cs

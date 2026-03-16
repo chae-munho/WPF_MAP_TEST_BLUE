@@ -9,6 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="data\last_gps_index.txt" />
+    <None Remove="data\pos.txt" />
+    <None Remove="data\vertex.txt" />
     <None Remove="images\A.png" />
     <None Remove="images\A2.png" />
     <None Remove="images\backGraph.png" />
@@ -30,6 +33,7 @@
     <None Remove="images\firstButton2.png" />
     <None Remove="images\gaze.png" />
     <None Remove="images\gaze2.png" />
+    <None Remove="images\gaze2_2.png" />
     <None Remove="images\glow.png" />
     <None Remove="images\glow2.png" />
     <None Remove="images\glow3.png" />
@@ -68,6 +72,18 @@
     <None Remove="images\warning.png" />
     <None Remove="images\가은역.png" />
     <None Remove="images\구량리역.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="data\last_gps_index.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\pos.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\vertex.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
@@ -137,6 +153,9 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="images\gaze2.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\gaze2_2.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="images\glow.png">
