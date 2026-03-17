@@ -16,9 +16,7 @@
               Background="Transparent"
               MouseDown="MapCanvas_MouseDown">
             <Image Height="79" Canvas.Left="74" Canvas.Top="208" Width="52" Source="pack://application:,,,/Map;component/images/station2.png" Margin="-3,1,0,0"/>
-            <Image Height="79" Canvas.Left="414" Canvas.Top="484" Width="52" Source="pack://application:,,,/Map;component/images/station2.png" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,8,0,0"/>
             <Image Height="79" Canvas.Left="652" Canvas.Top="20" Width="52" Source="pack://application:,,,/Map;component/images/station2.png" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,1,0,0"/>
-            
             <Image Height="26" Canvas.Left="533" Canvas.Top="128" Width="26" Source="pack://application:,,,/Map;component/images/bridge2.png" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             <Image Height="26" Canvas.Left="574" Canvas.Top="103" Width="26" Source="pack://application:,,,/Map;component/images/bridge2.png" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             <Image Height="26" Canvas.Left="180" Canvas.Top="348" Width="26" Source="pack://application:,,,/Map;component/images/bridge2.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>

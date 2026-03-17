@@ -50,14 +50,11 @@
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
-
-                
-
-              
-                <!-- LEFT (A열) -->
-                <controls:TrainAPanel Grid.Column="0"/>
-    
-                <!--Train A 패널 끝-->
+               
+              <!--왼쪽이 2번 기차가 되고 오른쪽이 1번 기차, 그럼 왼쪽이 4번, 오른쪽이 3번-->
+                <!-- LEFT (B열) -->             
+                <controls:TrainBPanel Grid.Column="0"/>
+                <!--Train B 패널 끝-->
 
 
 
@@ -72,9 +69,9 @@
                     <!--Alert Panel 끝-->
                 </StackPanel>
      
-                <!-- RIGHT (B열) -->
-                <controls:TrainBPanel Grid.Column="2"/>
-                <!---Train B 패널 끝-->                             
+                <!-- RIGHT (A열) -->              
+                <controls:TrainAPanel Grid.Column="2"/>
+                <!---Train A 패널 끝-->                             
             </Grid>
         </Grid>
     </Viewbox>

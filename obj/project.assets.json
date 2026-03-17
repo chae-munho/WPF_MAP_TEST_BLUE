@@ -115,11 +115,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\Map.csproj",
+      "projectUniqueName": "C:\\ean\\WPF_MAP_TEST_BLUE\\Map.csproj",
       "projectName": "Map",
-      "projectPath": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\Map.csproj",
+      "projectPath": "C:\\ean\\WPF_MAP_TEST_BLUE\\Map.csproj",
       "packagesPath": "C:\\Users\\munho\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\munho\\STUDY_C#\\WPF_MAP_TEST_BLUE\\obj\\",
+      "outputPath": "C:\\ean\\WPF_MAP_TEST_BLUE\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
