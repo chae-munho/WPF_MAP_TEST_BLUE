@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="Map.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="Map.exe" version="1.0.0.3" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <application />
   <entryPoint>
     <assemblyIdentity name="Launcher" version="8.0.0.0" language="neutral" processorArchitecture="msil" />
@@ -68,25 +68,16 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>huUBSWWGYTEqngs1VY2E9sbT2nl/VSqWV/4FWMpAze8=</dsig:DigestValue>
+      <dsig:DigestValue>hyJhYgQhft2znn35aeBpiu2OWZumLtLeHOSbA63g/t4=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="data\pos.txt" size="4189">
+  <file name="data\pos.txt" size="3720">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>L2Ed7oka0BS291GUJ1iTBhc1XvIoQrORjsLhlAxxvEo=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="data\vertex.txt" size="5347">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>F7xtMRv+0laFXILEjKoFvn7rlvnjJR3/F/Cp1UOUrLE=</dsig:DigestValue>
+      <dsig:DigestValue>h+FbCCKtOB3YsvXmX4ZOo7DFMmZTv3zstd7AKk/n3mU=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Map.deps.json" size="1702">
@@ -98,13 +89,13 @@
       <dsig:DigestValue>W2flMsMndBwQgrEarwVUuKDX1MW7P3U6n9l2mksf7aU=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Map.dll" size="1073664">
+  <file name="Map.dll" size="1072640">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>FwbbJFuT2y0N4FRc1NpNAg19xFKTvF0vYDKmKIyiO7E=</dsig:DigestValue>
+      <dsig:DigestValue>Cg63zQNqk1gJn5CBimKQLKg6LljWlaBXqqffmv+Uk/8=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Map.exe" size="151552">
@@ -113,7 +104,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>EdxEbMN1mUSfhyGT9XvQvko+emCnZDplyoN2AyH2RB8=</dsig:DigestValue>
+      <dsig:DigestValue>78xVPGz3CHBAtsXWVrUQAXY+Yb3RpDz0ZC23CNogAlU=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Map.runtimeconfig.json" size="496">

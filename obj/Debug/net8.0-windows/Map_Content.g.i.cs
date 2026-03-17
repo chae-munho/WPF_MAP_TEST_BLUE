@@ -10,6 +10,5 @@
 
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/last_gps_index.txt")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/pos.txt")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/vertex.txt")]
 
 

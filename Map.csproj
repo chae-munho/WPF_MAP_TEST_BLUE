@@ -11,7 +11,6 @@
   <ItemGroup>
     <None Remove="data\last_gps_index.txt" />
     <None Remove="data\pos.txt" />
-    <None Remove="data\vertex.txt" />
     <None Remove="images\A.png" />
     <None Remove="images\A2.png" />
     <None Remove="images\backGraph.png" />
@@ -79,9 +78,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="data\pos.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\vertex.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -272,6 +268,12 @@
     <Resource Include="images\구량리역.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="data\vertex.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

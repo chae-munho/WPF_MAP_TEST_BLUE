@@ -20,8 +20,9 @@
             <Image Height="26" Canvas.Left="533" Canvas.Top="128" Width="26" Source="pack://application:,,,/Map;component/images/bridge2.png" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             <Image Height="26" Canvas.Left="574" Canvas.Top="103" Width="26" Source="pack://application:,,,/Map;component/images/bridge2.png" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             <Image Height="26" Canvas.Left="180" Canvas.Top="348" Width="26" Source="pack://application:,,,/Map;component/images/bridge2.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <Image Height="23" Canvas.Left="661" Canvas.Top="78" Width="43" Source="pack://application:,,,/Map;component/images/가은역.png"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <Image Height="20" Canvas.Left="67" Canvas.Top="199.605" Width="60" Source="pack://application:,,,/Map;component/images/구량리역.png" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Image Height="23" Canvas.Left="67" Canvas.Top="199.605" Width="43" Source="pack://application:,,,/Map;component/images/가은역.png"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image Height="20" Canvas.Left="661" Canvas.Top="78" Width="60" Source="pack://application:,,,/Map;component/images/구량리역.png" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         </Canvas>
     </Grid>
+ 
 </UserControl>
