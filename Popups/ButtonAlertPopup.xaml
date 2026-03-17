@@ -28,7 +28,7 @@
                 VerticalAlignment="Top"
                 Margin="20,10,0,0">
                 <!-- 경고 아이콘 -->
-                <Image Source="/images/Warning.png"
+                <Image Source="pack://application:,,,/Map;component/images/Warning.png"
                    Width="40"
                    Height="40"
                        Margin="0,10,0,0"
@@ -51,6 +51,31 @@
                        HorizontalAlignment="Center"
                        VerticalAlignment="Center"
                        TextWrapping="Wrap"/>
+            <!-- 확인 버튼 -->
+            <Button x:Name="CancelButton"
+              Width="100"
+              Height="42"
+              Background="#475569"
+              Foreground="#FFF"
+              FontSize="18"
+              FontWeight="Bold"
+              HorizontalAlignment="Right"
+              VerticalAlignment="Bottom"
+              Cursor="Hand"
+              Click="Cancel_Click"
+                    Margin="0,0,110,0"
+              Content="취소">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                            CornerRadius="13">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
 
             <!-- 확인 버튼 -->
             <Button x:Name="ConfirmButton"

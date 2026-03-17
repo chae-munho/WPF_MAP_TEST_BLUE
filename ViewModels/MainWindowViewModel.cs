@@ -382,6 +382,8 @@ namespace Map.ViewModels
             }
         }
 
+        //A면 가속 감속 정지 이벤트 핸들러 시작
+
         // A면 버튼
         [RelayCommand]
         private async Task TrainAForwardDown()
@@ -391,12 +393,16 @@ namespace Map.ViewModels
         }
 
         [RelayCommand]
-        private Task TrainAForwardUp()
+        private async Task TrainAForwardUp()
         {
-            if (TrainA.IsLocked) return Task.CompletedTask;
-            AddAlert("기차1 A면에서 전진버튼이 눌렸습니다");
-            _buttonAlertDialog.ShowMessage("기차1 A면에서 전진버튼이 눌렸습니다");
-            return SendSetDataAsync(1, 0, 1);
+            if (TrainA.IsLocked) return;
+
+            AddAlert("기차1 A면에서 가속 버튼이 눌렸습니다");
+
+            bool ok = _buttonAlertDialog.ShowMessage("기차1 A면에서 가속 버튼이 눌렸습니다");
+            if (!ok) return;
+
+            await SendSetDataAsync(1, 0, 1);
         }
 
         [RelayCommand]
@@ -408,12 +414,16 @@ namespace Map.ViewModels
         }
 
         [RelayCommand]
-        private Task TrainABackwardUp()
+        private async Task TrainABackwardUp()
         {
-            if (TrainA.IsLocked) return Task.CompletedTask;
-            AddAlert("기차1 A면에서 후진버튼이 눌렸습니다");
-            _buttonAlertDialog.ShowMessage("기차1 A면에서 후진버튼이 눌렸습니다");
-            return SendSetDataAsync(2, 0, 1);
+            if (TrainA.IsLocked) return;
+
+            AddAlert("기차1 A면에서 감속 버튼이 눌렸습니다");
+
+            bool ok = _buttonAlertDialog.ShowMessage("기차1 A면에서 감속 버튼이 눌렸습니다");
+            if (!ok) return;
+
+            await SendSetDataAsync(2, 0, 1);
         }
 
         [RelayCommand]
@@ -425,15 +435,19 @@ namespace Map.ViewModels
         }
 
         [RelayCommand]
-        private Task TrainABreakUp()
+        private async Task TrainABreakUp()
         {
-            if (TrainA.IsLocked) return Task.CompletedTask;
+            if (TrainA.IsLocked) return;
+
             AddAlert("기차1 A면에서 정지버튼이 눌렸습니다");
-            _buttonAlertDialog.ShowMessage("기차1 A면에서 정지 버튼이 눌렸습니다");
-            return SendSetDataAsync(3, 0, 1);
+
+            bool ok = _buttonAlertDialog.ShowMessage("기차1 A면에서 정지 버튼이 눌렸습니다");
+            if (!ok) return;
+
+            await SendSetDataAsync(3, 0, 1);
         }
 
-        //  B면 버튼 
+        // B면 버튼
         [RelayCommand]
         private async Task TrainBForwardDown()
         {
@@ -443,12 +457,16 @@ namespace Map.ViewModels
         }
 
         [RelayCommand]
-        private Task TrainBForwardUp()
+        private async Task TrainBForwardUp()
         {
-            if (TrainB.IsLocked) return Task.CompletedTask;
-            AddAlert("기차1 B면에서 전진버튼이 눌렸습니다");
-            _buttonAlertDialog.ShowMessage("기차1 B면에서 전진버튼이 눌렸습니다");
-            return SendSetDataAsync(1, 0, 2);
+            if (TrainB.IsLocked) return;
+
+            AddAlert("기차1 B면에서 가속 버튼이 눌렸습니다");
+
+            bool ok = _buttonAlertDialog.ShowMessage("기차1 B면에서 가속 버튼이 눌렸습니다");
+            if (!ok) return;
+
+            await SendSetDataAsync(1, 0, 2);
         }
 
         [RelayCommand]
@@ -460,12 +478,16 @@ namespace Map.ViewModels
         }
 
         [RelayCommand]
-        private Task TrainBBackwardUp()
+        private async Task TrainBBackwardUp()
         {
-            if (TrainB.IsLocked) return Task.CompletedTask;
-            AddAlert("기차1 B면에서 후진버튼이 눌렸습니다");
-            _buttonAlertDialog.ShowMessage("기차1 B면에서 후진버튼이 눌렸습니다");
-            return SendSetDataAsync(2, 0, 2);
+            if (TrainB.IsLocked) return;
+
+            AddAlert("기차1 B면에서 감속 버튼이 눌렸습니다");
+
+            bool ok = _buttonAlertDialog.ShowMessage("기차1 B면에서 감속 버튼이 눌렸습니다");
+            if (!ok) return;
+
+            await SendSetDataAsync(2, 0, 2);
         }
 
         [RelayCommand]
@@ -477,13 +499,19 @@ namespace Map.ViewModels
         }
 
         [RelayCommand]
-        private Task TrainBBreakUp()
+        private async Task TrainBBreakUp()
         {
-            if (TrainB.IsLocked) return Task.CompletedTask;
+            if (TrainB.IsLocked) return;
+
             AddAlert("기차1 B면에서 정지버튼이 눌렸습니다");
-            _buttonAlertDialog.ShowMessage("기차1 B면에서 정지 버튼이 눌렸습니다");
-            return SendSetDataAsync(3, 0, 2);
+
+            bool ok = _buttonAlertDialog.ShowMessage("기차1 B면에서 정지 버튼이 눌렸습니다");
+            if (!ok) return;
+
+            await SendSetDataAsync(3, 0, 2);
         }
+
+        //A면 가속 감속 정지 이벤트 핸들러 종료
 
         //알람패널 다운로드 버튼 메서드
         [RelayCommand]

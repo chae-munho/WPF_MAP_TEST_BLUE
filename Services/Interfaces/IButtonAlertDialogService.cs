@@ -8,6 +8,6 @@ namespace Map.Services.Interfaces
 {
     public interface IButtonAlertDialogService
     {
-        void ShowMessage(string message);
+        bool ShowMessage(string message);
     }
 }
