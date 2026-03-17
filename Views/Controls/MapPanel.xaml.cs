@@ -53,7 +53,7 @@ namespace Map.Views.Controls
         private readonly DispatcherTimer gpsTimer = new();
         //개발/운영 모드 토글 true : 개발용(점 찍기, 점/라인 표시) false : 실서비스 (점 찍기 금지, 점/라인 숨기기)
         private static readonly bool DEBUG_ROUTE_EDITOR = false;
-        // 실제 GPS 기준 전체 경로 (위도/경도 목록)
+        // 실제 GPS 기준 전체 경로 (위도/경도 목록) 구량리역에서 가은역으로 출발한다고 했으니까 gps 좌표 역정렬해서 작성
         private readonly List<(double lat, double lng)> gpsRoute = new()
         {
             (36.65389603835667, 128.1282175273698),

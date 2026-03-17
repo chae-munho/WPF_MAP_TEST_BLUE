@@ -210,15 +210,15 @@ namespace Map.ViewModels
                 Alerts.Add(new AlertItemViewModel { Msg = "", Time = "" });
         }
 
-        private void CheckAlerts(string sideLabel, int voltage, int current, int batteryTemp, int motorSpeed)
+        private void CheckAlerts(string sideLabel, int voltage, int output, int batteryTemp, int motorSpeed)
         {
             string prefix = $"[{sideLabel}]";
 
             if (voltage < 10)
                 AddAlert($"{prefix} 저전압 발생 ({voltage}V)");
 
-            if (current > 290)
-                AddAlert($"{prefix} 과전류 발생 ({current}A)");
+            if (output > 290)
+                AddAlert($"{prefix} 과전류 발생 ({output}A)");
 
             if (batteryTemp > 46)
                 AddAlert($"{prefix} 배터리 고온 ({batteryTemp}°C)");
@@ -232,62 +232,73 @@ namespace Map.ViewModels
         private void UpdateDashboard(string[] arr)
         {
             //  Train A (arr[1]~arr[6]) 
-            int voltageA = int.Parse(arr[1]);
-            int currentA = int.Parse(arr[2]);  // 이제 전류는 표시 안함 혹시나 모르니까 코드는 남겨둠
-            int batteryA = int.Parse(arr[3]);
-            int batteryTempA = int.Parse(arr[4]);
-            int motorOutputA = int.Parse(arr[5]);
-            int motorSpeedA = int.Parse(arr[6]);
+            int speedA = int.Parse(arr[2]);   //기차1 속도
+            int voltageA = int.Parse(arr[4]); //기차1 전압
+            int motorOutputA = int.Parse(arr[6]); //기차1 모터전류(출력)
+            int batteryA = int.Parse(arr[8]); //기차1 배터리용량
+            int batteryTempA = int.Parse(arr[10]);  //기차1 배터리온도
+            int intercomA = int.Parse(arr[12]); //기차1에서 발생한 인터컴 번호
+
 
             TrainA.Voltage = voltageA;
-            TrainA.Current = currentA;
             TrainA.Battery = batteryA;
             TrainA.BatteryTemp = batteryTempA;
             TrainA.MotorOutput = motorOutputA;
-            TrainA.MotorSpeed = motorSpeedA;
+            TrainA.MotorSpeed = speedA;
+
 
             // 바늘
-            double angleA = -90 + (motorSpeedA * 6.0);    // 기존 7.2에서 6.0으로 수정됨
+            double angleA = -90 + (speedA * 6.0);    // 기존 7.2에서 6.0으로 수정됨
             if (angleA > 85) angleA = 85;
             if (angleA < -85) angleA = -85;
             TrainA.NeedleAngle = angleA;
 
             // 게이지 fill clip
-            TrainA.GaugeClip = CreateGaugeClip(motorSpeedA);
+            TrainA.GaugeClip = CreateGaugeClip(speedA);
 
             // 그래프 8칸
             TrainA.UpdateVoltageBar(voltageA);
             TrainA.UpdateMotorOutputBar(motorOutputA);
 
-            CheckAlerts("A면", voltageA, currentA, batteryTempA, motorSpeedA);
+            CheckAlerts("A면", voltageA, motorOutputA, batteryTempA, speedA);
+            if (intercomA > 0)
+            {
+                AddAlert($"A면 {intercomA}번 인터컴 호출");
+            }
+
+
 
             // Train B (arr[31]~arr[36]) 
-            int off = 30;
-            int voltageB = int.Parse(arr[1 + off]);
-            int currentB = int.Parse(arr[2 + off]);  // 이제 전류는 표시 안함 혹시나 모르니까 코드는 남겨둠
-            int batteryB = int.Parse(arr[3 + off]);
-            int batteryTempB = int.Parse(arr[4 + off]);
-            int motorOutputB = int.Parse(arr[5 + off]);
-            int motorSpeedB = int.Parse(arr[6 + off]);
+            int off = 47;
+
+            int speedB = int.Parse(arr[off + 2]);
+            int voltageB = int.Parse(arr[off + 4]);
+            int motorOutputB = int.Parse(arr[off + 6]);
+            int batteryB = int.Parse(arr[off + 8]);
+            int batteryTempB = int.Parse(arr[off + 10]);
+            int intercomB = int.Parse(arr[off + 12]);
 
             TrainB.Voltage = voltageB;
-            TrainB.Current = currentB;
             TrainB.Battery = batteryB;
             TrainB.BatteryTemp = batteryTempB;
             TrainB.MotorOutput = motorOutputB;
-            TrainB.MotorSpeed = motorSpeedB;
+            TrainB.MotorSpeed = speedB;
 
-            double angleB = -90 + (motorSpeedB * 6.0);
+            double angleB = -90 + (speedB * 6.0);
             if (angleB > 85) angleB = 85;
             if (angleB < -85) angleB = -85;
             TrainB.NeedleAngle = angleB;
 
-            TrainB.GaugeClip = CreateGaugeClip(motorSpeedB);
+            TrainB.GaugeClip = CreateGaugeClip(speedB);
 
             TrainB.UpdateVoltageBar(voltageB);
             TrainB.UpdateMotorOutputBar(motorOutputB);
 
-            CheckAlerts("B면", voltageB, currentB, batteryTempB, motorSpeedB);
+            CheckAlerts("B면", voltageB, motorOutputB, batteryTempB, speedB);
+            if (intercomB > 0)
+            {
+                AddAlert($"B면 {intercomB}번 인터컴 호출");
+            }
         }
 
 
