@@ -20,8 +20,9 @@ namespace Map.Views
             // Dialog Service 생성(Owner = this)
             var pwdSvc = new PasswordDialogService(this);
             var alertSvc = new ButtonAlertDialogService(this);
+            var dangerSvc = new DangerDialogService(this);
 
-            _vm = new MainWindowViewModel(_api, pwdSvc, alertSvc);
+            _vm = new MainWindowViewModel(_api, pwdSvc, alertSvc, dangerSvc);
 
             // MapPanel의 MoveSpeed/MoveDirectionSign 제공
             if (MapPanelControl != null)

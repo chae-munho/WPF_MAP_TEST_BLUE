@@ -21,6 +21,8 @@
     <None Remove="images\buttonpopup.png" />
     <None Remove="images\cancel.png" />
     <None Remove="images\check.png" />
+    <None Remove="images\dangerpopup.png" />
+    <None Remove="images\dangerWarning.png" />
     <None Remove="images\down.png" />
     <None Remove="images\down2.png" />
     <None Remove="images\download.png" />
@@ -116,6 +118,12 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="images\check.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\dangerpopup.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\dangerWarning.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="images\down.png">

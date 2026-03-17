@@ -34,7 +34,7 @@
                        Margin="0,10,0,0"
                   />
                 <!-- 우측 상단 -->
-            <TextBlock Text="주의경보"
+            <TextBlock Text="안전 확인"
                        Foreground="#EBA400"
                        FontSize="30"
                        FontWeight="Bold"

@@ -21,6 +21,7 @@ namespace Map.ViewModels
 
         private readonly IPasswordDialogService _passwordDialog;
         private readonly IButtonAlertDialogService _buttonAlertDialog;
+        private readonly IDangerDialogService _dangerDialog;
 
         private readonly DispatcherTimer _dataTimer = new();
         private readonly DispatcherTimer _rotateTimer = new();
@@ -37,6 +38,10 @@ namespace Map.ViewModels
         private const double GAUGE_CENTER_Y = GAUGE_HEIGHT / 2.0;
         private const double GAUGE_RADIUS = 135;
 
+        //비상정지 상태 변화 감지용 즉 0->1에서 변할 때 뜸 계속 1일 때는 뜨지 않게 
+        private int _prevEmergencyA = 0;
+        private int _prevEmergencyB = 0;    
+
         private readonly ImageSource _lockImg;
         private readonly ImageSource _unlockImg;
 
@@ -46,7 +51,7 @@ namespace Map.ViewModels
 
         public ObservableCollection<AlertItemViewModel> Alerts { get; } = new();
 
-        // 블랙막(패널 6개) - 기존 로직 유지
+        // 블랙막(패널 6개) 
         [ObservableProperty] private Visibility a1Blackout = Visibility.Visible;
         [ObservableProperty] private Visibility a2Blackout = Visibility.Visible;
         [ObservableProperty] private Visibility a3Blackout = Visibility.Visible;
@@ -62,11 +67,13 @@ namespace Map.ViewModels
         public MainWindowViewModel(
             ApiClient api,
             IPasswordDialogService passwordDialog,
-            IButtonAlertDialogService buttonAlertDialog)
+            IButtonAlertDialogService buttonAlertDialog,
+            IDangerDialogService dangerDialog)
         {
             _api = api;
-            _passwordDialog = passwordDialog;
-            _buttonAlertDialog = buttonAlertDialog;
+            _passwordDialog = passwordDialog; //패스워드 팝업
+            _buttonAlertDialog = buttonAlertDialog; //가속 감속 정지 팝업
+            _dangerDialog = dangerDialog; //주의경보 팝업
 
             _lockImg = new BitmapImage(new Uri("pack://application:,,,/Map;component/images/lock2.png"));
             _unlockImg = new BitmapImage(new Uri("pack://application:,,,/Map;component/images/unlock.png"));
@@ -214,16 +221,16 @@ namespace Map.ViewModels
         {
             string prefix = $"[{sideLabel}]";
 
-            if (voltage < 10)
-                AddAlert($"{prefix} 저전압 발생 ({voltage}V)");
+            if (voltage > 330)
+                AddAlert($"{prefix} 고전압 발생 ({voltage}V)");
 
             if (output > 290)
                 AddAlert($"{prefix} 과전류 발생 ({output}A)");
 
-            if (batteryTemp > 46)
+            if (batteryTemp > 80)
                 AddAlert($"{prefix} 배터리 고온 ({batteryTemp}°C)");
 
-            if (motorSpeed > 24)
+            if (motorSpeed > 80)
                 AddAlert($"{prefix} 모터 과속 ({motorSpeed}km/h)");
         }
 
@@ -238,6 +245,7 @@ namespace Map.ViewModels
             int batteryA = int.Parse(arr[8]); //기차1 배터리용량
             int batteryTempA = int.Parse(arr[10]);  //기차1 배터리온도
             int intercomA = int.Parse(arr[12]); //기차1에서 발생한 인터컴 번호
+            int emergencyA = int.Parse(arr[36]); //기차1 비상정지 상태(M122)
 
 
             TrainA.Voltage = voltageA;
@@ -266,6 +274,13 @@ namespace Map.ViewModels
                 AddAlert($"A면 {intercomA}번 인터컴 호출");
             }
 
+            //A면 비상정지 0 에서 1 변화 감지 시 팝업 1회
+            if (_prevEmergencyA == 0 && emergencyA == 1) {
+                AddAlert("A면 비상정지 발생");
+                _dangerDialog.ShowMessage("A면 비상정지 상태가 발생했습니다.");
+            }
+            _prevEmergencyA = emergencyA;
+
 
 
             // Train B (arr[31]~arr[36]) 
@@ -277,6 +292,7 @@ namespace Map.ViewModels
             int batteryB = int.Parse(arr[off + 8]);
             int batteryTempB = int.Parse(arr[off + 10]);
             int intercomB = int.Parse(arr[off + 12]);
+            int emergencyB = int.Parse(arr[off + 36]); // 기차1 비상정지 상태(M122)
 
             TrainB.Voltage = voltageB;
             TrainB.Battery = batteryB;
@@ -299,6 +315,14 @@ namespace Map.ViewModels
             {
                 AddAlert($"B면 {intercomB}번 인터컴 호출");
             }
+
+            //B면 비상정지 0에서 1로 바뀌때 주의팝업 띄우기
+            if (_prevEmergencyB == 0 && emergencyB == 1)
+            {
+                AddAlert("B면 비상정지 발생");
+                _dangerDialog.ShowMessage("B면 비상정지 상태가 발생했습니다.");
+            }
+            _prevEmergencyB = emergencyB;   
         }
 
 
