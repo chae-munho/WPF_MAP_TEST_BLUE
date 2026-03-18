@@ -7,7 +7,7 @@ namespace Map.Views
 {
     public partial class MainWindow : Window
     {
-        private readonly ApiClient _api = new ApiClient("http://192.168.0.173:5090");
+        private readonly ApiClient _api = new ApiClient("http://192.168.0.66:5090");
         private MainWindowViewModel? _vm;
 
         public MainWindow()

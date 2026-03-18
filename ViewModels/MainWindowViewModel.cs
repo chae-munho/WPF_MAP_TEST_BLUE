@@ -216,22 +216,35 @@ namespace Map.ViewModels
             while (Alerts.Count < 4)
                 Alerts.Add(new AlertItemViewModel { Msg = "", Time = "" });
         }
-
-        private void CheckAlerts(string sideLabel, int voltage, int output, int batteryTemp, int motorSpeed)
+        //A면 로그 오른쪽 패널
+        private void CheckAlertsA(int voltage, int output, int batteryTemp, int motorSpeed)
         {
-            string prefix = $"[{sideLabel}]";
-
             if (voltage > 330)
-                AddAlert($"{prefix} 고전압 발생 ({voltage}V)");
+                AddAlert($"[A면] 고전압 발생 ({voltage}V)");
 
             if (output > 290)
-                AddAlert($"{prefix} 과전류 발생 ({output}A)");
+                AddAlert($"[A면] 과전류 발생 ({output}A)");
 
             if (batteryTemp > 80)
-                AddAlert($"{prefix} 배터리 고온 ({batteryTemp}°C)");
+                AddAlert($"[A면] 배터리 고온 ({batteryTemp}°C)");
 
             if (motorSpeed > 80)
-                AddAlert($"{prefix} 모터 과속 ({motorSpeed}km/h)");
+                AddAlert($"[A면] 모터 과속 ({motorSpeed}km/h)");
+        }
+        //B면 로그 왼쪽 패널
+        private void CheckAlertsB(int voltage, int output, int batteryTemp, int motorSpeed)
+        {
+            if (voltage > 320)
+                AddAlert($"[B면] 고전압 발생 ({voltage}V)");
+
+            if (output > 300)
+                AddAlert($"[B면] 과전류 발생 ({output}A)");
+
+            if (batteryTemp > 85)
+                AddAlert($"[B면] 배터리 고온 ({batteryTemp}°C)");
+
+            if (motorSpeed > 75)
+                AddAlert($"[B면] 모터 과속 ({motorSpeed}km/h)");
         }
 
 
@@ -268,7 +281,7 @@ namespace Map.ViewModels
             TrainA.UpdateVoltageBar(voltageA);
             TrainA.UpdateMotorOutputBar(motorOutputA);
 
-            CheckAlerts("A면", voltageA, motorOutputA, batteryTempA, speedA);
+            CheckAlertsA(voltageA, motorOutputA, batteryTempA, speedA);
             if (intercomA > 0)
             {
                 AddAlert($"A면 {intercomA}번 인터컴 호출");
@@ -310,7 +323,7 @@ namespace Map.ViewModels
             TrainB.UpdateVoltageBar(voltageB);
             TrainB.UpdateMotorOutputBar(motorOutputB);
 
-            CheckAlerts("B면", voltageB, motorOutputB, batteryTempB, speedB);
+            CheckAlertsB(voltageB, motorOutputB, batteryTempB, speedB);
             if (intercomB > 0)
             {
                 AddAlert($"B면 {intercomB}번 인터컴 호출");
