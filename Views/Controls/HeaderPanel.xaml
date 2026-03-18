@@ -6,17 +6,17 @@
              xmlns:local="clr-namespace:Map.Views.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="60" d:DesignWidth="1750">
-    <!-- HEADER START-->
+
     <Border Grid.Row="0"
-        Height="60"
-        Background="#111327"
-        SnapsToDevicePixels="True">
+            Height="60"
+            Background="#111327"
+            SnapsToDevicePixels="True">
 
         <Border.Effect>
             <DropShadowEffect Color="Black"
-                  Opacity="0.1"
-                  ShadowDepth="0"
-                  BlurRadius="10" />
+                              Opacity="0.1"
+                              ShadowDepth="0"
+                              BlurRadius="10" />
         </Border.Effect>
 
         <Grid Margin="20,0">
@@ -26,34 +26,48 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <!-- CENTER: 로고 + 제목 (정확히 중앙) -->
+            <!-- CENTER -->
             <StackPanel Grid.Column="1"
-                Orientation="Horizontal"
-                VerticalAlignment="Center"
-                HorizontalAlignment="Center">
+                        Orientation="Horizontal"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
                 <Image Source="pack://application:,,,/Map;component/images/header.png"
-               Width="132"
-               Height="33"
-               Margin="0,0,0,0"
-               Stretch="Uniform"/>
+                       Width="132"
+                       Height="33"
+                       Stretch="Uniform"/>
 
                 <TextBlock Text="테마열차 관제 및 차량 제어 시스템"
-                   Foreground="White"
-                   FontSize="22"
-                   FontWeight="Bold"
-                   VerticalAlignment="Center"/>
+                           Foreground="White"
+                           FontSize="22"
+                           FontWeight="Bold"
+                           VerticalAlignment="Center"/>
             </StackPanel>
 
-            <!-- RIGHT: 시간 (오른쪽 끝) -->
-            <TextBlock Grid.Column="2"
-               HorizontalAlignment="Right"
-               Foreground="White"
-               FontSize="20"
-               VerticalAlignment="Center"
-               Text="{Binding TimeText, RelativeSource={RelativeSource AncestorType=UserControl},
-                              FallbackValue=0000년 00월 00일 - 00:00:00,
-                              TargetNullValue=0000년 00월 00일 - 00:00:00}"/>
+            <!-- RIGHT -->
+            <StackPanel Grid.Column="2"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center">
+
+                <Button Content="관리자 설정"
+                        Width="110"
+                        Height="34"
+                        Margin="0,0,12,0"
+                        Background="#3E6AA0"
+                        Foreground="White"
+                        BorderThickness="0"
+                        FontWeight="Bold"
+                        Cursor="Hand"
+                        Command="{Binding OpenAdminSettingsCommand}"/>
+
+                <TextBlock Foreground="White"
+                           FontSize="20"
+                           VerticalAlignment="Center"
+                           Text="{Binding TimeText,
+                                          RelativeSource={RelativeSource AncestorType=UserControl},
+                                          FallbackValue=0000년 00월 00일 - 00:00:00,
+                                          TargetNullValue=0000년 00월 00일 - 00:00:00}"/>
+            </StackPanel>
         </Grid>
     </Border>
-    <!--HEADER END-->
 </UserControl>

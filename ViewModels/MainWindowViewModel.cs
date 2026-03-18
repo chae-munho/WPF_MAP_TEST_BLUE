@@ -22,6 +22,7 @@ namespace Map.ViewModels
         private readonly IPasswordDialogService _passwordDialog;
         private readonly IButtonAlertDialogService _buttonAlertDialog;
         private readonly IDangerDialogService _dangerDialog;
+        private readonly IAdminSettingsDialogService _adminSettingsDialog;
 
         private readonly DispatcherTimer _dataTimer = new();
         private readonly DispatcherTimer _rotateTimer = new();
@@ -64,16 +65,22 @@ namespace Map.ViewModels
         //getdata 마지막 상태 알림용 변수(null:아직 모르는 상태, true=성공, false=실패)
         private bool? _getDataLastOk = null;
 
+        // 관리자 설정값 디폴트 값은 SideAlertSettings.cs에
+        public SideAlertSettings BSettings { get; private set; } = SideAlertSettings.CreateDefaultB();
+        public SideAlertSettings ASettings { get; private set; } = SideAlertSettings.CreateDefaultA();
+
         public MainWindowViewModel(
             ApiClient api,
             IPasswordDialogService passwordDialog,
             IButtonAlertDialogService buttonAlertDialog,
-            IDangerDialogService dangerDialog)
+            IDangerDialogService dangerDialog,
+            IAdminSettingsDialogService adminSettingsDialog)
         {
             _api = api;
             _passwordDialog = passwordDialog; //패스워드 팝업
             _buttonAlertDialog = buttonAlertDialog; //가속 감속 정지 팝업
             _dangerDialog = dangerDialog; //주의경보 팝업
+            _adminSettingsDialog = adminSettingsDialog;
 
             _lockImg = new BitmapImage(new Uri("pack://application:,,,/Map;component/images/lock2.png"));
             _unlockImg = new BitmapImage(new Uri("pack://application:,,,/Map;component/images/unlock.png"));
@@ -216,35 +223,35 @@ namespace Map.ViewModels
             while (Alerts.Count < 4)
                 Alerts.Add(new AlertItemViewModel { Msg = "", Time = "" });
         }
-        //A면 로그 오른쪽 패널
-        private void CheckAlertsA(int voltage, int output, int batteryTemp, int motorSpeed)
+        //A면 범위 검사
+        private void CheckAlertsA(int voltage, int output, int battery, int batteryTemp)
         {
-            if (voltage > 330)
-                AddAlert($"[A면] 고전압 발생 ({voltage}V)");
+            if (ASettings.VoltageMin <= voltage && voltage <= ASettings.VoltageMax)
+                AddAlert($"[A면] 전압 범위 진입 ({voltage}V)");
 
-            if (output > 290)
-                AddAlert($"[A면] 과전류 발생 ({output}A)");
+            if (ASettings.CurrentMin <= output && output <= ASettings.CurrentMax)
+                AddAlert($"[A면] 전류 범위 진입 ({output}A)");
 
-            if (batteryTemp > 80)
-                AddAlert($"[A면] 배터리 고온 ({batteryTemp}°C)");
+            if (ASettings.BatteryMin <= battery && battery <= ASettings.BatteryMax)
+                AddAlert($"[A면] 배터리용량 범위 진입 ({battery}%)");
 
-            if (motorSpeed > 80)
-                AddAlert($"[A면] 모터 과속 ({motorSpeed}km/h)");
+            if (ASettings.BatteryTempMin <= batteryTemp && batteryTemp <= ASettings.BatteryTempMax)
+                AddAlert($"[A면] 배터리온도 범위 진입 ({batteryTemp}°C)");
         }
-        //B면 로그 왼쪽 패널
-        private void CheckAlertsB(int voltage, int output, int batteryTemp, int motorSpeed)
+        //B면 범위 검사
+        private void CheckAlertsB(int voltage, int output, int battery, int batteryTemp)
         {
-            if (voltage > 320)
-                AddAlert($"[B면] 고전압 발생 ({voltage}V)");
+            if (BSettings.VoltageMin <= voltage && voltage <= BSettings.VoltageMax)
+                AddAlert($"[B면] 전압 범위 진입 ({voltage}V)");
 
-            if (output > 300)
-                AddAlert($"[B면] 과전류 발생 ({output}A)");
+            if (BSettings.CurrentMin <= output && output <= BSettings.CurrentMax)
+                AddAlert($"[B면] 전류 범위 진입 ({output}A)");
 
-            if (batteryTemp > 85)
-                AddAlert($"[B면] 배터리 고온 ({batteryTemp}°C)");
+            if (BSettings.BatteryMin <= battery && battery <= BSettings.BatteryMax)
+                AddAlert($"[B면] 배터리용량 범위 진입 ({battery}%)");
 
-            if (motorSpeed > 75)
-                AddAlert($"[B면] 모터 과속 ({motorSpeed}km/h)");
+            if (BSettings.BatteryTempMin <= batteryTemp && batteryTemp <= BSettings.BatteryTempMax)
+                AddAlert($"[B면] 배터리온도 범위 진입 ({batteryTemp}°C)");
         }
 
 
@@ -281,7 +288,7 @@ namespace Map.ViewModels
             TrainA.UpdateVoltageBar(voltageA);
             TrainA.UpdateMotorOutputBar(motorOutputA);
 
-            CheckAlertsA(voltageA, motorOutputA, batteryTempA, speedA);
+            CheckAlertsA(voltageA, motorOutputA, batteryA, batteryTempA);
             if (intercomA > 0)
             {
                 AddAlert($"A면 {intercomA}번 인터컴 호출");
@@ -323,7 +330,7 @@ namespace Map.ViewModels
             TrainB.UpdateVoltageBar(voltageB);
             TrainB.UpdateMotorOutputBar(motorOutputB);
 
-            CheckAlertsB(voltageB, motorOutputB, batteryTempB, speedB);
+            CheckAlertsB(voltageB, motorOutputB, batteryB, batteryTempB);
             if (intercomB > 0)
             {
                 AddAlert($"B면 {intercomB}번 인터컴 호출");
@@ -401,6 +408,23 @@ namespace Map.ViewModels
             {
                 TrainA.SetLockedUI(true, _lockImg, _unlockImg);
             }
+        }
+        [RelayCommand]
+        private void OpenAdminSettings()
+        {
+            bool ok = _adminSettingsDialog.ShowDialog(
+                BSettings,
+                ASettings,
+                out SideAlertSettings updatedBSettings,
+                out SideAlertSettings updatedASettings);
+
+            if (!ok)
+                return;
+
+            BSettings = updatedBSettings;
+            ASettings = updatedASettings;
+
+            AddAlert("[관리자 설정] 기준값이 변경되었습니다.");
         }
 
         [RelayCommand]

@@ -263,3 +263,5 @@ C:\ean\문경모노레일\WPF_MAP_TEST_BLUE\obj\Debug\net8.0-windows\Map.genrunt
 C:\ean\문경모노레일\WPF_MAP_TEST_BLUE\obj\Debug\net8.0-windows\ref\Map.dll
 C:\ean\문경모노레일\WPF_MAP_TEST_BLUE\obj\Debug\net8.0-windows\Popups\DangerPopup.baml
 C:\ean\문경모노레일\WPF_MAP_TEST_BLUE\obj\Debug\net8.0-windows\Popups\DangerPopup.g.cs
+C:\ean\문경모노레일\WPF_MAP_TEST_BLUE\obj\Debug\net8.0-windows\Popups\AdminSettingsPopup.baml
+C:\ean\문경모노레일\WPF_MAP_TEST_BLUE\obj\Debug\net8.0-windows\Popups\AdminSettingsPopup.g.cs

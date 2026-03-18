@@ -4,6 +4,9 @@
     <_LastSelectedProfileId>C:\ean\WPF_MAP_TEST_BLUE\Properties\PublishProfiles\ClickOnceProfile.pubxml</_LastSelectedProfileId>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Update="Popups\AdminSettingsPopup.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Popups\ButtonAlertPopup.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
