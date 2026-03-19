@@ -420,7 +420,7 @@ namespace Map.ViewModels
         }
 
       
-
+        //down 메서드는 필요가 없을 거 같은데 일단 남겨둠
         //A면 가속 감속 정지 이벤트 핸들러 시작
 
         // A면 버튼
@@ -433,7 +433,9 @@ namespace Map.ViewModels
         [RelayCommand]
         private async Task TrainAForwardUp()
         {
-           
+            if (!_passwordDialog.ShowPassword())
+                return;
+
             AddAlert("기차1 A면에서 가속 버튼이 눌렸습니다");
 
             bool ok = _buttonAlertDialog.ShowMessage("기차1 A면에서 가속 버튼이 눌렸습니다");
@@ -453,7 +455,8 @@ namespace Map.ViewModels
         [RelayCommand]
         private async Task TrainABackwardUp()
         {
-           
+            if (!_passwordDialog.ShowPassword())
+                return;
 
             AddAlert("기차1 A면에서 감속 버튼이 눌렸습니다");
 
@@ -474,7 +477,8 @@ namespace Map.ViewModels
         [RelayCommand]
         private async Task TrainABreakUp()
         {
-           
+            if (!_passwordDialog.ShowPassword())
+                return;
 
             AddAlert("기차1 A면에서 정지버튼이 눌렸습니다");
 
@@ -494,6 +498,9 @@ namespace Map.ViewModels
         [RelayCommand]
         private async Task TrainBForwardUp()
         {
+            if (!_passwordDialog.ShowPassword())
+                return;
+
             AddAlert("기차1 B면에서 가속 버튼이 눌렸습니다");
 
             bool ok = _buttonAlertDialog.ShowMessage("기차1 B면에서 가속 버튼이 눌렸습니다");
@@ -511,7 +518,8 @@ namespace Map.ViewModels
         [RelayCommand]
         private async Task TrainBBackwardUp()
         {
-          
+            if (!_passwordDialog.ShowPassword())
+                return;
 
             AddAlert("기차1 B면에서 감속 버튼이 눌렸습니다");
 
@@ -532,7 +540,8 @@ namespace Map.ViewModels
         [RelayCommand]
         private async Task TrainBBreakUp()
         {
-           
+            if (!_passwordDialog.ShowPassword())
+                return;
 
             AddAlert("기차1 B면에서 정지버튼이 눌렸습니다");
 
