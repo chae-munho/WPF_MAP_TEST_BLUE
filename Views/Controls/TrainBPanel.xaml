@@ -50,7 +50,7 @@
                     <Border Grid.Row="0"
                     Background="#3E6AA0"
                     CornerRadius="10,10,0,0">
-                        <TextBlock Text="가은역 → 구량리역 방면"
+                        <TextBlock Text="구량리역 방면"
                            Foreground="#FFF"
                            FontFamily="Dinmed"
                            FontSize="14"
