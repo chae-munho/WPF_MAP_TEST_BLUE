@@ -33,14 +33,14 @@
         {
             return new SideAlertSettings
             {
-                VoltageMin = 304,
-                VoltageMax = 304,
-                CurrentMin = 263,
-                CurrentMax = 264,
-                BatteryMin = 19,
-                BatteryMax = 20,
-                BatteryTempMin = 60,
-                BatteryTempMax = 62
+                VoltageMin = -1,
+                VoltageMax = 1000,
+                CurrentMin = -1,
+                CurrentMax = 1000,
+                BatteryMin = -1,
+                BatteryMax = 100,
+                BatteryTempMin = -1,
+                BatteryTempMax = 1000
             };
         }
 
@@ -48,14 +48,14 @@
         {
             return new SideAlertSettings
             {
-                VoltageMin = 304,
-                VoltageMax = 304,
-                CurrentMin = 263,
-                CurrentMax = 264,
-                BatteryMin = 19,
-                BatteryMax = 20,
-                BatteryTempMin = 60,
-                BatteryTempMax = 62
+                VoltageMin = 292,
+                VoltageMax = 303,
+                CurrentMin = 24,
+                CurrentMax = 262,
+                BatteryMin = -1,
+                BatteryMax = 100,
+                BatteryTempMin = 25,
+                BatteryTempMax = 32
             };
         }
     }

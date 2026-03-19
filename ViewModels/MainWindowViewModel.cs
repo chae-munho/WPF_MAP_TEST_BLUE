@@ -226,32 +226,46 @@ namespace Map.ViewModels
         //A면 범위 검사
         private void CheckAlertsA(int voltage, int output, int battery, int batteryTemp)
         {
-            if (ASettings.VoltageMin <= voltage && voltage <= ASettings.VoltageMax)
-                AddAlert($"[A면] 전압 범위 진입 ({voltage}V)");
+            if (voltage < ASettings.VoltageMin)
+                AddAlert($"[A면] 저전압 발생 ({voltage}V)");
+            else if (voltage > ASettings.VoltageMax)
+                AddAlert($"[A면] 고전압 발생 ({voltage}V)");
 
-            if (ASettings.CurrentMin <= output && output <= ASettings.CurrentMax)
-                AddAlert($"[A면] 전류 범위 진입 ({output}A)");
+            if (output < ASettings.CurrentMin)
+                AddAlert($"[A면] 저전류 발생 ({output}A)");
+            else if (output > ASettings.CurrentMax)
+                AddAlert($"[A면] 고전류 발생 ({output}A)");
 
-            if (ASettings.BatteryMin <= battery && battery <= ASettings.BatteryMax)
-                AddAlert($"[A면] 배터리용량 범위 진입 ({battery}%)");
+            if (battery < ASettings.BatteryMin)
+                AddAlert($"[A면] 배터리 용량 부족 ({battery}%)");
+            // battery > ASettings.BatteryMax 는 표시 없음
 
-            if (ASettings.BatteryTempMin <= batteryTemp && batteryTemp <= ASettings.BatteryTempMax)
-                AddAlert($"[A면] 배터리온도 범위 진입 ({batteryTemp}°C)");
+            if (batteryTemp < ASettings.BatteryTempMin)
+                AddAlert($"[A면] 배터리 저온 발생 ({batteryTemp}°C)");
+            else if (batteryTemp > ASettings.BatteryTempMax)
+                AddAlert($"[A면] 배터리 고온 발생 ({batteryTemp}°C)");
         }
         //B면 범위 검사
         private void CheckAlertsB(int voltage, int output, int battery, int batteryTemp)
         {
-            if (BSettings.VoltageMin <= voltage && voltage <= BSettings.VoltageMax)
-                AddAlert($"[B면] 전압 범위 진입 ({voltage}V)");
+            if (voltage < BSettings.VoltageMin)
+                AddAlert($"[B면] 저전압 발생 ({voltage}V)");
+            else if (voltage > BSettings.VoltageMax)
+                AddAlert($"[B면] 고전압 발생 ({voltage}V)");
 
-            if (BSettings.CurrentMin <= output && output <= BSettings.CurrentMax)
-                AddAlert($"[B면] 전류 범위 진입 ({output}A)");
+            if (output < BSettings.CurrentMin)
+                AddAlert($"[B면] 저전류 발생 ({output}A)");
+            else if (output > BSettings.CurrentMax)
+                AddAlert($"[B면] 고전류 발생 ({output}A)");
 
-            if (BSettings.BatteryMin <= battery && battery <= BSettings.BatteryMax)
-                AddAlert($"[B면] 배터리용량 범위 진입 ({battery}%)");
+            if (battery < BSettings.BatteryMin)
+                AddAlert($"[B면] 배터리 용량 부족 ({battery}%)");
+            // battery > BSettings.BatteryMax 는 표시 없음
 
-            if (BSettings.BatteryTempMin <= batteryTemp && batteryTemp <= BSettings.BatteryTempMax)
-                AddAlert($"[B면] 배터리온도 범위 진입 ({batteryTemp}°C)");
+            if (batteryTemp < BSettings.BatteryTempMin)
+                AddAlert($"[B면] 배터리 저온 발생 ({batteryTemp}°C)");
+            else if (batteryTemp > BSettings.BatteryTempMax)
+                AddAlert($"[B면] 배터리 고온 발생 ({batteryTemp}°C)");
         }
 
 

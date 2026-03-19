@@ -49,8 +49,8 @@
                     </Grid.RowDefinitions>
 
                     <TextBlock Grid.Row="0" Grid.Column="0" Text="항목" Foreground="White" VerticalAlignment="Center"/>
-                    <TextBlock Grid.Row="0" Grid.Column="1" Text="이상(최소)" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <TextBlock Grid.Row="0" Grid.Column="3" Text="이하(최대)" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBlock Grid.Row="0" Grid.Column="1" Text="MIN(최소)" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBlock Grid.Row="0" Grid.Column="3" Text="MAX(최대)" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
                     <TextBlock Grid.Row="1" Grid.Column="0" Text="전압" Foreground="White" VerticalAlignment="Center"/>
                     <TextBox x:Name="BVoltageMinTextBox" Grid.Row="1" Grid.Column="1" Margin="0,3"/>
@@ -62,7 +62,7 @@
 
                     <TextBlock Grid.Row="3" Grid.Column="0" Text="배터리용량" Foreground="White" VerticalAlignment="Center"/>
                     <TextBox x:Name="BBatteryMinTextBox" Grid.Row="3" Grid.Column="1" Margin="0,3"/>
-                    <TextBox x:Name="BBatteryMaxTextBox" Grid.Row="3" Grid.Column="3" Margin="0,3"/>
+                    <TextBox x:Name="BBatteryMaxTextBox" Grid.Row="3" Grid.Column="3" Margin="0,3" IsEnabled="False"/>
 
                     <TextBlock Grid.Row="4" Grid.Column="0" Text="배터리온도" Foreground="White" VerticalAlignment="Center"/>
                     <TextBox x:Name="BBatteryTempMinTextBox" Grid.Row="4" Grid.Column="1" Margin="0,3"/>
@@ -95,8 +95,8 @@
                     </Grid.RowDefinitions>
 
                     <TextBlock Grid.Row="0" Grid.Column="0" Text="항목" Foreground="White" VerticalAlignment="Center"/>
-                    <TextBlock Grid.Row="0" Grid.Column="1" Text="이상(최소)" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <TextBlock Grid.Row="0" Grid.Column="3" Text="이하(최대)" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBlock Grid.Row="0" Grid.Column="1" Text="MIN(최소)" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBlock Grid.Row="0" Grid.Column="3" Text="MAX(최대)" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
                     <TextBlock Grid.Row="1" Grid.Column="0" Text="전압" Foreground="White" VerticalAlignment="Center"/>
                     <TextBox x:Name="AVoltageMinTextBox" Grid.Row="1" Grid.Column="1" Margin="0,3"/>
@@ -108,7 +108,7 @@
 
                     <TextBlock Grid.Row="3" Grid.Column="0" Text="배터리용량" Foreground="White" VerticalAlignment="Center"/>
                     <TextBox x:Name="ABatteryMinTextBox" Grid.Row="3" Grid.Column="1" Margin="0,3"/>
-                    <TextBox x:Name="ABatteryMaxTextBox" Grid.Row="3" Grid.Column="3" Margin="0,3"/>
+                    <TextBox x:Name="ABatteryMaxTextBox" Grid.Row="3" Grid.Column="3" Margin="0,3" IsEnabled="False"/>
 
                     <TextBlock Grid.Row="4" Grid.Column="0" Text="배터리온도" Foreground="White" VerticalAlignment="Center"/>
                     <TextBox x:Name="ABatteryTempMinTextBox" Grid.Row="4" Grid.Column="1" Margin="0,3"/>
