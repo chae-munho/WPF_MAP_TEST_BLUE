@@ -124,30 +124,12 @@
                         <StackPanel Grid.Column="1"
                             VerticalAlignment="Center"
                             HorizontalAlignment="Center">
-
-                         
+                                                                       
                             <Button Width="98" Height="30"
-                            Background="Transparent"
-                            BorderThickness="0"
-                            Margin="0,5"
-                            Command="{Binding ToggleLockBCommand}">
-                                <Grid>
-                                    <Image Source="pack://application:,,,/Map;component/images/firstButton2.png" Stretch="Fill"/>
-                                    <Image Source="{Binding TrainB.LockIcon, TargetNullValue={StaticResource DefaultLockIcon},
-                                            FallbackValue={StaticResource DefaultLockIcon}}"
-                                   Width="18" Height="18"
-                                   HorizontalAlignment="Center"
-                                   VerticalAlignment="Center"/>
-                                </Grid>
-                            </Button>
-
-                        
-                            <Button Width="98" Height="30"
-                            Background="Transparent"
-                            BorderThickness="0"
-                            Margin="0,5"
-                            IsEnabled="{Binding TrainB.ControlsEnabled}"
-                            Opacity="{Binding TrainB.ControlsOpacity}">
+                                Background="Transparent"
+                                BorderThickness="0"
+                                Margin="0,5"                          
+                                >
                                 <i:Interaction.Triggers>
                                     <i:EventTrigger EventName="PreviewMouseDown">
                                         <i:InvokeCommandAction Command="{Binding TrainBForwardDownCommand}"/>
@@ -168,11 +150,10 @@
 
                         
                             <Button Width="98" Height="30"
-                            Background="Transparent"
-                            BorderThickness="0"
-                            Margin="0,5"
-                            IsEnabled="{Binding TrainB.ControlsEnabled}"
-                            Opacity="{Binding TrainB.ControlsOpacity}">
+                                Background="Transparent"
+                                BorderThickness="0"
+                                Margin="0,5"                          
+                                >
                                 <i:Interaction.Triggers>
                                     <i:EventTrigger EventName="PreviewMouseDown">
                                         <i:InvokeCommandAction Command="{Binding TrainBBackwardDownCommand}"/>
@@ -193,11 +174,10 @@
 
                           
                             <Button Width="98" Height="30"
-                            Background="Transparent"
-                            BorderThickness="0"
-                            Margin="0,5"
-                            IsEnabled="{Binding TrainB.ControlsEnabled}"
-                            Opacity="{Binding TrainB.ControlsOpacity}">
+                                Background="Transparent"
+                                BorderThickness="0"
+                                Margin="0,5"                          
+                                >
                                 <i:Interaction.Triggers>
                                     <i:EventTrigger EventName="PreviewMouseDown">
                                         <i:InvokeCommandAction Command="{Binding TrainBBreakDownCommand}"/>

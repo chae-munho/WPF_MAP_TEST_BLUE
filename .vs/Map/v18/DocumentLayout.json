@@ -3,6 +3,50 @@
   "WorkspaceRootPath": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|c:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\wpf_map_test_blue\\viewmodels\\mainwindowviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|solutionrelative:viewmodels\\mainwindowviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|c:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\wpf_map_test_blue\\viewmodels\\trainsideviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|solutionrelative:viewmodels\\trainsideviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|c:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\wpf_map_test_blue\\views\\controls\\trainbpanel.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|solutionrelative:views\\controls\\trainbpanel.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|c:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\wpf_map_test_blue\\views\\controls\\trainapanel.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|solutionrelative:views\\controls\\trainapanel.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|c:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\wpf_map_test_blue\\services\\passworddialogservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|solutionrelative:services\\passworddialogservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|c:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\wpf_map_test_blue\\services\\interfaces\\ipassworddialogservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|solutionrelative:services\\interfaces\\ipassworddialogservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|c:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\wpf_map_test_blue\\views\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|solutionrelative:views\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|c:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\wpf_map_test_blue\\popups\\passwordpopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|solutionrelative:popups\\passwordpopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|c:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\wpf_map_test_blue\\popups\\passwordpopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|solutionrelative:popups\\passwordpopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|c:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\wpf_map_test_blue\\views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|solutionrelative:views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|c:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\wpf_map_test_blue\\views\\controls\\headerpanel.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|solutionrelative:views\\controls\\headerpanel.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|c:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\wpf_map_test_blue\\models\\sidealertsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|solutionrelative:models\\sidealertsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -19,20 +63,8 @@
       "RelativeMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|solutionrelative:models\\gpsresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|c:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\wpf_map_test_blue\\viewmodels\\mainwindowviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|solutionrelative:viewmodels\\mainwindowviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|c:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\wpf_map_test_blue\\views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|solutionrelative:views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|c:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\wpf_map_test_blue\\viewmodels\\graphpointviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|solutionrelative:viewmodels\\graphpointviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|c:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\wpf_map_test_blue\\viewmodels\\trainsideviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|solutionrelative:viewmodels\\trainsideviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|c:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\wpf_map_test_blue\\popups\\adminsettingspopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -51,28 +83,12 @@
       "RelativeMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|solutionrelative:services\\interfaces\\iadminsettingsdialogservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|c:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\wpf_map_test_blue\\views\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|solutionrelative:views\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|c:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\wpf_map_test_blue\\views\\controls\\trainbpanel.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|solutionrelative:views\\controls\\trainbpanel.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|c:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\wpf_map_test_blue\\views\\controls\\trainapanel.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|solutionrelative:views\\controls\\trainapanel.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|c:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\wpf_map_test_blue\\views\\controls\\mappanel.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|solutionrelative:views\\controls\\mappanel.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|c:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\wpf_map_test_blue\\services\\apiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|solutionrelative:services\\apiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|c:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\wpf_map_test_blue\\views\\controls\\headerpanel.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|solutionrelative:views\\controls\\headerpanel.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|c:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\wpf_map_test_blue\\views\\controls\\headerpanel.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -93,10 +109,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|c:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\wpf_map_test_blue\\services\\buttonalertdialogservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|solutionrelative:services\\buttonalertdialogservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|c:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\wpf_map_test_blue\\popups\\passwordpopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|solutionrelative:popups\\passwordpopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|c:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\wpf_map_test_blue\\services\\interfaces\\ibuttonalertdialogservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -131,10 +143,6 @@
       "RelativeMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|solutionrelative:popups\\buttonalertpopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|c:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\wpf_map_test_blue\\popups\\passwordpopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|solutionrelative:popups\\passwordpopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|c:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\wpf_map_test_blue\\map.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
       "RelativeMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|solutionrelative:map.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     },
@@ -155,14 +163,6 @@
       "RelativeMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|solutionrelative:views\\controls\\alertpanel.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|c:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\wpf_map_test_blue\\services\\passworddialogservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|solutionrelative:services\\passworddialogservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|c:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\wpf_map_test_blue\\services\\interfaces\\ipassworddialogservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|solutionrelative:services\\interfaces\\ipassworddialogservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|c:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\wpf_map_test_blue\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{C57E4CB3-C31C-49A5-BA8C-C5B23095475B}|Map.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
@@ -174,201 +174,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Views\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "Views\\MainWindow.xaml",
-              "ToolTip": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Views\\MainWindow.xaml",
-              "RelativeToolTip": "Views\\MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-01-06T04:52:24.461Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SideAlertSettings.cs",
-              "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Models\\SideAlertSettings.cs",
-              "RelativeDocumentMoniker": "Models\\SideAlertSettings.cs",
-              "ToolTip": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Models\\SideAlertSettings.cs",
-              "RelativeToolTip": "Models\\SideAlertSettings.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAACIAAAANAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "PasswordDialogService.cs",
+              "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Services\\PasswordDialogService.cs",
+              "RelativeDocumentMoniker": "Services\\PasswordDialogService.cs",
+              "ToolTip": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Services\\PasswordDialogService.cs",
+              "RelativeToolTip": "Services\\PasswordDialogService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-18T06:03:08.993Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SetDataRequest.cs",
-              "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Models\\SetDataRequest.cs",
-              "RelativeDocumentMoniker": "Models\\SetDataRequest.cs",
-              "ToolTip": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Models\\SetDataRequest.cs",
-              "RelativeToolTip": "Models\\SetDataRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-07T08:19:29.314Z",
+              "WhenOpened": "2026-01-09T01:46:48.186Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "GpsResponse.cs",
-              "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Models\\GpsResponse.cs",
-              "RelativeDocumentMoniker": "Models\\GpsResponse.cs",
-              "ToolTip": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Models\\GpsResponse.cs",
-              "RelativeToolTip": "Models\\GpsResponse.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-07T08:19:38.281Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AdminSettingsPopup.xaml",
-              "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Popups\\AdminSettingsPopup.xaml",
-              "RelativeDocumentMoniker": "Popups\\AdminSettingsPopup.xaml",
-              "ToolTip": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Popups\\AdminSettingsPopup.xaml",
-              "RelativeToolTip": "Popups\\AdminSettingsPopup.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-03-18T06:06:26.901Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "GraphPointViewModel.cs",
-              "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\ViewModels\\GraphPointViewModel.cs",
-              "RelativeDocumentMoniker": "ViewModels\\GraphPointViewModel.cs",
-              "ToolTip": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\ViewModels\\GraphPointViewModel.cs",
-              "RelativeToolTip": "ViewModels\\GraphPointViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-09T01:56:29.582Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "TrainSideViewModel.cs",
-              "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\ViewModels\\TrainSideViewModel.cs",
-              "RelativeDocumentMoniker": "ViewModels\\TrainSideViewModel.cs",
-              "ToolTip": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\ViewModels\\TrainSideViewModel.cs",
-              "RelativeToolTip": "ViewModels\\TrainSideViewModel.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAAAAEYAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-09T02:22:08.42Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MainWindowViewModel.cs",
-              "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\ViewModels\\MainWindowViewModel.cs",
-              "RelativeDocumentMoniker": "ViewModels\\MainWindowViewModel.cs",
-              "ToolTip": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\ViewModels\\MainWindowViewModel.cs",
-              "RelativeToolTip": "ViewModels\\MainWindowViewModel.cs",
-              "ViewState": "AgIAAOgAAAAAAAAAAAAAAPsAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-09T02:24:31.656Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "AdminSettingsPopup.xaml.cs",
-              "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Popups\\AdminSettingsPopup.xaml.cs",
-              "RelativeDocumentMoniker": "Popups\\AdminSettingsPopup.xaml.cs",
-              "ToolTip": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Popups\\AdminSettingsPopup.xaml.cs",
-              "RelativeToolTip": "Popups\\AdminSettingsPopup.xaml.cs",
-              "ViewState": "AgIAAGgAAAAAAAAAAAAAAHYAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-18T06:07:50.721Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "DataResponse.cs",
-              "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Models\\DataResponse.cs",
-              "RelativeDocumentMoniker": "Models\\DataResponse.cs",
-              "ToolTip": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Models\\DataResponse.cs",
-              "RelativeToolTip": "Models\\DataResponse.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-07T08:19:21.742Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "AdminSettingsDialogService.cs",
-              "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Services\\AdminSettingsDialogService.cs",
-              "RelativeDocumentMoniker": "Services\\AdminSettingsDialogService.cs",
-              "ToolTip": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Services\\AdminSettingsDialogService.cs",
-              "RelativeToolTip": "Services\\AdminSettingsDialogService.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAAABUAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-18T06:04:40.138Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "IAdminSettingsDialogService.cs",
-              "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Services\\Interfaces\\IAdminSettingsDialogService.cs",
-              "RelativeDocumentMoniker": "Services\\Interfaces\\IAdminSettingsDialogService.cs",
-              "ToolTip": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Services\\Interfaces\\IAdminSettingsDialogService.cs",
-              "RelativeToolTip": "Services\\Interfaces\\IAdminSettingsDialogService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-18T06:04:08.242Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Views\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "Views\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Views\\MainWindow.xaml.cs",
-              "RelativeToolTip": "Views\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-03T06:22:56.644Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "TrainBPanel.xaml",
-              "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Views\\Controls\\TrainBPanel.xaml",
-              "RelativeDocumentMoniker": "Views\\Controls\\TrainBPanel.xaml",
-              "ToolTip": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Views\\Controls\\TrainBPanel.xaml",
-              "RelativeToolTip": "Views\\Controls\\TrainBPanel.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-01-11T14:06:44.621Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "MapPanel.xaml",
-              "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Views\\Controls\\MapPanel.xaml",
-              "RelativeDocumentMoniker": "Views\\Controls\\MapPanel.xaml",
-              "ToolTip": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Views\\Controls\\MapPanel.xaml",
-              "RelativeToolTip": "Views\\Controls\\MapPanel.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-01-07T03:48:50.106Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
               "Title": "TrainAPanel.xaml",
               "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Views\\Controls\\TrainAPanel.xaml",
               "RelativeDocumentMoniker": "Views\\Controls\\TrainAPanel.xaml",
@@ -380,19 +203,108 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "ApiClient.cs",
-              "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Services\\ApiClient.cs",
-              "RelativeDocumentMoniker": "Services\\ApiClient.cs",
-              "ToolTip": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Services\\ApiClient.cs",
-              "RelativeToolTip": "Services\\ApiClient.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAIwDgAAABbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-07T05:47:12.023Z"
+              "DocumentIndex": 2,
+              "Title": "TrainBPanel.xaml",
+              "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Views\\Controls\\TrainBPanel.xaml",
+              "RelativeDocumentMoniker": "Views\\Controls\\TrainBPanel.xaml",
+              "ToolTip": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Views\\Controls\\TrainBPanel.xaml",
+              "RelativeToolTip": "Views\\Controls\\TrainBPanel.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-01-11T14:06:44.621Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 0,
+              "Title": "MainWindowViewModel.cs",
+              "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\ViewModels\\MainWindowViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\MainWindowViewModel.cs",
+              "ToolTip": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\ViewModels\\MainWindowViewModel.cs",
+              "RelativeToolTip": "ViewModels\\MainWindowViewModel.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-09T02:24:31.656Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TrainSideViewModel.cs",
+              "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\ViewModels\\TrainSideViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\TrainSideViewModel.cs",
+              "ToolTip": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\ViewModels\\TrainSideViewModel.cs",
+              "RelativeToolTip": "ViewModels\\TrainSideViewModel.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAAACgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-09T02:22:08.42Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IPasswordDialogService.cs",
+              "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Services\\Interfaces\\IPasswordDialogService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\IPasswordDialogService.cs",
+              "ToolTip": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Services\\Interfaces\\IPasswordDialogService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\IPasswordDialogService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-09T01:44:19.394Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Views\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Views\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Views\\MainWindow.xaml.cs",
+              "RelativeToolTip": "Views\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T06:22:56.644Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PasswordPopup.xaml.cs",
+              "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Popups\\PasswordPopup.xaml.cs",
+              "RelativeDocumentMoniker": "Popups\\PasswordPopup.xaml.cs",
+              "ToolTip": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Popups\\PasswordPopup.xaml.cs",
+              "RelativeToolTip": "Popups\\PasswordPopup.xaml.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAQwDAAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-17T05:59:43.035Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PasswordPopup.xaml",
+              "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Popups\\PasswordPopup.xaml",
+              "RelativeDocumentMoniker": "Popups\\PasswordPopup.xaml",
+              "ToolTip": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Popups\\PasswordPopup.xaml",
+              "RelativeToolTip": "Popups\\PasswordPopup.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-17T05:23:07.671Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Views\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "Views\\MainWindow.xaml",
+              "ToolTip": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Views\\MainWindow.xaml",
+              "RelativeToolTip": "Views\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-01-06T04:52:24.461Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "HeaderPanel.xaml",
               "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Views\\Controls\\HeaderPanel.xaml",
               "RelativeDocumentMoniker": "Views\\Controls\\HeaderPanel.xaml",
@@ -404,7 +316,139 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AdminSettingsPopup.xaml",
+              "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Popups\\AdminSettingsPopup.xaml",
+              "RelativeDocumentMoniker": "Popups\\AdminSettingsPopup.xaml",
+              "ToolTip": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Popups\\AdminSettingsPopup.xaml",
+              "RelativeToolTip": "Popups\\AdminSettingsPopup.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-03-18T06:06:26.901Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "GpsResponse.cs",
+              "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Models\\GpsResponse.cs",
+              "RelativeDocumentMoniker": "Models\\GpsResponse.cs",
+              "ToolTip": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Models\\GpsResponse.cs",
+              "RelativeToolTip": "Models\\GpsResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-07T08:19:38.281Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "SetDataRequest.cs",
+              "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Models\\SetDataRequest.cs",
+              "RelativeDocumentMoniker": "Models\\SetDataRequest.cs",
+              "ToolTip": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Models\\SetDataRequest.cs",
+              "RelativeToolTip": "Models\\SetDataRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-07T08:19:29.314Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "SideAlertSettings.cs",
+              "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Models\\SideAlertSettings.cs",
+              "RelativeDocumentMoniker": "Models\\SideAlertSettings.cs",
+              "ToolTip": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Models\\SideAlertSettings.cs",
+              "RelativeToolTip": "Models\\SideAlertSettings.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAACQAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T06:03:08.993Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "GraphPointViewModel.cs",
+              "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\ViewModels\\GraphPointViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\GraphPointViewModel.cs",
+              "ToolTip": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\ViewModels\\GraphPointViewModel.cs",
+              "RelativeToolTip": "ViewModels\\GraphPointViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-09T01:56:29.582Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AdminSettingsPopup.xaml.cs",
+              "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Popups\\AdminSettingsPopup.xaml.cs",
+              "RelativeDocumentMoniker": "Popups\\AdminSettingsPopup.xaml.cs",
+              "ToolTip": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Popups\\AdminSettingsPopup.xaml.cs",
+              "RelativeToolTip": "Popups\\AdminSettingsPopup.xaml.cs",
+              "ViewState": "AgIAAGgAAAAAAAAAAAAAAHYAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T06:07:50.721Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "DataResponse.cs",
+              "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Models\\DataResponse.cs",
+              "RelativeDocumentMoniker": "Models\\DataResponse.cs",
+              "ToolTip": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Models\\DataResponse.cs",
+              "RelativeToolTip": "Models\\DataResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-07T08:19:21.742Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 18,
+              "Title": "AdminSettingsDialogService.cs",
+              "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Services\\AdminSettingsDialogService.cs",
+              "RelativeDocumentMoniker": "Services\\AdminSettingsDialogService.cs",
+              "ToolTip": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Services\\AdminSettingsDialogService.cs",
+              "RelativeToolTip": "Services\\AdminSettingsDialogService.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAABUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T06:04:40.138Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "IAdminSettingsDialogService.cs",
+              "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Services\\Interfaces\\IAdminSettingsDialogService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\IAdminSettingsDialogService.cs",
+              "ToolTip": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Services\\Interfaces\\IAdminSettingsDialogService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\IAdminSettingsDialogService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T06:04:08.242Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "MapPanel.xaml",
+              "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Views\\Controls\\MapPanel.xaml",
+              "RelativeDocumentMoniker": "Views\\Controls\\MapPanel.xaml",
+              "ToolTip": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Views\\Controls\\MapPanel.xaml",
+              "RelativeToolTip": "Views\\Controls\\MapPanel.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-01-07T03:48:50.106Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ApiClient.cs",
+              "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Services\\ApiClient.cs",
+              "RelativeDocumentMoniker": "Services\\ApiClient.cs",
+              "ToolTip": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Services\\ApiClient.cs",
+              "RelativeToolTip": "Services\\ApiClient.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAIwDgAAABbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-07T05:47:12.023Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
               "Title": "HeaderPanel.xaml.cs",
               "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Views\\Controls\\HeaderPanel.xaml.cs",
               "RelativeDocumentMoniker": "Views\\Controls\\HeaderPanel.xaml.cs",
@@ -416,7 +460,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 23,
               "Title": "ButtonAlertPopup.xaml",
               "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Popups\\ButtonAlertPopup.xaml",
               "RelativeDocumentMoniker": "Popups\\ButtonAlertPopup.xaml",
@@ -427,7 +471,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 24,
               "Title": "AlertPanel.xaml",
               "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Views\\Controls\\AlertPanel.xaml",
               "RelativeDocumentMoniker": "Views\\Controls\\AlertPanel.xaml",
@@ -439,7 +483,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 25,
               "Title": "AlertItemViewModel.cs",
               "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\ViewModels\\AlertItemViewModel.cs",
               "RelativeDocumentMoniker": "ViewModels\\AlertItemViewModel.cs",
@@ -451,7 +495,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 26,
               "Title": "ButtonAlertDialogService.cs",
               "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Services\\ButtonAlertDialogService.cs",
               "RelativeDocumentMoniker": "Services\\ButtonAlertDialogService.cs",
@@ -463,19 +507,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "PasswordPopup.xaml.cs",
-              "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Popups\\PasswordPopup.xaml.cs",
-              "RelativeDocumentMoniker": "Popups\\PasswordPopup.xaml.cs",
-              "ToolTip": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Popups\\PasswordPopup.xaml.cs",
-              "RelativeToolTip": "Popups\\PasswordPopup.xaml.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAwAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-17T05:59:43.035Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 27,
               "Title": "IButtonAlertDialogService.cs",
               "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Services\\Interfaces\\IButtonAlertDialogService.cs",
               "RelativeDocumentMoniker": "Services\\Interfaces\\IButtonAlertDialogService.cs",
@@ -487,7 +519,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 28,
               "Title": "IDangerDialogService.cs",
               "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Services\\Interfaces\\IDangerDialogService.cs",
               "RelativeDocumentMoniker": "Services\\Interfaces\\IDangerDialogService.cs",
@@ -499,7 +531,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 29,
               "Title": "IMovementProvider.cs",
               "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Services\\Interfaces\\IMovementProvider.cs",
               "RelativeDocumentMoniker": "Services\\Interfaces\\IMovementProvider.cs",
@@ -511,7 +543,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 30,
               "Title": "MapPanel.xaml.cs",
               "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Views\\Controls\\MapPanel.xaml.cs",
               "RelativeDocumentMoniker": "Views\\Controls\\MapPanel.xaml.cs",
@@ -523,7 +555,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 32,
               "Title": "DangerDialogService.cs",
               "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Services\\DangerDialogService.cs",
               "RelativeDocumentMoniker": "Services\\DangerDialogService.cs",
@@ -535,7 +567,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 31,
               "Title": "DangerPopup.xaml",
               "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Popups\\DangerPopup.xaml",
               "RelativeDocumentMoniker": "Popups\\DangerPopup.xaml",
@@ -546,7 +578,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 34,
               "Title": "ButtonAlertPopup.xaml.cs",
               "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Popups\\ButtonAlertPopup.xaml.cs",
               "RelativeDocumentMoniker": "Popups\\ButtonAlertPopup.xaml.cs",
@@ -558,7 +590,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 33,
               "Title": "DangerPopup.xaml.cs",
               "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Popups\\DangerPopup.xaml.cs",
               "RelativeDocumentMoniker": "Popups\\DangerPopup.xaml.cs",
@@ -570,18 +602,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "PasswordPopup.xaml",
-              "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Popups\\PasswordPopup.xaml",
-              "RelativeDocumentMoniker": "Popups\\PasswordPopup.xaml",
-              "ToolTip": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Popups\\PasswordPopup.xaml",
-              "RelativeToolTip": "Popups\\PasswordPopup.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-12-17T05:23:07.671Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 35,
               "Title": "Map",
               "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Map.csproj",
               "RelativeDocumentMoniker": "Map.csproj",
@@ -592,7 +613,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 36,
               "Title": "AssemblyInfo.cs",
               "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\AssemblyInfo.cs",
               "RelativeDocumentMoniker": "AssemblyInfo.cs",
@@ -604,7 +625,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 37,
               "Title": "TrainBPanel.xaml.cs",
               "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Views\\Controls\\TrainBPanel.xaml.cs",
               "RelativeDocumentMoniker": "Views\\Controls\\TrainBPanel.xaml.cs",
@@ -616,7 +637,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 38,
               "Title": "TrainAPanel.xaml.cs",
               "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Views\\Controls\\TrainAPanel.xaml.cs",
               "RelativeDocumentMoniker": "Views\\Controls\\TrainAPanel.xaml.cs",
@@ -628,7 +649,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 39,
               "Title": "AlertPanel.xaml.cs",
               "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Views\\Controls\\AlertPanel.xaml.cs",
               "RelativeDocumentMoniker": "Views\\Controls\\AlertPanel.xaml.cs",
@@ -637,30 +658,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-04T05:20:05.249Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "PasswordDialogService.cs",
-              "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Services\\PasswordDialogService.cs",
-              "RelativeDocumentMoniker": "Services\\PasswordDialogService.cs",
-              "ToolTip": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Services\\PasswordDialogService.cs",
-              "RelativeToolTip": "Services\\PasswordDialogService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-09T01:46:48.186Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "IPasswordDialogService.cs",
-              "DocumentMoniker": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Services\\Interfaces\\IPasswordDialogService.cs",
-              "RelativeDocumentMoniker": "Services\\Interfaces\\IPasswordDialogService.cs",
-              "ToolTip": "C:\\ean\\\uBB38\uACBD\uBAA8\uB178\uB808\uC77C\\WPF_MAP_TEST_BLUE\\Services\\Interfaces\\IPasswordDialogService.cs",
-              "RelativeToolTip": "Services\\Interfaces\\IPasswordDialogService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-09T01:44:19.394Z"
             },
             {
               "$type": "Document",

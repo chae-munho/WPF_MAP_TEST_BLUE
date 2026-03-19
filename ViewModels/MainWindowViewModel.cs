@@ -43,8 +43,7 @@ namespace Map.ViewModels
         private int _prevEmergencyA = 0;
         private int _prevEmergencyB = 0;    
 
-        private readonly ImageSource _lockImg;
-        private readonly ImageSource _unlockImg;
+       
 
         //화면 바인딩 대상 
         public TrainSideViewModel TrainA { get; } = new();
@@ -82,13 +81,6 @@ namespace Map.ViewModels
             _dangerDialog = dangerDialog; //주의경보 팝업
             _adminSettingsDialog = adminSettingsDialog;
 
-            _lockImg = new BitmapImage(new Uri("pack://application:,,,/Map;component/images/lock2.png"));
-            _unlockImg = new BitmapImage(new Uri("pack://application:,,,/Map;component/images/unlock.png"));
-
-
-            // 초기 Lock UI
-            TrainA.SetLockedUI(true, _lockImg, _unlockImg);
-            TrainB.SetLockedUI(true, _lockImg, _unlockImg);
 
             // dataTimer (getdata)
             _dataTimer.Interval = TimeSpan.FromSeconds(1);
@@ -408,21 +400,7 @@ namespace Map.ViewModels
         //Commands (RelayCommand) 
         //Lock 클릭: RelayCommand
         //Down/Up: Behaviors로 연결
-        [RelayCommand]
-        private void ToggleLockA()
-        {
-            if (TrainA.IsLocked)
-            {
-                if (!_passwordDialog.ShowPassword())
-                    return;
-
-                TrainA.SetLockedUI(false, _lockImg, _unlockImg);
-            }
-            else
-            {
-                TrainA.SetLockedUI(true, _lockImg, _unlockImg);
-            }
-        }
+        
         [RelayCommand]
         private void OpenAdminSettings()
         {
@@ -441,37 +419,21 @@ namespace Map.ViewModels
             AddAlert("[관리자 설정] 기준값이 변경되었습니다.");
         }
 
-        [RelayCommand]
-        private void ToggleLockB()
-        {
-            if (TrainB.IsLocked)
-            {
-                if (!_passwordDialog.ShowPassword())
-                    return;
-
-                TrainB.SetLockedUI(false, _lockImg, _unlockImg);
-            }
-            else
-            {
-                TrainB.SetLockedUI(true, _lockImg, _unlockImg);
-            }
-        }
+      
 
         //A면 가속 감속 정지 이벤트 핸들러 시작
 
         // A면 버튼
         [RelayCommand]
         private async Task TrainAForwardDown()
-        {
-            if (TrainA.IsLocked) return;
+        {   
             await SendSetDataAsync(1, 1, 1);
         }
 
         [RelayCommand]
         private async Task TrainAForwardUp()
         {
-            if (TrainA.IsLocked) return;
-
+           
             AddAlert("기차1 A면에서 가속 버튼이 눌렸습니다");
 
             bool ok = _buttonAlertDialog.ShowMessage("기차1 A면에서 가속 버튼이 눌렸습니다");
@@ -483,7 +445,7 @@ namespace Map.ViewModels
         [RelayCommand]
         private async Task TrainABackwardDown()
         {
-            if (TrainA.IsLocked) return;
+           
 
             await SendSetDataAsync(2, 1, 1);
         }
@@ -491,7 +453,7 @@ namespace Map.ViewModels
         [RelayCommand]
         private async Task TrainABackwardUp()
         {
-            if (TrainA.IsLocked) return;
+           
 
             AddAlert("기차1 A면에서 감속 버튼이 눌렸습니다");
 
@@ -504,7 +466,7 @@ namespace Map.ViewModels
         [RelayCommand]
         private async Task TrainABreakDown()
         {
-            if (TrainA.IsLocked) return;
+           
 
             await SendSetDataAsync(3, 1, 1);
         }
@@ -512,7 +474,7 @@ namespace Map.ViewModels
         [RelayCommand]
         private async Task TrainABreakUp()
         {
-            if (TrainA.IsLocked) return;
+           
 
             AddAlert("기차1 A면에서 정지버튼이 눌렸습니다");
 
@@ -526,16 +488,12 @@ namespace Map.ViewModels
         [RelayCommand]
         private async Task TrainBForwardDown()
         {
-            if (TrainB.IsLocked) return;
-
             await SendSetDataAsync(1, 1, 2);
         }
 
         [RelayCommand]
         private async Task TrainBForwardUp()
         {
-            if (TrainB.IsLocked) return;
-
             AddAlert("기차1 B면에서 가속 버튼이 눌렸습니다");
 
             bool ok = _buttonAlertDialog.ShowMessage("기차1 B면에서 가속 버튼이 눌렸습니다");
@@ -547,15 +505,13 @@ namespace Map.ViewModels
         [RelayCommand]
         private async Task TrainBBackwardDown()
         {
-            if (TrainB.IsLocked) return;
-
             await SendSetDataAsync(2, 1, 2);
         }
 
         [RelayCommand]
         private async Task TrainBBackwardUp()
         {
-            if (TrainB.IsLocked) return;
+          
 
             AddAlert("기차1 B면에서 감속 버튼이 눌렸습니다");
 
@@ -568,7 +524,7 @@ namespace Map.ViewModels
         [RelayCommand]
         private async Task TrainBBreakDown()
         {
-            if (TrainB.IsLocked) return;
+           
 
             await SendSetDataAsync(3, 1, 2);
         }
@@ -576,7 +532,7 @@ namespace Map.ViewModels
         [RelayCommand]
         private async Task TrainBBreakUp()
         {
-            if (TrainB.IsLocked) return;
+           
 
             AddAlert("기차1 B면에서 정지버튼이 눌렸습니다");
 

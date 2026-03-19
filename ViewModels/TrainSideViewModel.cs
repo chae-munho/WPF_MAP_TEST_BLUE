@@ -22,12 +22,7 @@ namespace Map.ViewModels
         [ObservableProperty] private Geometry? gaugeClip;
 
      
-        // Lock 상태 / UI
-        [ObservableProperty] private bool isLocked = true;
-        [ObservableProperty] private ImageSource? lockIcon;
-
-        [ObservableProperty] private bool controlsEnabled = false;
-        [ObservableProperty] private double controlsOpacity = 0.4;
+       
 
       
         // 회전(원형 이미지)
@@ -43,14 +38,7 @@ namespace Map.ViewModels
 
         private const double BAR_MAX_WIDTH = 350.0;
 
-        public void SetLockedUI(bool locked, ImageSource lockedIcon, ImageSource unlockedIcon)
-        {
-            IsLocked = locked;
-            LockIcon = locked ? lockedIcon : unlockedIcon;
-
-            ControlsEnabled = !locked;
-            ControlsOpacity = locked ? 0.4 : 1.0;
-        }
+     
 
         // 전압(0~350) -> bar width(0~350)
         public void UpdateVoltageBar(int v)
