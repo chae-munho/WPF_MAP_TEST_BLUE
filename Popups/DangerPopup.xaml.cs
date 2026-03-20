@@ -12,7 +12,7 @@ namespace Map.Popups
 
         private void Confirm_Click(object sender, RoutedEventArgs e)
         {
-            DialogResult = true;
+            this.Close();   
         }
     }
 }

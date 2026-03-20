@@ -20,7 +20,7 @@ namespace Map.Services
                 Owner = _owner
             };
 
-            popup.ShowDialog();
+            popup.Show();
         }
     }
 }
