@@ -108,9 +108,9 @@ namespace Map.ViewModels
             try
             {
                 var data = await _api.GetDataAsync();
-                if (data == null) return;
+                if (data == null || string.IsNullOrWhiteSpace(data.argument))
+                    return;
 
-                //실패 -> 성공으로 바뀌는 순간에만 알림
                 if (_getDataLastOk != true)
                 {
                     AddAlert("[GET] 수신 성공");
@@ -118,6 +118,10 @@ namespace Map.ViewModels
                 }
 
                 string[] arr = data.argument.Split(',');
+
+                if (arr.Length < 94)
+                    return;
+
                 UpdateDashboard(arr);
             }
             catch (Exception ex)
