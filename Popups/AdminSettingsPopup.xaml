@@ -23,10 +23,55 @@
                 <ColumnDefinition Width="20"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
+            <!-- A면 -->
+            <GroupBox Grid.Column="0"
+           Header="가은역 방면 알람 설정"
+           Foreground="White"
+           FontSize="16"
+           FontWeight="Bold"
+           Padding="10"
+           BorderBrush="#4CC3FF">
+                <Grid Margin="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="120"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="100"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="35"/>
+                        <RowDefinition Height="35"/>
+                        <RowDefinition Height="35"/>
+                        <RowDefinition Height="35"/>
+                        <RowDefinition Height="35"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="항목" Foreground="White" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Row="0" Grid.Column="1" Text="MIN(최소)" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBlock Grid.Row="0" Grid.Column="3" Text="MAX(최대)" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="전압" Foreground="White" VerticalAlignment="Center"/>
+                    <TextBox x:Name="AVoltageMinTextBox" Grid.Row="1" Grid.Column="1" Margin="0,3"/>
+                    <TextBox x:Name="AVoltageMaxTextBox" Grid.Row="1" Grid.Column="3" Margin="0,3"/>
+
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="전류" Foreground="White" VerticalAlignment="Center"/>
+                    <TextBox x:Name="ACurrentMinTextBox" Grid.Row="2" Grid.Column="1" Margin="0,3"/>
+                    <TextBox x:Name="ACurrentMaxTextBox" Grid.Row="2" Grid.Column="3" Margin="0,3"/>
+
+                    <TextBlock Grid.Row="3" Grid.Column="0" Text="배터리용량" Foreground="White" VerticalAlignment="Center"/>
+                    <TextBox x:Name="ABatteryMinTextBox" Grid.Row="3" Grid.Column="1" Margin="0,3"/>
+                    <TextBox x:Name="ABatteryMaxTextBox" Grid.Row="3" Grid.Column="3" Margin="0,3" IsEnabled="False"/>
+
+                    <TextBlock Grid.Row="4" Grid.Column="0" Text="배터리온도" Foreground="White" VerticalAlignment="Center"/>
+                    <TextBox x:Name="ABatteryTempMinTextBox" Grid.Row="4" Grid.Column="1" Margin="0,3"/>
+                    <TextBox x:Name="ABatteryTempMaxTextBox" Grid.Row="4" Grid.Column="3" Margin="0,3"/>
+                </Grid>
+            </GroupBox>
 
             <!-- B면 -->
-            <GroupBox Grid.Column="0"
-                      Header="B면 설정"
+            <GroupBox Grid.Column="2"
+                      Header="구량리역 방면 알람 설정"
                       Foreground="White"
                       FontSize="16"
                       FontWeight="Bold"
@@ -70,51 +115,7 @@
                 </Grid>
             </GroupBox>
 
-            <!-- A면 -->
-            <GroupBox Grid.Column="2"
-                      Header="A면 설정"
-                      Foreground="White"
-                      FontSize="16"
-                      FontWeight="Bold"
-                      Padding="10"
-                      BorderBrush="#4CC3FF">
-                <Grid Margin="10">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="120"/>
-                        <ColumnDefinition Width="100"/>
-                        <ColumnDefinition Width="20"/>
-                        <ColumnDefinition Width="100"/>
-                    </Grid.ColumnDefinitions>
-
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="35"/>
-                        <RowDefinition Height="35"/>
-                        <RowDefinition Height="35"/>
-                        <RowDefinition Height="35"/>
-                        <RowDefinition Height="35"/>
-                    </Grid.RowDefinitions>
-
-                    <TextBlock Grid.Row="0" Grid.Column="0" Text="항목" Foreground="White" VerticalAlignment="Center"/>
-                    <TextBlock Grid.Row="0" Grid.Column="1" Text="MIN(최소)" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <TextBlock Grid.Row="0" Grid.Column="3" Text="MAX(최대)" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-
-                    <TextBlock Grid.Row="1" Grid.Column="0" Text="전압" Foreground="White" VerticalAlignment="Center"/>
-                    <TextBox x:Name="AVoltageMinTextBox" Grid.Row="1" Grid.Column="1" Margin="0,3"/>
-                    <TextBox x:Name="AVoltageMaxTextBox" Grid.Row="1" Grid.Column="3" Margin="0,3"/>
-
-                    <TextBlock Grid.Row="2" Grid.Column="0" Text="전류" Foreground="White" VerticalAlignment="Center"/>
-                    <TextBox x:Name="ACurrentMinTextBox" Grid.Row="2" Grid.Column="1" Margin="0,3"/>
-                    <TextBox x:Name="ACurrentMaxTextBox" Grid.Row="2" Grid.Column="3" Margin="0,3"/>
-
-                    <TextBlock Grid.Row="3" Grid.Column="0" Text="배터리용량" Foreground="White" VerticalAlignment="Center"/>
-                    <TextBox x:Name="ABatteryMinTextBox" Grid.Row="3" Grid.Column="1" Margin="0,3"/>
-                    <TextBox x:Name="ABatteryMaxTextBox" Grid.Row="3" Grid.Column="3" Margin="0,3" IsEnabled="False"/>
-
-                    <TextBlock Grid.Row="4" Grid.Column="0" Text="배터리온도" Foreground="White" VerticalAlignment="Center"/>
-                    <TextBox x:Name="ABatteryTempMinTextBox" Grid.Row="4" Grid.Column="1" Margin="0,3"/>
-                    <TextBox x:Name="ABatteryTempMaxTextBox" Grid.Row="4" Grid.Column="3" Margin="0,3"/>
-                </Grid>
-            </GroupBox>
+           
         </Grid>
 
         <StackPanel Grid.Row="1"
