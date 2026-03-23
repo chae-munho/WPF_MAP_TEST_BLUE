@@ -16,7 +16,7 @@ namespace Map.ViewModels
 {
     public partial class MainWindowViewModel : ObservableObject, IDisposable
     {
-        private readonly ApiClient _api;
+        private readonly TrainWebSocketServerService _wsServer;
         private IMovementProvider? _movement;
 
         private readonly IPasswordDialogService _passwordDialog;
@@ -69,13 +69,13 @@ namespace Map.ViewModels
         public SideAlertSettings ASettings { get; private set; } = SideAlertSettings.CreateDefaultA();
 
         public MainWindowViewModel(
-            ApiClient api,
+            TrainWebSocketServerService wsServer,
             IPasswordDialogService passwordDialog,
             IButtonAlertDialogService buttonAlertDialog,
             IDangerDialogService dangerDialog,
             IAdminSettingsDialogService adminSettingsDialog)
         {
-            _api = api;
+            _wsServer = wsServer;
             _passwordDialog = passwordDialog; //패스워드 팝업
             _buttonAlertDialog = buttonAlertDialog; //가속 감속 정지 팝업
             _dangerDialog = dangerDialog; //주의경보 팝업
@@ -107,7 +107,7 @@ namespace Map.ViewModels
 
             try
             {
-                var data = await _api.GetDataAsync();
+                var data = await _wsServer.GetDataAsync();
                 if (data == null || string.IsNullOrWhiteSpace(data.argument))
                     return;
 
@@ -569,7 +569,7 @@ namespace Map.ViewModels
         {
             try
             {   //train : A면인지 B면인지, op : 전진 후진 정지 긴급(삭제된 기능), value : 누름, 뗌 상태(1, 0)
-                await _api.PostSetDataAsync(operation, value, train);
+                await _wsServer.PostSetDataAsync(operation, value, train);
                 AddAlert($"[SET] 전송 성공 (train={train}, op={operation}, value={value})");
 
 

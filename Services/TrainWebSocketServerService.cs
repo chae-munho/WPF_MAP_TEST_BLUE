@@ -18,7 +18,7 @@ namespace Map.Services
     /// 기존 UI 코드와의 호환을 위해
     /// GetDataAsync / GetNextPosAsync / PostSetDataAsync 형태는 그대로 유지한다.
     /// </summary>
-    public sealed class ApiClient : IDisposable
+    public sealed class TrainWebSocketServerService : IDisposable
     {
         private readonly HttpListener _listener = new();
         private readonly CancellationTokenSource _cts = new();
@@ -46,7 +46,7 @@ namespace Map.Services
 
         public event Action<string>? LogReceived;
 
-        public ApiClient(string baseUrl)
+        public TrainWebSocketServerService(string baseUrl)
         {
             if (string.IsNullOrWhiteSpace(baseUrl))
                 throw new ArgumentException("baseUrl is required.", nameof(baseUrl));

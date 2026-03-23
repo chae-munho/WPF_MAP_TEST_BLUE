@@ -29,7 +29,7 @@ namespace Map.Views.Controls
         //지도/캔버스 + 경로 + GPS + 이동 + 포인터/이펙트 + 회전/방향/각도 + 상태 복원/재실행 관련 필드 시작
 
 
-        private ApiClient? _api;
+        private TrainWebSocketServerService? _wsServer;
         //포인터 이미지
         private Image? pointerImage;
         //활성화 이미지
@@ -395,9 +395,9 @@ namespace Map.Views.Controls
         //지도/캔버스 + 경로 + GPS + 이동 + 포인터/이펙트 + 회전/방향/각도 + 상태 복원/재실행 관련 메서드 선언 시작
 
         //MainWindow.xaml.cs에서 http client 주입받기
-        public void SetApi(ApiClient api)
+        public void SetApi(TrainWebSocketServerService wsServer)
         {
-            _api = api;
+            _wsServer = wsServer;
         }
         // 포인터(기차 아이콘) 배치      
         private void PlacePointer(double x, double y)
@@ -892,9 +892,8 @@ namespace Map.Views.Controls
 
             try
             {
-                if (_api == null) return; // 아직 주입 안됐으면 무시
-
-                var data = await _api.GetNextPosAsync();
+                if (_wsServer == null) return;
+                var data = await _wsServer.GetNextPosAsync();
                 if (data == null) return;
 
                 bool forceSnap = gpsWasStale;
