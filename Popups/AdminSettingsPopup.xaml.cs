@@ -1,17 +1,20 @@
 ﻿using Map.Models;
+using System;
 using System.Windows;
 
 namespace Map.Views.Popups
 {
     public partial class AdminSettingsPopup : Window
     {
+        public string ServerBaseUrl { get; private set; } = "";
         public SideAlertSettings BSettings { get; private set; }
         public SideAlertSettings ASettings { get; private set; }
 
-        public AdminSettingsPopup(SideAlertSettings bSettings, SideAlertSettings aSettings)
+        public AdminSettingsPopup(string serverBaseUrl, SideAlertSettings bSettings, SideAlertSettings aSettings)
         {
             InitializeComponent();
 
+            ServerBaseUrl = serverBaseUrl;
             BSettings = bSettings;
             ASettings = aSettings;
 
@@ -20,6 +23,8 @@ namespace Map.Views.Popups
 
         private void LoadSettingsToUi()
         {
+            ServerBaseUrlTextBox.Text = ServerBaseUrl;
+
             BVoltageMinTextBox.Text = BSettings.VoltageMin.ToString();
             BVoltageMaxTextBox.Text = BSettings.VoltageMax.ToString();
             BCurrentMinTextBox.Text = BSettings.CurrentMin.ToString();
@@ -50,6 +55,18 @@ namespace Map.Views.Popups
 
         private bool TryReadSettings()
         {
+            string inputUrl = ServerBaseUrlTextBox.Text.Trim();
+
+            if (!Uri.TryCreate(inputUrl, UriKind.Absolute, out Uri? uri) ||
+                (uri.Scheme != Uri.UriSchemeHttp && uri.Scheme != Uri.UriSchemeHttps))
+            {
+                MessageBox.Show("서버 주소 형식이 올바르지 않습니다.\n예: http://192.168.0.173:5090",
+                    "입력 오류", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return false;
+            }
+
+            string normalizedBaseUrl = uri.GetLeftPart(UriPartial.Authority);
+
             if (!TryParseSideSettings(
                     BVoltageMinTextBox.Text, BVoltageMaxTextBox.Text,
                     BCurrentMinTextBox.Text, BCurrentMaxTextBox.Text,
@@ -72,6 +89,7 @@ namespace Map.Views.Popups
                 return false;
             }
 
+            ServerBaseUrl = normalizedBaseUrl;
             BSettings = bSettings;
             ASettings = aSettings;
             return true;
@@ -86,29 +104,14 @@ namespace Map.Views.Popups
         {
             settings = new SideAlertSettings();
 
-            if (!int.TryParse(voltageMinText, out int voltageMin))
-                return false;
-
-            if (!int.TryParse(voltageMaxText, out int voltageMax))
-                return false;
-
-            if (!int.TryParse(currentMinText, out int currentMin))
-                return false;
-
-            if (!int.TryParse(currentMaxText, out int currentMax))
-                return false;
-
-            if (!int.TryParse(batteryMinText, out int batteryMin))
-                return false;
-
-            if (!int.TryParse(batteryMaxText, out int batteryMax))
-                return false;
-
-            if (!int.TryParse(batteryTempMinText, out int batteryTempMin))
-                return false;
-
-            if (!int.TryParse(batteryTempMaxText, out int batteryTempMax))
-                return false;
+            if (!int.TryParse(voltageMinText, out int voltageMin)) return false;
+            if (!int.TryParse(voltageMaxText, out int voltageMax)) return false;
+            if (!int.TryParse(currentMinText, out int currentMin)) return false;
+            if (!int.TryParse(currentMaxText, out int currentMax)) return false;
+            if (!int.TryParse(batteryMinText, out int batteryMin)) return false;
+            if (!int.TryParse(batteryMaxText, out int batteryMax)) return false;
+            if (!int.TryParse(batteryTempMinText, out int batteryTempMin)) return false;
+            if (!int.TryParse(batteryTempMaxText, out int batteryTempMax)) return false;
 
             if (voltageMin > voltageMax) return false;
             if (currentMin > currentMax) return false;

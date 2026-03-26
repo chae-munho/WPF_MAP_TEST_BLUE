@@ -45,13 +45,13 @@ namespace Map.Services
         private DateTime _latestPositionAt = DateTime.MinValue;
 
         public event Action<string>? LogReceived;
+        private string _baseUrl;
+        public string BaseUrl => _baseUrl;
 
         public TrainWebSocketServerService(string baseUrl)
         {
-            if (string.IsNullOrWhiteSpace(baseUrl))
-                throw new ArgumentException("baseUrl is required.", nameof(baseUrl));
-
-            var baseUri = new Uri(baseUrl.TrimEnd('/'));
+            _baseUrl = NormalizeBaseUrl(baseUrl);
+            var baseUri = new Uri(_baseUrl);
 
             _port = baseUri.Port;
             _wsPath = "/ws/train/";
@@ -440,6 +440,26 @@ namespace Map.Services
         // =========================
         // 유틸
         // =========================
+        private static string NormalizeBaseUrl(string baseUrl)
+        {
+            if (string.IsNullOrWhiteSpace(baseUrl))
+                throw new ArgumentException("baseUrl is required.", nameof(baseUrl));
+
+            return baseUrl.Trim().TrimEnd('/');
+        }
+        public void UpdateBaseUrl(string newBaseUrl)
+        {
+            string normalized = NormalizeBaseUrl(newBaseUrl);
+            var uri = new Uri(normalized);
+
+            if (uri.Port != _port)
+                throw new InvalidOperationException(
+                    $"현재 실행 중인 WebSocket 서버 포트는 {_port} 입니다. " +
+                    $"포트 변경({uri.Port})은 런타임 즉시 반영할 수 없습니다. 프로그램 재시작이 필요합니다.");
+
+            _baseUrl = normalized;
+            WriteLog($"BaseUrl 변경 적용: {_baseUrl}");
+        }
 
         private static async Task<string> ReceiveTextMessageAsync(WebSocket socket, byte[] buffer, CancellationToken token)
         {

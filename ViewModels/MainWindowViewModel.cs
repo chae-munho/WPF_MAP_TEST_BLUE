@@ -27,6 +27,11 @@ namespace Map.ViewModels
         private readonly DispatcherTimer _dataTimer = new();
         private readonly DispatcherTimer _rotateTimer = new();
 
+        private readonly IAppSettingsService _appSettingsService;
+        private readonly Action<string> _applyServerBaseUrl;
+
+        public string CurrentServerBaseUrl { get; private set; } = "";
+
         //기존 MainWindow.xaml.cs 
         private const double GAUGE_MIN = 0;
         private const double GAUGE_MAX = 30;   // 25에서 30으로 수정됨
@@ -73,21 +78,27 @@ namespace Map.ViewModels
             IPasswordDialogService passwordDialog,
             IButtonAlertDialogService buttonAlertDialog,
             IDangerDialogService dangerDialog,
-            IAdminSettingsDialogService adminSettingsDialog)
+            IAdminSettingsDialogService adminSettingsDialog,
+            IAppSettingsService appSettingsService,
+            AppSettings initialSettings,
+            Action<string> applyServerBaseUrl)
         {
             _wsServer = wsServer;
-            _passwordDialog = passwordDialog; //패스워드 팝업
-            _buttonAlertDialog = buttonAlertDialog; //가속 감속 정지 팝업
-            _dangerDialog = dangerDialog; //주의경보 팝업
+            _passwordDialog = passwordDialog;
+            _buttonAlertDialog = buttonAlertDialog;
+            _dangerDialog = dangerDialog;
             _adminSettingsDialog = adminSettingsDialog;
+            _appSettingsService = appSettingsService;
+            _applyServerBaseUrl = applyServerBaseUrl;
 
+            CurrentServerBaseUrl = initialSettings.ServerBaseUrl;
+            BSettings = initialSettings.BSettings?.Clone() ?? SideAlertSettings.CreateDefaultB();
+            ASettings = initialSettings.ASettings?.Clone() ?? SideAlertSettings.CreateDefaultA();
 
-            // dataTimer (getdata)
             _dataTimer.Interval = TimeSpan.FromSeconds(1);
             _dataTimer.Tick += async (_, __) => await DataTimerTickAsync();
             _dataTimer.Start();
 
-            // rotateTimer (원형회전 + 블랙막)
             _rotateTimer.Interval = TimeSpan.FromMilliseconds(16);
             _rotateTimer.Tick += (_, __) => RotateTimerTick();
             _rotateTimer.Start();
@@ -406,24 +417,48 @@ namespace Map.ViewModels
         //Down/Up: Behaviors로 연결
         
         [RelayCommand]
+
         private void OpenAdminSettings()
         {
             bool ok = _adminSettingsDialog.ShowDialog(
+                CurrentServerBaseUrl,
                 BSettings,
                 ASettings,
+                out string updatedServerBaseUrl,
                 out SideAlertSettings updatedBSettings,
                 out SideAlertSettings updatedASettings);
 
             if (!ok)
                 return;
 
-            BSettings = updatedBSettings;
-            ASettings = updatedASettings;
+            try
+            {
+                CurrentServerBaseUrl = updatedServerBaseUrl;
+                BSettings = updatedBSettings;
+                ASettings = updatedASettings;
 
-            AddAlert("[관리자 설정] 기준값이 변경되었습니다.");
+                var appSettings = new AppSettings
+                {
+                    ServerBaseUrl = CurrentServerBaseUrl,
+                    BSettings = BSettings.Clone(),
+                    ASettings = ASettings.Clone()
+                };
+
+                _appSettingsService.Save(appSettings);
+
+                // 저장 즉시 현재 통신 주소 반영
+                _applyServerBaseUrl(CurrentServerBaseUrl);
+
+                AddAlert("[관리자 설정] 서버 주소 및 기준값이 저장되었습니다.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"설정 저장 중 오류가 발생했습니다.\n{ex.Message}",
+                    "저장 오류", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
-      
+
         //down 메서드는 필요가 없을 거 같은데 일단 남겨둠
         //A면 가속 감속 정지 이벤트 핸들러 시작
 
