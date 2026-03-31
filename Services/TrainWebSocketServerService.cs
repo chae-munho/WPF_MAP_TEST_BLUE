@@ -11,13 +11,7 @@ using System.Threading.Tasks;
 
 namespace Map.Services
 {
-    /// <summary>
-    /// 관제 프로그램 내부에서 WebSocket 서버를 열고,
-    /// 기차가 보내는 telemetry / position / heartbeat / control_ack 를 수신한다.
-    ///
-    /// 기존 UI 코드와의 호환을 위해
-    /// GetDataAsync / GetNextPosAsync / PostSetDataAsync 형태는 그대로 유지한다.
-    /// </summary>
+   
     public sealed class TrainWebSocketServerService : IDisposable
     {
         private readonly HttpListener _listener = new();
@@ -78,11 +72,8 @@ namespace Map.Services
 
      
         // 기존 UI 호환용 API
-      
-
-        /// <summary>
         /// 최신 telemetry 캐시를 기존 DataResponse 형태로 제공
-        /// </summary>
+      
         public Task<DataResponse?> GetDataAsync(CancellationToken ct = default)
         {
             lock (_telemetryLock)
@@ -98,9 +89,9 @@ namespace Map.Services
             }
         }
 
-        /// <summary>
+       
         /// 최신 GPS 캐시를 기존 GpsResponse 형태로 제공
-        /// </summary>
+       
         public Task<GpsResponse?> GetNextPosAsync(CancellationToken ct = default)
         {
             lock (_positionLock)
@@ -117,9 +108,9 @@ namespace Map.Services
             }
         }
 
-        /// <summary>
+       
         /// 기존 setdata POST 대신 control 메시지를 WebSocket으로 전송
-        /// </summary>
+       
         public async Task PostSetDataAsync(int operation, int value, int train, CancellationToken ct = default)
         {
             string commandId = Guid.NewGuid().ToString("N");
@@ -142,9 +133,9 @@ namespace Map.Services
             WriteLog($"control 전송 완료: train={train}, op={operation}, value={value}, targets={sentCount}");
         }
 
-        // =========================
+    
         // WebSocket 서버 루프
-        // =========================
+    
 
         private async Task AcceptLoopAsync(CancellationToken token)
         {
@@ -271,7 +262,10 @@ namespace Map.Services
                             {
                                 session.ClientName = msg.ClientName;
                                 session.Role = msg.Role;
-                                WriteLog($"hello 수신: session={session.SessionId}, role={msg.Role}, name={msg.ClientName}");
+                                if (msg.Train > 0) {
+                                    session.ObservedTrainIds.TryAdd(msg.Train, 0);
+                                }
+                                WriteLog($"hello 수신: train={msg.Train}, session={session.SessionId}, role={msg.Role}, name={msg.ClientName}");
                             }
                             break;
                         }
@@ -287,17 +281,11 @@ namespace Map.Services
                                     _latestTelemetryAt = DateTime.Now;
                                 }
 
-                                // 현재 패킷 구조상 0번, 47번 인덱스는 각 면/열차 ID
-                                if (msg.Data.Length >= 48)
-                                {
-                                    int trainA = msg.Data[0];
-                                    int trainB = msg.Data[47];
+                                
+                                if (msg.Train > 0)
+                                    session.ObservedTrainIds.TryAdd(msg.Train, 0);
 
-                                    if (trainA > 0) session.ObservedTrainIds.TryAdd(trainA, 0);
-                                    if (trainB > 0) session.ObservedTrainIds.TryAdd(trainB, 0);
-                                }
-
-                                WriteLog($"telemetry 수신: session={session.SessionId}, len={msg.Data.Length}");
+                                WriteLog($"telemetry 수신: train={msg.Train}, session={session.SessionId}, len={msg.Data.Length}");
                             }
                             break;
                         }
@@ -332,8 +320,15 @@ namespace Map.Services
                     case "heartbeat":
                         {
                             WsHeartbeatMessage? msg = JsonSerializer.Deserialize<WsHeartbeatMessage>(json, _jsonOptions);
-                            session.LastHeartbeatAt = DateTime.Now;
-                            WriteLog($"heartbeat 수신: session={session.SessionId}");
+                            if (msg != null)
+                            {
+                                session.LastHeartbeatAt = DateTime.Now;
+
+                                if (msg.Train > 0)
+                                    session.ObservedTrainIds.TryAdd(msg.Train, 0);
+
+                                WriteLog($"heartbeat 수신: train={msg.Train}, session={session.SessionId}");
+                            }
                             break;
                         }
 
@@ -382,10 +377,7 @@ namespace Map.Services
             return successCount;
         }
 
-        /// <summary>
-        /// train ID를 이미 관찰한 세션이 있으면 그 세션으로만 보내고,
-        /// 없으면 연결된 모든 세션으로 브로드캐스트한다.
-        /// </summary>
+       // 이 제어 명령을 어느 기차 세션에 보낼지 고르는 역할
         private ClientSession[] GetTargetSessions(int train)
         {
             var all = _sessions.Values.ToArray();
@@ -404,6 +396,7 @@ namespace Map.Services
                 .ToArray();
         }
 
+       // 고른 세선 1개에 실제로 JSON 패킷을 보내는 역할
         private async Task<bool> SendToSessionAsync<T>(ClientSession session, T payload, CancellationToken ct)
         {
             if (session.Socket.State != WebSocketState.Open)
@@ -437,9 +430,9 @@ namespace Map.Services
             }
         }
 
-        // =========================
+       
         // 유틸
-        // =========================
+      
         private static string NormalizeBaseUrl(string baseUrl)
         {
             if (string.IsNullOrWhiteSpace(baseUrl))
