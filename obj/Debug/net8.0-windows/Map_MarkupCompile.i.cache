@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
 C:\ean\문경모노레일\WPF_MAP_TEST_BLUE\App.xaml
-101920460595
+11633046169
 21843156531
-41-64666610
+44-1522049361
 200-986391265
-Popups\AdminSettingsPopup.xaml;Popups\ButtonAlertPopup.xaml;Popups\DangerPopup.xaml;Popups\PasswordPopup.xaml;Views\Controls\AlertPanel.xaml;Views\Controls\HeaderPanel.xaml;Views\Controls\MapPanel.xaml;Views\Controls\TrainAPanel.xaml;Views\Controls\TrainBPanel.xaml;Views\MainWindow.xaml;
+Popups\AdminSettingsPopup.xaml;Popups\ButtonAlertPopup.xaml;Popups\CameraPopup.xaml;Popups\DangerPopup.xaml;Popups\PasswordPopup.xaml;Views\Controls\AlertPanel.xaml;Views\Controls\HeaderPanel.xaml;Views\Controls\MapPanel.xaml;Views\Controls\TrainAPanel.xaml;Views\Controls\TrainBPanel.xaml;Views\MainWindow.xaml;
 
 False
 

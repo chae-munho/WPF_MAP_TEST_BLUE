@@ -265,3 +265,5 @@ C:\ean\문경모노레일\WPF_MAP_TEST_BLUE\obj\Debug\net8.0-windows\Popups\Dang
 C:\ean\문경모노레일\WPF_MAP_TEST_BLUE\obj\Debug\net8.0-windows\Popups\DangerPopup.g.cs
 C:\ean\문경모노레일\WPF_MAP_TEST_BLUE\obj\Debug\net8.0-windows\Popups\AdminSettingsPopup.baml
 C:\ean\문경모노레일\WPF_MAP_TEST_BLUE\obj\Debug\net8.0-windows\Popups\AdminSettingsPopup.g.cs
+C:\ean\문경모노레일\WPF_MAP_TEST_BLUE\obj\Debug\net8.0-windows\Popups\CameraPopup.baml
+C:\ean\문경모노레일\WPF_MAP_TEST_BLUE\obj\Debug\net8.0-windows\Popups\CameraPopup.g.cs

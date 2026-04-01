@@ -1,0 +1,61 @@
+﻿<Window x:Class="Map.Popups.CameraPopup"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="관제 카메라 팝업"
+        Width="1100"
+        Height="680"
+        WindowStartupLocation="CenterOwner"
+        Background="#1E1E1E">
+    <Grid Margin="12">
+        <Border CornerRadius="10"
+                BorderBrush="#3A3A3A"
+                BorderThickness="1"
+                Background="Black"
+                Padding="10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0" Margin="0,0,0,10">
+                    <TextBlock x:Name="txtSelectedTitle"
+                               Text="호출 없음"
+                               Foreground="White"
+                               FontSize="26"
+                               FontWeight="Bold"/>
+                    <TextBlock x:Name="txtSelectedInfo"
+                               Text="-"
+                               Foreground="#BFBFBF"
+                               FontSize="12"
+                               TextTrimming="CharacterEllipsis"/>
+                </StackPanel>
+
+                <Border Grid.Row="1"
+                        CornerRadius="8"
+                        Background="Black"
+                        BorderBrush="#444444"
+                        BorderThickness="1">
+                    <Grid>
+                        <Image x:Name="imgVideo"
+                               Stretch="Uniform"/>
+                        <TextBlock x:Name="txtVideoPlaceholder"
+                                   Text="영상 수신 대기 중"
+                                   Foreground="#9A9A9A"
+                                   FontSize="24"
+                                   FontWeight="SemiBold"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"/>
+                    </Grid>
+                </Border>
+
+                <TextBlock Grid.Row="2"
+                           Margin="0,10,0,0"
+                           Foreground="#CFCFCF"
+                           FontSize="12"
+                           Text="기차에서 전송한 인터컴 카메라 영상을 표시합니다."/>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

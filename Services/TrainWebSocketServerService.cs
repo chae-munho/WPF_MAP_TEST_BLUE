@@ -39,6 +39,11 @@ namespace Map.Services
         private DateTime _latestPositionAt = DateTime.MinValue;
 
         public event Action<string>? LogReceived;
+
+        //영상 관련 필드
+        public event Action<WsVideoFrameMessage>? VideoFrameReceived;
+        public event Action<WsVideoStopMessage>? VideoStopReceived;
+
         private string _baseUrl;
         public string BaseUrl => _baseUrl;
 
@@ -341,12 +346,41 @@ namespace Map.Services
                             }
                             break;
                         }
+                    case "video_frame":
+                        {
+                            WsVideoFrameMessage? msg = JsonSerializer.Deserialize<WsVideoFrameMessage>(json, _jsonOptions);
+                            if (msg != null)
+                            {
+                                if (msg.Train > 0)
+                                    session.ObservedTrainIds.TryAdd(msg.Train, 0);
+
+                                WriteLog($"video_frame 수신: train={msg.Train}, car={msg.CarNo}, {msg.Width}x{msg.Height}");
+                                VideoFrameReceived?.Invoke(msg);
+                            }
+                            break;
+                        }
+
+                    case "video_stop":
+                        {
+                            WsVideoStopMessage? msg = JsonSerializer.Deserialize<WsVideoStopMessage>(json, _jsonOptions);
+                            if (msg != null)
+                            {
+                                if (msg.Train > 0)
+                                    session.ObservedTrainIds.TryAdd(msg.Train, 0);
+
+                                WriteLog($"video_stop 수신: train={msg.Train}");
+                                VideoStopReceived?.Invoke(msg);
+                            }
+                            break;
+                        }
+
 
                     case "pong":
                         {
                             WriteLog($"pong 수신: session={session.SessionId}");
                             break;
                         }
+
 
                     default:
                         WriteLog($"알 수 없는 메시지 수신: type={type}");
