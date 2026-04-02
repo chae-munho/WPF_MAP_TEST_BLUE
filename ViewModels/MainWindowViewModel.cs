@@ -234,45 +234,45 @@ namespace Map.ViewModels
         private void CheckAlertsA(int voltage, int output, int battery, int batteryTemp)
         {
             if (voltage < ASettings.VoltageMin)
-                AddAlert($"[A면] 저전압 발생 ({voltage}V)");
+                AddAlert($"가은역 방면 기관차 저전압 발생 ({voltage}V)");
             else if (voltage > ASettings.VoltageMax)
-                AddAlert($"[A면] 고전압 발생 ({voltage}V)");
+                AddAlert($"가은역 방면 기관차 고전압 발생 ({voltage}V)");
 
             if (output < ASettings.CurrentMin)
-                AddAlert($"[A면] 저전류 발생 ({output}A)");
+                AddAlert($"가은역 방면 기관차 저전류 발생 ({output}A)");
             else if (output > ASettings.CurrentMax)
-                AddAlert($"[A면] 고전류 발생 ({output}A)");
+                AddAlert($"가은역 방면 기관차 고전류 발생 ({output}A)");
 
             if (battery < ASettings.BatteryMin)
-                AddAlert($"[A면] 배터리 용량 부족 ({battery}%)");
+                AddAlert($"가은역 방면 기관차 배터리 용량 부족 ({battery}%)");
             // battery > ASettings.BatteryMax 는 표시 없음
 
             if (batteryTemp < ASettings.BatteryTempMin)
-                AddAlert($"[A면] 배터리 저온 발생 ({batteryTemp}°C)");
+                AddAlert($"가은역 방면 기관차 배터리 저온 발생 ({batteryTemp}°C)");
             else if (batteryTemp > ASettings.BatteryTempMax)
-                AddAlert($"[A면] 배터리 고온 발생 ({batteryTemp}°C)");
+                AddAlert($"가은역 방면 기관차 배터리 고온 발생 ({batteryTemp}°C)");
         }
         //B면 범위 검사
         private void CheckAlertsB(int voltage, int output, int battery, int batteryTemp)
         {
             if (voltage < BSettings.VoltageMin)
-                AddAlert($"[B면] 저전압 발생 ({voltage}V)");
+                AddAlert($"구량리역 방면 기관차 저전압 발생 ({voltage}V)");
             else if (voltage > BSettings.VoltageMax)
-                AddAlert($"[B면] 고전압 발생 ({voltage}V)");
+                AddAlert($"구량리역 방면 기관차 고전압 발생 ({voltage}V)");
 
             if (output < BSettings.CurrentMin)
-                AddAlert($"[B면] 저전류 발생 ({output}A)");
+                AddAlert($"구량리역 방면 기관차 저전류 발생 ({output}A)");
             else if (output > BSettings.CurrentMax)
-                AddAlert($"[B면] 고전류 발생 ({output}A)");
+                AddAlert($"구량리역 방면 기관차 고전류 발생 ({output}A)");
 
             if (battery < BSettings.BatteryMin)
-                AddAlert($"[B면] 배터리 용량 부족 ({battery}%)");
+                AddAlert($"구량리역 방면 기관차 배터리 용량 부족 ({battery}%)");
             // battery > BSettings.BatteryMax 는 표시 없음
 
             if (batteryTemp < BSettings.BatteryTempMin)
-                AddAlert($"[B면] 배터리 저온 발생 ({batteryTemp}°C)");
+                AddAlert($"구량리역 방면 기관차 배터리 저온 발생 ({batteryTemp}°C)");
             else if (batteryTemp > BSettings.BatteryTempMax)
-                AddAlert($"[B면] 배터리 고온 발생 ({batteryTemp}°C)");
+                AddAlert($"구량리역 방면 기관차 배터리 고온 발생 ({batteryTemp}°C)");
         }
 
 
@@ -312,13 +312,13 @@ namespace Map.ViewModels
             CheckAlertsA(voltageA, motorOutputA, batteryA, batteryTempA);
             if (intercomA > 0)
             {
-                AddAlert($"A면 {intercomA}번 인터컴 호출");
+                AddAlert($"객차 {intercomA}번 인터컴 호출");
             }
 
             //A면 비상정지 0 에서 1 변화 감지 시 팝업 1회
             if (_prevEmergencyA == 0 && emergencyA == 1) {
-                AddAlert("A면 비상정지 발생");
-                _dangerDialog.ShowMessage("A면 비상정지 상태가 발생했습니다.");
+                AddAlert("가은역 방면 기관차 비상정지 발생");
+                _dangerDialog.ShowMessage("가은역 방면 기관차 비상정지 상태가 발생했습니다.");
             }
             _prevEmergencyA = emergencyA;
 
@@ -354,14 +354,14 @@ namespace Map.ViewModels
             CheckAlertsB(voltageB, motorOutputB, batteryB, batteryTempB);
             if (intercomB > 0)
             {
-                AddAlert($"B면 {intercomB}번 인터컴 호출");
+                AddAlert($"객차 {intercomB}번 인터컴 호출");
             }
 
             //B면 비상정지 0에서 1로 바뀌때 주의팝업 띄우기
             if (_prevEmergencyB == 0 && emergencyB == 1)
             {
-                AddAlert("B면 비상정지 발생");
-                _dangerDialog.ShowMessage("B면 비상정지 상태가 발생했습니다.");
+                AddAlert("구량리역 방면 기관차 비상정지 발생");
+                _dangerDialog.ShowMessage("구량리역 방면 기관차 비상정지 상태가 발생했습니다.");
             }
             _prevEmergencyB = emergencyB;   
         }
@@ -462,7 +462,7 @@ namespace Map.ViewModels
         //down 메서드는 필요가 없을 거 같은데 일단 남겨둠
         //A면 가속 감속 정지 이벤트 핸들러 시작
 
-        // A면 버튼
+        // 가은역 방면 제어버튼
         [RelayCommand]
         private async Task TrainAForwardDown()
         {   
@@ -475,9 +475,9 @@ namespace Map.ViewModels
             if (!_passwordDialog.ShowPassword())
                 return;
 
-            AddAlert("기차1 A면에서 가속 버튼이 눌렸습니다");
+            AddAlert("가은역 방면 기관차 가속 버튼이 눌렸습니다");
 
-            bool ok = _buttonAlertDialog.ShowMessage("기차1 A면에서 가속 버튼이 눌렸습니다");
+            bool ok = _buttonAlertDialog.ShowMessage("가은역 방면 기관차 가속 버튼이 눌렸습니다");
             if (!ok) return;
 
             await SendSetDataAsync(1, 0, 1);
@@ -497,9 +497,9 @@ namespace Map.ViewModels
             if (!_passwordDialog.ShowPassword())
                 return;
 
-            AddAlert("기차1 A면에서 감속 버튼이 눌렸습니다");
+            AddAlert("가은역 방면 기관차 감속 버튼이 눌렸습니다");
 
-            bool ok = _buttonAlertDialog.ShowMessage("기차1 A면에서 감속 버튼이 눌렸습니다");
+            bool ok = _buttonAlertDialog.ShowMessage("가은역 방면 기관차 감속 버튼이 눌렸습니다");
             if (!ok) return;
 
             await SendSetDataAsync(2, 0, 1);
@@ -519,15 +519,15 @@ namespace Map.ViewModels
             if (!_passwordDialog.ShowPassword())
                 return;
 
-            AddAlert("기차1 A면에서 정지버튼이 눌렸습니다");
+            AddAlert("가은역 방면 기관차 정지 버튼이 눌렸습니다");
 
-            bool ok = _buttonAlertDialog.ShowMessage("기차1 A면에서 정지 버튼이 눌렸습니다");
+            bool ok = _buttonAlertDialog.ShowMessage("가은역 방면 기관차 정지 버튼이 눌렸습니다");
             if (!ok) return;
 
             await SendSetDataAsync(3, 0, 1);
         }
 
-        // B면 버튼
+        // 구량리역 방면 제어 버튼
         [RelayCommand]
         private async Task TrainBForwardDown()
         {
@@ -540,9 +540,9 @@ namespace Map.ViewModels
             if (!_passwordDialog.ShowPassword())
                 return;
 
-            AddAlert("기차1 B면에서 가속 버튼이 눌렸습니다");
+            AddAlert("구량리역 방면 기관차 가속 버튼이 눌렸습니다");
 
-            bool ok = _buttonAlertDialog.ShowMessage("기차1 B면에서 가속 버튼이 눌렸습니다");
+            bool ok = _buttonAlertDialog.ShowMessage("구량리역 방면 기관차 가속 버튼이 눌렸습니다");
             if (!ok) return;
 
             await SendSetDataAsync(1, 0, 2);
@@ -560,9 +560,9 @@ namespace Map.ViewModels
             if (!_passwordDialog.ShowPassword())
                 return;
 
-            AddAlert("기차1 B면에서 감속 버튼이 눌렸습니다");
+            AddAlert("구량리역 방면 기관차 감속 버튼이 눌렸습니다");
 
-            bool ok = _buttonAlertDialog.ShowMessage("기차1 B면에서 감속 버튼이 눌렸습니다");
+            bool ok = _buttonAlertDialog.ShowMessage("구량리역 방면 기관차 감속 버튼이 눌렸습니다");
             if (!ok) return;
 
             await SendSetDataAsync(2, 0, 2);
@@ -582,9 +582,9 @@ namespace Map.ViewModels
             if (!_passwordDialog.ShowPassword())
                 return;
 
-            AddAlert("기차1 B면에서 정지버튼이 눌렸습니다");
+            AddAlert("구량리역 방면 기관차 정지버튼이 눌렸습니다");
 
-            bool ok = _buttonAlertDialog.ShowMessage("기차1 B면에서 정지 버튼이 눌렸습니다");
+            bool ok = _buttonAlertDialog.ShowMessage("구량리역 방면 기관차 정지 버튼이 눌렸습니다");
             if (!ok) return;
 
             await SendSetDataAsync(3, 0, 2);

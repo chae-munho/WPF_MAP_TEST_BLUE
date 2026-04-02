@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/appsettings.json")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/last_gps_index.txt")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/pos.txt")]
 

@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="data\appsettings.json" />
     <None Remove="data\last_gps_index.txt" />
     <None Remove="data\pos.txt" />
     <None Remove="images\A.png" />
@@ -76,6 +77,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="data\appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="data\last_gps_index.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
