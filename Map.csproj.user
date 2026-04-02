@@ -10,9 +10,6 @@
     <Compile Update="Popups\ButtonAlertPopup.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Popups\CameraPopup.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Popups\DangerPopup.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
