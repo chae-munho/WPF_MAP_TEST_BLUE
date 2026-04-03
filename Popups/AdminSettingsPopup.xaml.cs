@@ -7,14 +7,20 @@ namespace Map.Views.Popups
     public partial class AdminSettingsPopup : Window
     {
         public string ServerBaseUrl { get; private set; } = "";
+        public string VideoServerBaseUrl { get; private set; } = "";
         public SideAlertSettings BSettings { get; private set; }
         public SideAlertSettings ASettings { get; private set; }
 
-        public AdminSettingsPopup(string serverBaseUrl, SideAlertSettings bSettings, SideAlertSettings aSettings)
+        public AdminSettingsPopup(
+            string serverBaseUrl,
+            string videoServerBaseUrl,
+            SideAlertSettings bSettings,
+            SideAlertSettings aSettings)
         {
             InitializeComponent();
 
             ServerBaseUrl = serverBaseUrl;
+            VideoServerBaseUrl = videoServerBaseUrl;
             BSettings = bSettings;
             ASettings = aSettings;
 
@@ -24,6 +30,7 @@ namespace Map.Views.Popups
         private void LoadSettingsToUi()
         {
             ServerBaseUrlTextBox.Text = ServerBaseUrl;
+            VideoServerBaseUrlTextBox.Text = VideoServerBaseUrl;
 
             BVoltageMinTextBox.Text = BSettings.VoltageMin.ToString();
             BVoltageMaxTextBox.Text = BSettings.VoltageMax.ToString();
@@ -55,17 +62,19 @@ namespace Map.Views.Popups
 
         private bool TryReadSettings()
         {
-            string inputUrl = ServerBaseUrlTextBox.Text.Trim();
-
-            if (!Uri.TryCreate(inputUrl, UriKind.Absolute, out Uri? uri) ||
-                (uri.Scheme != Uri.UriSchemeHttp && uri.Scheme != Uri.UriSchemeHttps))
+            if (!TryNormalizeBaseUrl(ServerBaseUrlTextBox.Text.Trim(), out string normalizedServerBaseUrl))
             {
-                MessageBox.Show("서버 주소 형식이 올바르지 않습니다.\n예: http://192.168.0.173:5090",
+                MessageBox.Show("일반 서버 주소 형식이 올바르지 않습니다.\n예: http://192.168.0.173:5090",
                     "입력 오류", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return false;
             }
 
-            string normalizedBaseUrl = uri.GetLeftPart(UriPartial.Authority);
+            if (!TryNormalizeBaseUrl(VideoServerBaseUrlTextBox.Text.Trim(), out string normalizedVideoServerBaseUrl))
+            {
+                MessageBox.Show("영상 서버 주소 형식이 올바르지 않습니다.\n예: http://192.168.0.173:5090",
+                    "입력 오류", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return false;
+            }
 
             if (!TryParseSideSettings(
                     BVoltageMinTextBox.Text, BVoltageMaxTextBox.Text,
@@ -89,9 +98,24 @@ namespace Map.Views.Popups
                 return false;
             }
 
-            ServerBaseUrl = normalizedBaseUrl;
+            ServerBaseUrl = normalizedServerBaseUrl;
+            VideoServerBaseUrl = normalizedVideoServerBaseUrl;
             BSettings = bSettings;
             ASettings = aSettings;
+            return true;
+        }
+
+        private static bool TryNormalizeBaseUrl(string inputUrl, out string normalizedBaseUrl)
+        {
+            normalizedBaseUrl = "";
+
+            if (!Uri.TryCreate(inputUrl, UriKind.Absolute, out Uri? uri) ||
+                (uri.Scheme != Uri.UriSchemeHttp && uri.Scheme != Uri.UriSchemeHttps))
+            {
+                return false;
+            }
+
+            normalizedBaseUrl = uri.GetLeftPart(UriPartial.Authority);
             return true;
         }
 

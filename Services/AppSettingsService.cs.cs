@@ -41,6 +41,9 @@ namespace Map.Services
                 if (string.IsNullOrWhiteSpace(settings.ServerBaseUrl))
                     settings.ServerBaseUrl = "http://192.168.0.173:5090";
 
+                if (string.IsNullOrWhiteSpace(settings.VideoServerBaseUrl))
+                    settings.VideoServerBaseUrl = "http://192.168.0.173:5091";
+
                 return settings;
             }
             catch

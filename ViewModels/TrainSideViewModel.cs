@@ -10,10 +10,10 @@ namespace Map.ViewModels
         // 숫자 데이터
      
         [ObservableProperty] private int voltage;
-        [ObservableProperty] private int current;  // 전류는 이제는 표현 안함 근데 일단 코드는 남겨둘 거임
+        [ObservableProperty] private int current;  // 전류는 이제는 표현 안함
         [ObservableProperty] private int battery;
         [ObservableProperty] private int batteryTemp;
-        [ObservableProperty] private int motorOutput;  //모터출력
+        [ObservableProperty] private int motorOutput;  //모터출력 or 모터 전류
         [ObservableProperty] private int motorSpeed;
 
       

@@ -28,7 +28,7 @@ namespace Map.ViewModels
         private readonly DispatcherTimer _rotateTimer = new();
 
         private readonly IAppSettingsService _appSettingsService;
-        private readonly Action<string> _applyServerBaseUrl;
+        private readonly Action<string, string> _applyServerBaseUrls;
 
         public string CurrentServerBaseUrl { get; private set; } = "";
 
@@ -73,25 +73,41 @@ namespace Map.ViewModels
         public SideAlertSettings BSettings { get; private set; } = SideAlertSettings.CreateDefaultB();
         public SideAlertSettings ASettings { get; private set; } = SideAlertSettings.CreateDefaultA();
 
+
+        private readonly TrainVideoWebSocketServerService _videoWsServer;
+        private readonly ICameraPopupService _cameraPopupService;
+
+        private int _previousActiveIntercomCar = 0;
+        private int _previousActiveIntercomTrain = 0;
+
+        public string CurrentVideoServerBaseUrl { get; private set; } = "";
+
+      
+
         public MainWindowViewModel(
             TrainWebSocketServerService wsServer,
+            TrainVideoWebSocketServerService videoWsServer,
             IPasswordDialogService passwordDialog,
             IButtonAlertDialogService buttonAlertDialog,
             IDangerDialogService dangerDialog,
             IAdminSettingsDialogService adminSettingsDialog,
+            ICameraPopupService cameraPopupService,
             IAppSettingsService appSettingsService,
             AppSettings initialSettings,
-            Action<string> applyServerBaseUrl)
+            Action<string, string> applyServerBaseUrls)
         {
             _wsServer = wsServer;
+            _videoWsServer = videoWsServer;
             _passwordDialog = passwordDialog;
             _buttonAlertDialog = buttonAlertDialog;
             _dangerDialog = dangerDialog;
             _adminSettingsDialog = adminSettingsDialog;
+            _cameraPopupService = cameraPopupService;
             _appSettingsService = appSettingsService;
-            _applyServerBaseUrl = applyServerBaseUrl;
+            _applyServerBaseUrls = applyServerBaseUrls;
 
             CurrentServerBaseUrl = initialSettings.ServerBaseUrl;
+            CurrentVideoServerBaseUrl = initialSettings.VideoServerBaseUrl;
             BSettings = initialSettings.BSettings?.Clone() ?? SideAlertSettings.CreateDefaultB();
             ASettings = initialSettings.ASettings?.Clone() ?? SideAlertSettings.CreateDefaultA();
 
@@ -102,6 +118,56 @@ namespace Map.ViewModels
             _rotateTimer.Interval = TimeSpan.FromMilliseconds(16);
             _rotateTimer.Tick += (_, __) => RotateTimerTick();
             _rotateTimer.Start();
+        }
+        private (int trainNo, int carNo) GetActiveIntercomTarget(string[] arr)
+        {
+            int aIntercomCar = GetSafeInt(arr, 12);
+            int aMaster = GetSafeInt(arr, 14);
+
+            int bIntercomCar = GetSafeInt(arr, 59);
+            int bMaster = GetSafeInt(arr, 61);
+
+            if (aMaster == 1 && aIntercomCar > 0)
+                return (1, aIntercomCar);
+
+            if (aMaster == 0 && bMaster == 1 && bIntercomCar > 0)
+                return (2, bIntercomCar);
+
+            return (0, 0);
+        }
+
+        private void HandleActiveIntercomTransition(int currentTrainNo, int currentCarNo)
+        {
+            if (currentTrainNo <= 0 || currentCarNo <= 0)
+                return;
+
+            if (_previousActiveIntercomCar == 0 && _previousActiveIntercomTrain == 0)
+            {
+                AddAlert($"객차 {currentCarNo}번 인터컴 호출");
+                _cameraPopupService.ShowIntercomPopup(currentTrainNo, currentCarNo);
+
+                _previousActiveIntercomTrain = currentTrainNo;
+                _previousActiveIntercomCar = currentCarNo;
+                return;
+            }
+
+            if (currentTrainNo != _previousActiveIntercomTrain ||
+                currentCarNo != _previousActiveIntercomCar)
+            {
+                AddAlert($"객차 {currentCarNo}번 인터컴 호출");
+                _cameraPopupService.ShowIntercomPopup(currentTrainNo, currentCarNo);
+
+                _previousActiveIntercomTrain = currentTrainNo;
+                _previousActiveIntercomCar = currentCarNo;
+            }
+        }
+
+        private static int GetSafeInt(string[] arr, int index)
+        {
+            if (arr == null || index < 0 || index >= arr.Length)
+                return 0;
+
+            return int.TryParse(arr[index], out int value) ? value : 0;
         }
 
         public void SetMovementProvider(IMovementProvider movementProvider)
@@ -285,7 +351,7 @@ namespace Map.ViewModels
             int motorOutputA = int.Parse(arr[6]); //기차1 모터전류(출력)
             int batteryA = int.Parse(arr[8]); //기차1 배터리용량
             int batteryTempA = int.Parse(arr[10]);  //기차1 배터리온도
-            int intercomA = int.Parse(arr[12]); //기차1에서 발생한 인터컴 번호
+            
             int emergencyA = int.Parse(arr[36]); //기차1 비상정지 상태(M122)
 
 
@@ -310,10 +376,7 @@ namespace Map.ViewModels
             TrainA.UpdateMotorOutputBar(motorOutputA);
 
             CheckAlertsA(voltageA, motorOutputA, batteryA, batteryTempA);
-            if (intercomA > 0)
-            {
-                AddAlert($"객차 {intercomA}번 인터컴 호출");
-            }
+           
 
             //A면 비상정지 0 에서 1 변화 감지 시 팝업 1회
             if (_prevEmergencyA == 0 && emergencyA == 1) {
@@ -332,7 +395,7 @@ namespace Map.ViewModels
             int motorOutputB = int.Parse(arr[off + 6]);
             int batteryB = int.Parse(arr[off + 8]);
             int batteryTempB = int.Parse(arr[off + 10]);
-            int intercomB = int.Parse(arr[off + 12]);
+           
             int emergencyB = int.Parse(arr[off + 36]); // 기차1 비상정지 상태(M122)
 
             TrainB.Voltage = voltageB;
@@ -352,10 +415,7 @@ namespace Map.ViewModels
             TrainB.UpdateMotorOutputBar(motorOutputB);
 
             CheckAlertsB(voltageB, motorOutputB, batteryB, batteryTempB);
-            if (intercomB > 0)
-            {
-                AddAlert($"객차 {intercomB}번 인터컴 호출");
-            }
+        
 
             //B면 비상정지 0에서 1로 바뀌때 주의팝업 띄우기
             if (_prevEmergencyB == 0 && emergencyB == 1)
@@ -363,7 +423,9 @@ namespace Map.ViewModels
                 AddAlert("구량리역 방면 기관차 비상정지 발생");
                 _dangerDialog.ShowMessage("구량리역 방면 기관차 비상정지 상태가 발생했습니다.");
             }
-            _prevEmergencyB = emergencyB;   
+            _prevEmergencyB = emergencyB;
+            var activeIntercomTarget = GetActiveIntercomTarget(arr);
+            HandleActiveIntercomTransition(activeIntercomTarget.trainNo, activeIntercomTarget.carNo);
         }
 
 
@@ -415,16 +477,17 @@ namespace Map.ViewModels
         //Commands (RelayCommand) 
         //Lock 클릭: RelayCommand
         //Down/Up: Behaviors로 연결
-        
-        [RelayCommand]
 
+        [RelayCommand]
         private void OpenAdminSettings()
         {
             bool ok = _adminSettingsDialog.ShowDialog(
                 CurrentServerBaseUrl,
+                CurrentVideoServerBaseUrl,
                 BSettings,
                 ASettings,
                 out string updatedServerBaseUrl,
+                out string updatedVideoServerBaseUrl,
                 out SideAlertSettings updatedBSettings,
                 out SideAlertSettings updatedASettings);
 
@@ -434,22 +497,23 @@ namespace Map.ViewModels
             try
             {
                 CurrentServerBaseUrl = updatedServerBaseUrl;
+                CurrentVideoServerBaseUrl = updatedVideoServerBaseUrl;
                 BSettings = updatedBSettings;
                 ASettings = updatedASettings;
 
                 var appSettings = new AppSettings
                 {
                     ServerBaseUrl = CurrentServerBaseUrl,
+                    VideoServerBaseUrl = CurrentVideoServerBaseUrl,
                     BSettings = BSettings.Clone(),
                     ASettings = ASettings.Clone()
                 };
 
                 _appSettingsService.Save(appSettings);
 
-                // 저장 즉시 현재 통신 주소 반영
-                _applyServerBaseUrl(CurrentServerBaseUrl);
+                _applyServerBaseUrls(CurrentServerBaseUrl, CurrentVideoServerBaseUrl);
 
-                AddAlert("[관리자 설정] 서버 주소 및 기준값이 저장되었습니다.");
+                AddAlert("[관리자 설정] 일반/영상 서버 주소 및 기준값이 저장되었습니다.");
             }
             catch (Exception ex)
             {
@@ -620,6 +684,7 @@ namespace Map.ViewModels
         {
             _dataTimer.Stop();
             _rotateTimer.Stop();
+            _cameraPopupService.CloseAll();
         }
     }
 }

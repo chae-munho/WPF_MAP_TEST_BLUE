@@ -45,7 +45,7 @@
             <!-- 중앙 메시지 -->
             <TextBlock x:Name="MessageText"
                        Foreground="#F32735"
-                       FontSize="26"
+                       FontSize="23"
                        FontWeight="Bold"
                        TextAlignment="Center"
                        HorizontalAlignment="Center"
