@@ -14,6 +14,8 @@ namespace Map.Views.Popups
         private bool _confirmed;
         private bool _confirmAsked;
         private long _lastSequence;
+        //취소/x시 stop 요청
+        private bool _stopRequested;
 
         public int CurrentTrainNo { get; private set; }
         public int CurrentCarNo { get; private set; }
@@ -39,7 +41,7 @@ namespace Map.Views.Popups
             VideoImage.Source = null;
         }
 
-        protected override void OnContentRendered(EventArgs e)
+        protected override async void OnContentRendered(EventArgs e)
         {
             base.OnContentRendered(e);
 
@@ -56,12 +58,31 @@ namespace Map.Views.Popups
 
             if (result != MessageBoxResult.OK)
             {
+                await SendStopRequestAsync();
                 Close();
                 return;
             }
 
             _confirmed = true;
             _frameTimer.Start();
+        }
+        private async Task SendStopRequestAsync()
+        {
+            if (_stopRequested)
+                return;
+
+            _stopRequested = true;
+
+            try
+            {
+                if (CurrentTrainNo > 0 && CurrentCarNo > 0)
+                {
+                    await _videoServer.SendVideoControlAsync(CurrentTrainNo, CurrentCarNo, "stop");
+                }
+            }
+            catch
+            {
+            }
         }
 
         private void FrameTimer_Tick(object? sender, EventArgs e)
@@ -98,12 +119,13 @@ namespace Map.Views.Popups
             }
         }
 
-        protected override void OnClosed(EventArgs e)
+        protected override async void OnClosed(EventArgs e)
         {
             try
             {
                 _frameTimer.Stop();
                 _frameTimer.Tick -= FrameTimer_Tick;
+                await SendStopRequestAsync();
             }
             catch
             {

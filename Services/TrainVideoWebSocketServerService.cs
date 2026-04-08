@@ -8,7 +8,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
-
+using System.Linq;
 namespace Map.Services
 {
     public sealed class TrainVideoWebSocketServerService : IDisposable
@@ -74,6 +74,78 @@ namespace Map.Services
             sequence = 0;
             return false;
         }
+        //TrainClient한테 영상 중단 신호 메서드 시작
+        // 명령 메시지 객체 생성
+        public async Task SendVideoControlAsync(int train, int carNo, string action, CancellationToken ct = default)
+        {
+            var msg = new WsVideoControlMessage
+            {
+                Train = train,
+                CarNo = carNo,
+                Action = action,
+                RequestId = Guid.NewGuid().ToString("N"),
+                Timestamp = DateTime.UtcNow.ToString("O")
+            };
+
+            int sentCount = await SendToTargetTrainSessionsAsync(msg, train, ct).ConfigureAwait(false);
+
+            WriteLog($"video_control 전송: train={train}, car={carNo}, action={action}, targets={sentCount}");
+        }
+
+        // 수많은 접속자 중에서 누구에게 보낼지 골라내는 역할
+        private async Task<int> SendToTargetTrainSessionsAsync<T>(T payload, int train, CancellationToken ct)
+        {
+            var targets = _sessions.Values
+                .Where(s => s.Socket.State == WebSocketState.Open && s.Train == train)
+                .ToArray();
+
+            int successCount = 0;
+
+            foreach (var session in targets)
+            {
+                bool ok = await SendToSessionAsync(session, payload, ct).ConfigureAwait(false);
+                if (ok)
+                    successCount++;
+            }
+
+            return successCount;
+        }
+        //실제 통신
+        private async Task<bool> SendToSessionAsync<T>(ClientSession session, T payload, CancellationToken ct)
+        {
+            if (session.Socket.State != WebSocketState.Open)
+                return false;
+
+            string json = JsonSerializer.Serialize(payload, _jsonOptions);
+            byte[] bytes = Encoding.UTF8.GetBytes(json);
+
+            await session.SendLock.WaitAsync(ct).ConfigureAwait(false);
+            try
+            {
+                if (session.Socket.State != WebSocketState.Open)
+                    return false;
+
+                await session.Socket.SendAsync(
+                    new ArraySegment<byte>(bytes),
+                    WebSocketMessageType.Text,
+                    true,
+                    ct).ConfigureAwait(false);
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                WriteLog($"영상 전송 실패: session={session.SessionId}, error={ex.Message}");
+                return false;
+            }
+            finally
+            {
+                session.SendLock.Release();
+            }
+        }
+        //TrainClient한테 영상 중단 신호 메서드 끝
+
+
 
         public void UpdateBaseUrl(string newBaseUrl)
         {
@@ -341,6 +413,8 @@ namespace Map.Services
             public int Train { get; set; }
             public string ClientName { get; set; } = "";
             public string Role { get; set; } = "";
+            //영상중단 전송용
+            public SemaphoreSlim SendLock { get; } = new(1, 1);
 
             public ClientSession(string sessionId, WebSocket socket)
             {
@@ -350,6 +424,7 @@ namespace Map.Services
 
             public void Dispose()
             {
+                try { SendLock.Dispose(); } catch { }
                 try { Socket.Dispose(); } catch { }
             }
         }

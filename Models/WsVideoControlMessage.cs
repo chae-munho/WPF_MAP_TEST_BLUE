@@ -1,9 +1,9 @@
 ﻿namespace Map.Models
 {
-    //TrainClinet -> Map한테 보내는 stop 신호 즉 TrainClient에서 
-    public sealed class WsVideoStopMessage
+    public sealed class WsVideoControlMessage
     {
-        public string Type { get; set; } = "video_stop";
+        public string Type { get; set; } = "video_control";
+        public string Action { get; set; } = "";   // "stop"
         public int Train { get; set; }
         public int CarNo { get; set; }
         public string? RequestId { get; set; }
