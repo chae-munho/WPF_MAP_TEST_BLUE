@@ -139,7 +139,11 @@ namespace Map.ViewModels
         private void HandleActiveIntercomTransition(int currentTrainNo, int currentCarNo)
         {
             if (currentTrainNo <= 0 || currentCarNo <= 0)
+            {
+                _previousActiveIntercomTrain = 0;
+                _previousActiveIntercomCar = 0;
                 return;
+            }
 
             if (_previousActiveIntercomCar == 0 && _previousActiveIntercomTrain == 0)
             {
