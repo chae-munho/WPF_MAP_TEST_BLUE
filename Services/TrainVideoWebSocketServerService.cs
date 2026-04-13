@@ -297,7 +297,7 @@ namespace Map.Services
                             WsVideoFrameMessage? msg = JsonSerializer.Deserialize<WsVideoFrameMessage>(json, _jsonOptions);
                             if (msg == null || msg.Train <= 0 || msg.CarNo <= 0 || string.IsNullOrWhiteSpace(msg.ImageBase64))
                                 return;
-                            WriteLog($"video_frame 수신: train={msg.Train}, car={msg.CarNo}");
+                            //WriteLog($"video_frame 수신: train={msg.Train}, car={msg.CarNo}");
                             byte[] jpegBytes;
                             try
                             {
@@ -305,7 +305,7 @@ namespace Map.Services
                             }
                             catch
                             {
-                                WriteLog($"video_frame base64 디코딩 실패: train={msg.Train}, car={msg.CarNo}");
+                                //WriteLog($"video_frame base64 디코딩 실패: train={msg.Train}, car={msg.CarNo}");
                                 return;
                             }
 
