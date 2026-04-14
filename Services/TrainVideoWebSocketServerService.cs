@@ -377,27 +377,7 @@ namespace Map.Services
             }
         }
 
-        private static async Task<string> ReceiveTextMessageAsync(WebSocket socket, byte[] buffer, CancellationToken token)
-        {
-            using MemoryStream ms = new();
-
-            while (true)
-            {
-                WebSocketReceiveResult result = await socket.ReceiveAsync(
-                    new ArraySegment<byte>(buffer),
-                    token).ConfigureAwait(false);
-
-                if (result.MessageType == WebSocketMessageType.Close)
-                    return string.Empty;
-
-                ms.Write(buffer, 0, result.Count);
-
-                if (result.EndOfMessage)
-                    break;
-            }
-
-            return Encoding.UTF8.GetString(ms.ToArray());
-        }
+       
 
         private static string NormalizeBaseUrl(string baseUrl)
         {
