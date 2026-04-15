@@ -1,6 +1,8 @@
 ﻿using Map.Services;
 using System;
 using System.IO;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
@@ -10,12 +12,17 @@ namespace Map.Views.Popups
     public partial class CameraPopup : Window
     {
         private readonly TrainVideoWebSocketServerService _videoServer;
-        private readonly DispatcherTimer _frameTimer = new();
+
+        private CancellationTokenSource? _frameLoopCts;
+
         private bool _confirmed;
         private bool _confirmAsked;
-        private long _lastSequence;
-        //취소/x시 stop 요청
         private bool _stopRequested;
+
+        private long _lastSequence;
+
+        // 중복 디코딩 방지용
+        private int _isRendering;
 
         public int CurrentTrainNo { get; private set; }
         public int CurrentCarNo { get; private set; }
@@ -24,9 +31,6 @@ namespace Map.Views.Popups
         {
             InitializeComponent();
             _videoServer = videoServer;
-
-            _frameTimer.Interval = TimeSpan.FromMilliseconds(100);
-            _frameTimer.Tick += FrameTimer_Tick;
         }
 
         public void ShowIntercom(int trainNo, int carNo)
@@ -39,6 +43,12 @@ namespace Map.Views.Popups
             txtVideoPlaceholder.Text = "영상 대기 중...";
             txtVideoPlaceholder.Visibility = Visibility.Visible;
             VideoImage.Source = null;
+
+            _lastSequence = 0;
+            _confirmed = false;
+            _confirmAsked = false;
+            _stopRequested = false;
+            Interlocked.Exchange(ref _isRendering, 0);
         }
 
         protected override async void OnContentRendered(EventArgs e)
@@ -64,8 +74,135 @@ namespace Map.Views.Popups
             }
 
             _confirmed = true;
-            _frameTimer.Start();
+            StartFrameLoop();
         }
+
+        private void StartFrameLoop()
+        {
+            StopFrameLoop();
+
+            _frameLoopCts = new CancellationTokenSource();
+            _ = RunFrameLoopAsync(_frameLoopCts.Token);
+        }
+
+        private void StopFrameLoop()
+        {
+            try
+            {
+                _frameLoopCts?.Cancel();
+            }
+            catch
+            {
+            }
+            finally
+            {
+                _frameLoopCts?.Dispose();
+                _frameLoopCts = null;
+            }
+        }
+
+        private async Task RunFrameLoopAsync(CancellationToken token)
+        {
+            try
+            {
+                while (!token.IsCancellationRequested)
+                {
+                    if (!_confirmed || CurrentTrainNo <= 0 || CurrentCarNo <= 0)
+                    {
+                        await Task.Delay(200, token);
+                        continue;
+                    }
+
+                    if (!_videoServer.TryGetLatestFrame(CurrentTrainNo, CurrentCarNo, out byte[] jpegBytes, out long sequence))
+                    {
+                        await Task.Delay(200, token);
+                        continue;
+                    }
+
+                    if (sequence == _lastSequence)
+                    {
+                        await Task.Delay(200, token);
+                        continue;
+                    }
+
+                    // 이미 이전 프레임 디코딩 중이면 이번 프레임은 버림
+                    if (Interlocked.Exchange(ref _isRendering, 1) == 1)
+                    {
+                        await Task.Delay(50, token);
+                        continue;
+                    }
+
+                    try
+                    {
+                        _lastSequence = sequence;
+
+                        BitmapImage bitmap = await DecodeBitmapAsync(jpegBytes, token);
+
+                        await Dispatcher.InvokeAsync(() =>
+                        {
+                            if (!_confirmed || token.IsCancellationRequested)
+                                return;
+
+                            VideoImage.Source = bitmap;
+                            txtVideoPlaceholder.Visibility = Visibility.Collapsed;
+                        }, DispatcherPriority.Render, token);
+                    }
+                    catch (OperationCanceledException)
+                    {
+                        break;
+                    }
+                    catch
+                    {
+                        try
+                        {
+                            await Dispatcher.InvokeAsync(() =>
+                            {
+                                txtVideoPlaceholder.Text = "영상 디코딩 실패";
+                                txtVideoPlaceholder.Visibility = Visibility.Visible;
+                            }, DispatcherPriority.Render, token);
+                        }
+                        catch
+                        {
+                        }
+                    }
+                    finally
+                    {
+                        Interlocked.Exchange(ref _isRendering, 0);
+                    }
+
+                    await Task.Delay(200, token);
+                }
+            }
+            catch (OperationCanceledException)
+            {
+            }
+            catch
+            {
+            }
+        }
+
+        private static Task<BitmapImage> DecodeBitmapAsync(byte[] jpegBytes, CancellationToken token)
+        {
+            return Task.Run(() =>
+            {
+                token.ThrowIfCancellationRequested();
+
+                using var ms = new MemoryStream(jpegBytes);
+
+                var bitmap = new BitmapImage();
+                bitmap.BeginInit();
+                bitmap.CacheOption = BitmapCacheOption.OnLoad;
+                bitmap.CreateOptions = BitmapCreateOptions.PreservePixelFormat;
+                bitmap.StreamSource = ms;
+                bitmap.EndInit();
+                bitmap.Freeze();
+
+                token.ThrowIfCancellationRequested();
+
+                return bitmap;
+            }, token);
+        }
+
         private async Task SendStopRequestAsync()
         {
             if (_stopRequested)
@@ -85,46 +222,12 @@ namespace Map.Views.Popups
             }
         }
 
-        private void FrameTimer_Tick(object? sender, EventArgs e)
-        {
-            if (!_confirmed)
-                return;
-
-            if (!_videoServer.TryGetLatestFrame(CurrentTrainNo, CurrentCarNo, out byte[] jpegBytes, out long sequence))
-                return;
-
-            if (sequence == _lastSequence)
-                return;
-
-            _lastSequence = sequence;
-
-            try
-            {
-                using var ms = new MemoryStream(jpegBytes);
-
-                var bitmap = new BitmapImage();
-                bitmap.BeginInit();
-                bitmap.CacheOption = BitmapCacheOption.OnLoad;
-                bitmap.StreamSource = ms;
-                bitmap.EndInit();
-                bitmap.Freeze();
-
-                VideoImage.Source = bitmap;
-                txtVideoPlaceholder.Visibility = Visibility.Collapsed;
-            }
-            catch
-            {
-                txtVideoPlaceholder.Text = "영상 디코딩 실패";
-                txtVideoPlaceholder.Visibility = Visibility.Visible;
-            }
-        }
-
         protected override async void OnClosed(EventArgs e)
         {
             try
             {
-                _frameTimer.Stop();
-                _frameTimer.Tick -= FrameTimer_Tick;
+                _confirmed = false;
+                StopFrameLoop();
                 await SendStopRequestAsync();
             }
             catch
